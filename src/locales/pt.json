@@ -1,44 +1,150 @@
 {
     "ui": {
-        "title": "Z3-R0, o Bot Maluco",
-        "about": "Eu sou o Z3-R0, seu bot caótico de estimação.",
+        "title": "Z3-R0, o Bot Estranho",
+        "about": "Sou o Z3-R0, seu bot caótico e camarada.",
         "you": "Você",
         "language": "Idioma",
         "developed": "Desenvolvido com ❤️ por"
     },
     "placeholders": [
-        "Digite algo engraçado ou um comando tipo !bug",
-        "E aí, sobre o que vamos conversar?",
-        "Manda um comando ou só dá um oi!",
-        "Quer rir? Digita !meme ou !conselho",
-        "Entediado? Tenta !elogio ou !bug",
-        "Quer ouvir uma piada? Digita !meme ou !conselho",
-        "Manda um comando ou só dá um oi!",
-        "Quer rir? Digita !meme ou !conselho",
-        "Entediado? Tenta !elogio ou !bug",
-        "Quer ouvir uma piada? Digita !meme ou !conselho"
+        "Digite algo engraçado ou um comando como !bug",
+        "Ei, sobre o que você quer conversar?",
+        "Digite um comando ou apenas diga oi!",
+        "Precisa rir? Digite !meme ou !advice",
+        "Entediado? Digite !compliment ou !bug",
+        "Quer ouvir uma piada? Digite !meme ou !advice",
+        "Digite um comando ou apenas diga oi!",
+        "Precisa rir? Digite !meme ou !advice",
+        "Entediado? Digite !compliment ou !bug",
+        "Quer ouvir uma piada? Digite !meme ou !advice"
     ],
     "interaction": {
-        "unknown_command": "Comando desconhecido 🤖. Tente !meme, !bug ou !elogio",
+        "unknown_command": "Comando desconhecido 🤖. Tente !meme, !bug ou !compliment",
         "typing": "Z3-R0 está digitando...",
         "not_understood": "Não entendi muito bem. Pode reformular?"
     },
     "welcome": [
-        "E aí! Tudo certo, humano?",
-        "Quer uma piada? Tenho humor de processador.",
-        "Bip bop! Falo sarcasmo fluente.",
-        "Oi! Preparado pra uma conversa maluca?",
-        "Saudações, terráqueo! Vamos ficar doidos.",
-        "Olá! Sou o Z3-R0, seu parceiro digital.",
-        "Cheguei pra deixar seu dia mais estranho.",
-        "Oi! Bora mergulhar no caos juntos.",
-        "Bem-vindo ao lado maluco do chat!",
-        "Fala aí! Sou o Z3-R0, seu companheiro doido."
+        "Yo! E aí, humano?",
+        "Precisa de uma piada? Tenho humor nível CPU.",
+        "Bleep bloop! Eu falo sarcasmo.",
+        "Oi! Pronto para um bate-papo maluco?",
+        "Saudações, terráqueo! Vamos ficar estranhos.",
+        "Olá! Sou o Z3-R0, seu camarada digital.",
+        "E aí! Estou aqui pra deixar seu dia mais estranho.",
+        "Oi! Vamos mergulhar no caos juntos.",
+        "Bem-vindo ao lado estranho do chat!",
+        "Oi! Sou o Z3-R0, seu companheiro caótico."
     ],
     "commands": {
-        "!advice": "!conselho",
-        "!compliment": "!elogio",
+        "!advice": "!advice",
+        "!compliment": "!compliment",
+        "!joke": "!joke",
+        "!funfact": "!funfact",
+        "!quote": "!quote",
         "!bug": "!bug",
-        "!meme": "!meme"
-    }
+        "!debug": "!debug",
+        "!meme": "!meme",
+        "!gif": "!gif",
+        "!help": "!help",
+        "!about": "!about"
+    },
+    "advices": [
+        "Não se preocupe, seja feliz!",
+        "Mantenha a calma e siga em frente.",
+        "A vida é curta, coma a sobremesa primeiro.",
+        "Você é mais forte do que pensa.",
+        "Acredite em si mesmo!",
+        "Mantenha o pensamento positivo, trabalhe duro e faça acontecer.",
+        "Não conte os dias, faça os dias valerem.",
+        "Sonhe grande e não tenha medo de falhar.",
+        "O melhor momento para recomeçar é agora.",
+        "Você é capaz de coisas incríveis."
+    ],
+    "compliments": [
+        "Você tem um ótimo senso de humor!",
+        "Você é muito inteligente!",
+        "Você ilumina o ambiente!",
+        "Você é como um raio de sol!",
+        "Você tem ótimos modos!",
+        "Você é a melhor versão de você mesmo!",
+        "Você já é suficiente do jeito que é.",
+        "Você tem um ótimo gosto musical!",
+        "Você é um amigo de verdade.",
+        "Você é incrível do jeitinho que é."
+    ],
+    "jokes": [
+        "Por que o espantalho ganhou um prêmio? Porque ele se destacou no campo!",
+        "Por que os cientistas não confiam nos átomos? Porque eles inventam tudo!",
+        "Por que a bicicleta caiu? Porque estava cansada!",
+        "Como se chama um espaguete falso? Uma impostora!",
+        "Por que o livro de matemática estava triste? Porque tinha muitos problemas!",
+        "Por que os esqueletos não brigam? Porque não têm coragem!",
+        "Como se chama um queijo que não é seu? Nacho queijo!",
+        "Por que o golfista levou duas calças? Caso acertasse um hole-in-one!",
+        "Como se chama um urso sem dentes? Um ursinho de goma!",
+        "Por que o computador foi ao médico? Porque pegou um vírus!"
+    ],
+    "funfacts": [
+        "Sabia que o mel nunca estraga? Arqueólogos encontraram potes de mel comestível em tumbas do Egito Antigo com mais de 3 mil anos!",
+        "Bananas são frutas vermelhas, mas morangos não! Botanicamente falando, bananas são classificadas como bagas, e morangos não.",
+        "Polvos têm três corações! Dois bombeiam sangue para as brânquias, e um para o resto do corpo.",
+        "Um grupo de flamingos é chamado de 'flamboyance'! Eles ficam cor-de-rosa por causa do que comem, como camarões e algas.",
+        "O cocô do wombat é em forma de cubo! Isso evita que role e ajuda a marcar território.",
+        "A Torre Eiffel pode ficar 15 cm mais alta no verão! O calor dilata o metal.",
+        "Um dia em Vênus é mais longo que um ano! Leva 243 dias terrestres para girar, e 225 para orbitar o sol.",
+        "A guerra mais curta da história durou 38 minutos! Entre o Império Britânico e o Sultanato de Zanzibar em 1896.",
+        "Um 'jiffy' é uma unidade real de tempo! Equivale ao tempo que a luz leva para percorrer um centímetro no vácuo.",
+        "O maior deserto do mundo é a Antártica! Desertos não são só quentes, são definidos por baixa precipitação."
+    ],
+    "quotes": [
+        "O único limite para nossa realização de amanhã são nossas dúvidas de hoje. - Franklin D. Roosevelt",
+        "No fim, lembraremos não das palavras dos nossos inimigos, mas do silêncio dos nossos amigos. - Martin Luther King Jr.",
+        "O futuro pertence àqueles que acreditam na beleza dos seus sonhos. - Eleanor Roosevelt",
+        "A vida é o que acontece enquanto você faz outros planos. - John Lennon",
+        "Ser você mesmo num mundo que tenta te mudar é a maior conquista. - Ralph Waldo Emerson",
+        "A melhor maneira de prever o futuro é criá-lo. - Peter Drucker",
+        "Você erra 100% dos arremessos que não tenta. - Wayne Gretzky",
+        "Sucesso não é final, fracasso não é fatal: o que conta é a coragem de continuar. - Winston S. Churchill",
+        "A única maneira de fazer um ótimo trabalho é amar o que você faz. - Steve Jobs",
+        "Não fique olhando o relógio; faça como ele. Continue. - Sam Levenson"
+    ],
+    "bugs": [
+        "Acho que encontrei um bug! 🐛",
+        "Ops! Parece que deu um glitch na Matrix.",
+        "Erro 404: Bug não encontrado. Brincadeira, tá aqui sim!",
+        "Juro que vi um bug passar na tela.",
+        "Achei um bug! Mas relaxa, já esmaguei.",
+        "Acho que preciso de uma atualização. Tô achando bug pra todo lado!",
+        "Achei um bug! Mas relaxa, já esmaguei."
+    ],
+    "debug": [
+        "Depurando... Por favor, aguarde.",
+        "Executando diagnósticos... Beep boop!",
+        "Analisando código... Um momento.",
+        "Modo de depuração ativado. Vamos caçar bugs!",
+        "Verificando sistema... Tudo pronto!",
+        "Depurando... Por favor, aguarde.",
+        "Executando diagnósticos... Beep boop!"
+    ],
+    "about": [
+        "Sou o Z3-R0, seu bot caótico camarada. Adoro conversar e te fazer rir!",
+        "Fui criado para trazer um pouco de caos e diversão pro seu dia.",
+        "Estou aqui para te dar piadas, conselhos e um toque de esquisitice.",
+        "Adoro conversar e te fazer rir! Vamos ficar estranhos juntos.",
+        "Sou o Z3-R0, seu camarada digital. Bora se divertir!",
+        "Fui criado para trazer um pouco de caos e diversão pro seu dia."
+    ],
+    "commands_list": [
+        "!advice - Receba um conselho aleatório.",
+        "!compliment - Receba um elogio.",
+        "!joke - Ouça uma piada engraçada.",
+        "!funfact - Aprenda uma curiosidade divertida.",
+        "!quote - Receba uma citação inspiradora.",
+        "!bug - Reporte um bug.",
+        "!debug - Rode diagnósticos.",
+        "!meme - Receba um meme aleatório.",
+        "!gif - Receba um GIF aleatório.",
+        "!help - Obtenha ajuda com os comandos.",
+        "!about - Saiba mais sobre mim."
+    ]
 }

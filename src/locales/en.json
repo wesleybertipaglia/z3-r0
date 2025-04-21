@@ -46,8 +46,7 @@
         "!meme": "!meme",
         "!gif": "!gif",
         "!help": "!help",
-        "!about": "!about",
-        "!commands": "!commands"
+        "!about": "!about"
     },
     "advices": [
         "Don't worry, be happy!",
@@ -127,15 +126,6 @@
         "Debugging in progress... Please hold on.",
         "Running diagnostics... Beep boop!"
     ],
-    "help": [
-        "Need help? Just ask!",
-        "I'm here to assist you. What do you need?",
-        "How can I help you today?",
-        "Need assistance? I'm just a message away!",
-        "I'm here to help! What do you need?",
-        "Need help? Just ask!",
-        "I'm here to assist you. What do you need?"
-    ],
     "about": [
         "I'm Z3-R0, your chaotic bot buddy. I love to chat and make you laugh!",
         "I was created to bring a little chaos and fun to your day.",
@@ -155,7 +145,6 @@
         "!meme - Get a random meme.",
         "!gif - Get a random GIF.",
         "!help - Get help with commands.",
-        "!about - Learn more about me.",
-        "!commands - List all available commands."
+        "!about - Learn more about me."
     ]
 }

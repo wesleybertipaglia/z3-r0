@@ -12,9 +12,9 @@ const Message = ({ from, content, type }: MessageDto) => {
             case "glitch":
                 return <p className="text-red-500">{content}</p>;
             case "pre":
-                return <pre className="bg-gray-800 p-2 rounded-md whitespace-pre-wrap">{content}</pre>;
+                return <pre className="bg-neutral-700 p-2 rounded-md whitespace-pre-wrap">{content}</pre>;
             case "code":
-                return <code className="bg-gray-800 p-1 rounded-md whitespace-pre-wrap">{content}</code>;
+                return <code className="bg-neutral-700 p-1 rounded-md whitespace-pre-wrap">{content}</code>;
             case "error":
                 return <p className="text-red-500">{content}</p>;
             case "warning":

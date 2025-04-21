@@ -46,9 +46,8 @@ export function useBot() {
             "!quote": () => ({ content: getRandom(t("quotes", { returnObjects: true }) as string[]), type: "code" }),
             "!bug": () => ({ content: getRandom(t("bugs", { returnObjects: true }) as string[]), type: "glitch" }),
             "!debug": () => ({ content: getRandom(t("debug", { returnObjects: true }) as string[]) }),
-            "!help": () => ({ content: getRandom(t("help", { returnObjects: true }) as string[]) }),
             "!about": () => ({ content: getRandom(t("about", { returnObjects: true }) as string[]) }),
-            "!commands": () => ({
+            "!help": () => ({
                 content: (t("commands_list", { returnObjects: true }) as string[]).join("\n"),
                 type: "pre"
             })
@@ -65,8 +64,7 @@ export function useBot() {
             [t("commands.!bug")]: "!bug",
             [t("commands.!debug")]: "!debug",
             [t("commands.!help")]: "!help",
-            [t("commands.!about")]: "!about",
-            [t("commands.!commands")]: "!commands"
+            [t("commands.!about")]: "!about"
         };
 
         const resolved = commandTranslations[normalized] || normalized;
