@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { MessageDto } from "../types/message";
+import Audio from "./Audio";
 
 const Message = ({ from, content, type }: MessageDto) => {
     const isUser = from === "user";
@@ -25,6 +26,10 @@ const Message = ({ from, content, type }: MessageDto) => {
                 return <p className="text-blue-500">{content}</p>;
             case "image":
                 return <img src={content as string} alt="Media" className="rounded-md max-w-xs shadow" />;
+            case "audio":
+                return (
+                    <Audio text={content} />
+                );
             default:
                 return <p className="break-words overflow-hidden text-ellipsis">{content}</p>;
         }

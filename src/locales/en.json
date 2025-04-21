@@ -4,7 +4,11 @@
         "about": "I am Z3-R0, your chaotic bot buddy.",
         "you": "You",
         "language": "Language",
-        "developed": "Developed with ❤️ by"
+        "developed": "Developed with ❤️ by",
+        "unknown_command": "Unknown command 🤖. Try !meme, !bug or !compliment",
+        "typing": "Z3-R0 is typing...",
+        "not_understood": "I didn't quite get that. Can you rephrase?",
+        "audio": "Audio"
     },
     "about": [
         "I'm Z3-R0, your chaotic bot buddy. I love to chat and make you laugh!",
@@ -26,11 +30,6 @@
         "Feeling bored? Type !compliment or !bug",
         "Want to hear a joke? Type !meme or !advice"
     ],
-    "interaction": {
-        "unknown_command": "Unknown command 🤖. Try !meme, !bug or !compliment",
-        "typing": "Z3-R0 is typing...",
-        "not_understood": "I didn't quite get that. Can you rephrase?"
-    },
     "commands": {
         "!advice": "!advice",
         "!compliment": "!compliment",

@@ -4,7 +4,11 @@
         "about": "Soy Z3-R0, tu caótico amigo bot.",
         "you": "Tú",
         "language": "Idioma",
-        "developed": "Desarrollado con ❤️ por"
+        "developed": "Desarrollado con ❤️ por",
+        "unknown_command": "Comando desconocido 🤖. Prueba con !meme, !bug o !compliment",
+        "typing": "Z3-R0 está escribiendo...",
+        "not_understood": "No entendí muy bien. ¿Puedes decirlo de otra manera?",
+        "audio": "Audio"
     },
     "placeholders": [
         "Escribe algo gracioso o un comando como !bug",
@@ -18,11 +22,6 @@
         "¿Aburrido? Escribe !compliment o !bug",
         "¿Quieres oír un chiste? Escribe !meme o !advice"
     ],
-    "interaction": {
-        "unknown_command": "Comando desconocido 🤖. Prueba con !meme, !bug o !compliment",
-        "typing": "Z3-R0 está escribiendo...",
-        "not_understood": "No entendí muy bien. ¿Puedes decirlo de otra manera?"
-    },
     "welcome": [
         "¡Yo! ¿Qué tal, humano?",
         "¿Necesitas un chiste? Tengo humor de nivel CPU.",

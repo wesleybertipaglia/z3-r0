@@ -46,10 +46,10 @@ export function useCommands() {
         const resolved = commandTranslations[normalized] || normalized;
 
         if (!resolved.startsWith("!")) {
-            return { content: t("interaction.not_understood"), type: "text" };
+            return { content: t("ui.not_understood"), type: "text" };
         }
 
-        return commands[resolved]?.() ?? { content: t("interaction.unknown_command"), type: "text" };
+        return commands[resolved]?.() ?? { content: t("ui.unknown_command"), type: "text" };
     }
 
     return { resolveCommand };
