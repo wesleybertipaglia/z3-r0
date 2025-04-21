@@ -35,6 +35,18 @@
         "¡Bienvenido al lado raro del chat!",
         "¡Hola! Soy Z3-R0, tu compañero caótico."
     ],
+    "status": [
+        "Ejecutando sarcasmo.exe...",
+        "Procesando comentarios ingeniosos...",
+        "Calibrando niveles de humor...",
+        "Alimentando el ego de la IA...",
+        "Cargando actitud innecesaria...",
+        "Pretendiendo pensar...",
+        "Simulando inteligencia...",
+        "Cargando mi rayo de sarcasmo...",
+        "Rodando mis ojos virtualmente...",
+        "No haciendo nada... profesionalmente."
+    ],
     "commands": {
         "!advice": "!advice",
         "!compliment": "!compliment",

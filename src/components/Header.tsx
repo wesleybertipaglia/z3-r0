@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { LanguageSwitcher } from "./LanguageSwitcher"
+import StatusBar from "./StatusBar";
 
 const Header = () => {
     const [isOnline, setIsOnline] = useState(false);
@@ -28,7 +29,7 @@ const Header = () => {
                         </div>
                         <div>
                             <h1 className="text-sm font-bold">Z3-R0</h1>
-                            <p className="text-xs text-gray-400 border-t">Chatbot</p>
+                            <StatusBar />
                         </div>
                     </div>
 
