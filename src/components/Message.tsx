@@ -10,7 +10,7 @@ const Message = ({ from, content, type }: MessageDto) => {
             case "text":
                 return <p className="break-words overflow-hidden text-ellipsis">{content}</p>;
             case "glitch":
-                return <p className="text-red-500">{content}</p>;
+                return <p className="text-amber-500">{content}</p>;
             case "pre":
                 return <pre className="bg-neutral-700 p-2 rounded-md whitespace-pre-wrap">{content}</pre>;
             case "code":
@@ -32,7 +32,7 @@ const Message = ({ from, content, type }: MessageDto) => {
 
     return (
         <div className={`flex ${isUser ? "justify-end" : "justify-start"} my-2 overflow-hidden`}>
-            <div className={`space-y-2 w-[70%] ${isUser ? "text-end" : ""}`}>
+            <div className={`space-y-2 w-[70%] hover:shadow-md hover:bg-neutral-800 transition rounded p-2 ${isUser ? "text-end" : ""}`}>
                 <p className={`text-sm ${isUser ? "text-cyan-500" : "text-emerald-500"}`}>
                     {isUser ? t("ui.you") : "Z3-R0"}
                 </p>
