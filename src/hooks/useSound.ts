@@ -1,7 +1,7 @@
 
 export function useSound() {
     const play = (name: string) => {
-        const audio = new Audio(`src/assets/sounds/${name}`);
+        const audio = new Audio(`/src/assets/sounds/${name}`);
         audio.currentTime = 0;
         audio.play().catch(e => {
             console.error("Failed to play sound:", e);
