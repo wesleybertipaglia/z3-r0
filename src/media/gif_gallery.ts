@@ -1,0 +1,30 @@
+const gifs = [
+    "https://i.giphy.com/kd9BlRovbPOykLBMqX.webp",
+    "https://i.giphy.com/d3mlE7uhX8KFgEmY.webp",
+    "https://i.giphy.com/8m4R4pvViWtRzbloJ1.webp",
+    "https://i.giphy.com/kspVl6FzbdblOMKRmM.webp",
+    "https://i.giphy.com/a5viI92PAF89q.webp",
+    "https://i.giphy.com/itOuxcFvgYjWE.webp",
+    "https://i.giphy.com/BmmfETghGOPrW.webp",
+    "https://i.giphy.com/l3q2K5jinAlChoCLS.webp",
+    "https://i.giphy.com/Dg4TxjYikCpiGd7tYs.webp",
+    "https://i.giphy.com/Lopx9eUi34rbq.webp",
+    "https://i.giphy.com/AuIvUrZpzBl04.webp",
+    "https://i.giphy.com/111ebonMs90YLu.webp",
+    "https://i.giphy.com/JRE3AvLsSRXg360F6l.webp",
+    "https://i.giphy.com/olAik8MhYOB9K.webp",
+    "https://i.giphy.com/Um3ljJl8jrnHy.webp",
+    "https://i.giphy.com/xTiTnHvXHHxOTcdmxO.webp",
+    "https://i.giphy.com/bcrOR2stk6tKIxqPOZ.webp",
+    "https://i.giphy.com/NEvPzZ8bd1V4Y.webp",
+    "https://i.giphy.com/H5C8CevNMbpBqNqFjl.webp",
+    "https://i.giphy.com/o0vwzuFwCGAFO.webp",
+    "https://i.giphy.com/xL7PDV9frcudO.webp",
+    "https://i.giphy.com/cF7QqO5DYdft6.webp",
+    "https://i.giphy.com/QTrG6mjkHEkpFR3DqX.webp",
+    "https://i.giphy.com/3o7abKhOpu0NwenH3O.webp",
+    "https://i.giphy.com/l0MYAs5E2oIDCq9So.webp",
+    "https://i.giphy.com/Q6WPVzFU8LcBWWgQE1.webp"
+]
+
+export default gifs;
