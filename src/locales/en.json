@@ -38,7 +38,113 @@
     "commands": {
         "!advice": "!advice",
         "!compliment": "!compliment",
+        "!joke": "!joke",
+        "!funfact": "!funfact",
+        "!quote": "!quote",
         "!bug": "!bug",
-        "!meme": "!meme"
-    }
+        "!debug": "!debug",
+        "!meme": "!meme",
+        "!gif": "!gif",
+        "!help": "!help",
+        "!about": "!about"
+    },
+    "advices": [
+        "Don't worry, be happy!",
+        "Keep calm and carry on.",
+        "Life is short, eat dessert first.",
+        "You are stronger than you think.",
+        "Believe in yourself!",
+        "Stay positive, work hard, make it happen.",
+        "Don't count the days, make the days count.",
+        "Dream big and dare to fail.",
+        "The best time for new beginnings is now.",
+        "You are capable of amazing things."
+    ],
+    "compliments": [
+        "You have a great sense of humor!",
+        "You're a smart cookie!",
+        "You light up the room!",
+        "You're like a ray of sunshine!",
+        "You have impeccable manners!",
+        "You are the most perfect you there is!",
+        "You are enough just as you are.",
+        "You have a great taste in music!",
+        "You are a true friend.",
+        "You are amazing just the way you are."
+    ],
+    "jokes": [
+        "Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "Why did the bicycle fall over? Because it was two-tired!",
+        "What do you call fake spaghetti? An impasta!",
+        "Why did the math book look sad? Because it had too many problems!",
+        "Why don't skeletons fight each other? They don't have the guts!",
+        "What do you call cheese that isn't yours? Nacho cheese!",
+        "Why did the golfer bring two pairs of pants? In case he got a hole in one!",
+        "What do you call a bear with no teeth? A gummy bear!",
+        "Why did the computer go to the doctor? Because it had a virus!"
+    ],
+    "funfacts": [
+        "Did you know honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3000 years old and still edible!",
+        "Bananas are berries, but strawberries aren't! Botanically speaking, bananas are classified as berries while strawberries are not.",
+        "Octopuses have three hearts! Two pump blood to the gills, while the third pumps it to the rest of the body.",
+        "A group of flamingos is called a 'flamboyance'! They get their pink color from the food they eat, like shrimp and algae.",
+        "Wombat poop is cube-shaped! This unique shape prevents it from rolling away and helps mark their territory.",
+        "The Eiffel Tower can be 15 cm taller during the summer! The heat causes the metal to expand, making it slightly taller.",
+        "A day on Venus is longer than a year on Venus! It takes about 243 Earth days for Venus to rotate once on its axis, but only about 225 Earth days to orbit the sun.",
+        "The shortest war in history lasted only 38 minutes! It was fought between the British Empire and the Sultanate of Zanzibar on August 27, 1896.",
+        "A jiffy is an actual unit of time! It's used in physics to measure the time it takes for light to travel one centimeter in a vacuum, which is about 33.3564 picoseconds.",
+        "The world's largest desert is Antarctica! While we often think of deserts as hot, sandy places, Antarctica is classified as a desert because it receives very little precipitation."
+    ],
+    "quotes": [
+        "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
+        "In the end, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King Jr.",
+        "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+        "Life is what happens when you're busy making other plans. - John Lennon",
+        "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment. - Ralph Waldo Emerson",
+        "The best way to predict the future is to create it. - Peter Drucker",
+        "You miss 100% of the shots you don't take. - Wayne Gretzky",
+        "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston S. Churchill",
+        "The only way to do great work is to love what you do. - Steve Jobs",
+        "Don't watch the clock; do what it does. Keep going. - Sam Levenson"
+    ],
+    "bugs": [
+        "I think I found a bug! 🐛",
+        "Oops! Looks like there's a glitch in the matrix.",
+        "Error 404: Bug not found. Just kidding, it's right here!",
+        "I swear I just saw a bug crawl across my screen.",
+        "I found a bug! But don't worry, I squashed it.",
+        "I think I need a software update. I keep finding bugs everywhere!",
+        "I found a bug! But don't worry, I squashed it."
+    ],
+    "debug": [
+        "Debugging in progress... Please hold on.",
+        "Running diagnostics... Beep boop!",
+        "Analyzing code... Just a moment.",
+        "Debugging mode activated. Let's find those bugs!",
+        "Running a system check... All systems go!",
+        "Debugging in progress... Please hold on.",
+        "Running diagnostics... Beep boop!"
+    ],
+    "about": [
+        "I'm Z3-R0, your chaotic bot buddy. I love to chat and make you laugh!",
+        "I was created to bring a little chaos and fun to your day.",
+        "I'm here to provide you with jokes, advice, and a bit of weirdness.",
+        "I love to chat and make you laugh! Let's get weird together.",
+        "I'm Z3-R0, your digital buddy. Let's have some fun!",
+        "I was created to bring a little chaos and fun to your day."
+    ],
+    "commands_list": [
+        "!advice - Get some random advice.",
+        "!compliment - Receive a compliment.",
+        "!joke - Hear a funny joke.",
+        "!funfact - Learn a fun fact.",
+        "!quote - Get an inspirational quote.",
+        "!bug - Report a bug.",
+        "!debug - Run diagnostics.",
+        "!meme - Get a random meme.",
+        "!gif - Get a random GIF.",
+        "!help - Get help with commands.",
+        "!about - Learn more about me."
+    ]
 }
