@@ -15,7 +15,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen max-h-screen bg-neutral-900 text-blue-50 flex">
+    <div className="h-dvh max-h-screen bg-neutral-900 text-blue-50 flex">
       <div className="w-full flex flex-col flex-1 overflow-hidden">
         <Header />
 

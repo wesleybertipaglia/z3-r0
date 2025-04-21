@@ -23,7 +23,7 @@ const Audio = ({ text }: Props) => {
         <div className="flex items-start gap-4 bg-zinc-800 text-white rounded-2xl p-3 max-w-xs shadow-sm">
             <div className='relative' onClick={() => speak(text)}>
                 <img
-                    src="src/assets/profile.png"
+                    src="src/assets/profile.jpg"
                     alt="Avatar"
                     className="w-10 h-10 rounded-full object-cover"
                 />
