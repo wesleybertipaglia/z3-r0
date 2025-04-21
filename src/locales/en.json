@@ -6,6 +6,14 @@
         "language": "Language",
         "developed": "Developed with ❤️ by"
     },
+    "about": [
+        "I'm Z3-R0, your chaotic bot buddy. I love to chat and make you laugh!",
+        "I was created to bring a little chaos and fun to your day.",
+        "I'm here to provide you with jokes, advice, and a bit of weirdness.",
+        "I love to chat and make you laugh! Let's get weird together.",
+        "I'm Z3-R0, your digital buddy. Let's have some fun!",
+        "I was created to bring a little chaos and fun to your day."
+    ],
     "placeholders": [
         "Type something funny or a command like !bug",
         "Hey, what do you want to talk about?",
@@ -23,18 +31,6 @@
         "typing": "Z3-R0 is typing...",
         "not_understood": "I didn't quite get that. Can you rephrase?"
     },
-    "welcome": [
-        "Yo! What's up, human?",
-        "Need a joke? I got CPU-level humor.",
-        "Bleep bloop! I speak sarcasm.",
-        "Hey there! Ready for some wild chat?",
-        "Greetings, Earthling! Let's get weird.",
-        "Hello! I'm Z3-R0, your digital buddy.",
-        "Hey! I'm here to make your day a bit weirder.",
-        "Hi! Let's dive into the chaos together.",
-        "Welcome to the weird side of the chat!",
-        "Hey! I'm Z3-R0, your chaotic companion."
-    ],
     "commands": {
         "!advice": "!advice",
         "!compliment": "!compliment",
@@ -48,6 +44,61 @@
         "!help": "!help",
         "!about": "!about"
     },
+    "commands_list": [
+        "!advice - Get some random advice.",
+        "!compliment - Receive a compliment.",
+        "!joke - Hear a funny joke.",
+        "!funfact - Learn a fun fact.",
+        "!quote - Get an inspirational quote.",
+        "!bug - Report a bug.",
+        "!debug - Run diagnostics.",
+        "!meme - Get a random meme.",
+        "!gif - Get a random GIF.",
+        "!help - Get help with commands.",
+        "!about - Learn more about me."
+    ],
+    "status": [
+        "Running sarcasm.exe...",
+        "Processing witty remarks...",
+        "Calibrating humor levels...",
+        "Feeding the AI ego...",
+        "Loading unnecessary sass...",
+        "Pretending to think...",
+        "Simulating intelligence...",
+        "Charging my sarcasm ray...",
+        "Rolling my virtual eyes...",
+        "Doing nothing... professionally."
+    ],
+    "welcome": [
+        "Yo! What's up, human?",
+        "Need a joke? I got CPU-level humor.",
+        "Bleep bloop! I speak sarcasm.",
+        "Hey there! Ready for some wild chat?",
+        "Greetings, Earthling! Let's get weird.",
+        "Hello! I'm Z3-R0, your digital buddy.",
+        "Hey! I'm here to make your day a bit weirder.",
+        "Hi! Let's dive into the chaos together.",
+        "Welcome to the weird side of the chat!",
+        "Hey! I'm Z3-R0, your chaotic companion."
+    ],
+    "bugs": [
+        "I think I found a bug! 🐛",
+        "Oops! Looks like there's a glitch in the matrix.",
+        "Error 404: Bug not found. Just kidding, it's right here!",
+        "I swear I just saw a bug crawl across my screen.",
+        "I found a bug! But don't worry, I squashed it.",
+        "I think I need a software update. I keep finding bugs everywhere!",
+        "I found a bug! But don't worry, I squashed it."
+    ],
+    "debug": [
+        "Debugging in progress... Please hold on.",
+        "Running diagnostics... Beep boop!",
+        "Analyzing code... Just a moment.",
+        "Debugging mode activated. Let's find those bugs!",
+        "Running a system check... All systems go!",
+        "Debugging in progress... Please hold on.",
+        "Running diagnostics... Beep boop!"
+    ],
     "advices": [
         "Don't worry, be happy!",
         "Keep calm and carry on.",
@@ -107,44 +158,5 @@
         "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston S. Churchill",
         "The only way to do great work is to love what you do. - Steve Jobs",
         "Don't watch the clock; do what it does. Keep going. - Sam Levenson"
-    ],
-    "bugs": [
-        "I think I found a bug! 🐛",
-        "Oops! Looks like there's a glitch in the matrix.",
-        "Error 404: Bug not found. Just kidding, it's right here!",
-        "I swear I just saw a bug crawl across my screen.",
-        "I found a bug! But don't worry, I squashed it.",
-        "I think I need a software update. I keep finding bugs everywhere!",
-        "I found a bug! But don't worry, I squashed it."
-    ],
-    "debug": [
-        "Debugging in progress... Please hold on.",
-        "Running diagnostics... Beep boop!",
-        "Analyzing code... Just a moment.",
-        "Debugging mode activated. Let's find those bugs!",
-        "Running a system check... All systems go!",
-        "Debugging in progress... Please hold on.",
-        "Running diagnostics... Beep boop!"
-    ],
-    "about": [
-        "I'm Z3-R0, your chaotic bot buddy. I love to chat and make you laugh!",
-        "I was created to bring a little chaos and fun to your day.",
-        "I'm here to provide you with jokes, advice, and a bit of weirdness.",
-        "I love to chat and make you laugh! Let's get weird together.",
-        "I'm Z3-R0, your digital buddy. Let's have some fun!",
-        "I was created to bring a little chaos and fun to your day."
-    ],
-    "commands_list": [
-        "!advice - Get some random advice.",
-        "!compliment - Receive a compliment.",
-        "!joke - Hear a funny joke.",
-        "!funfact - Learn a fun fact.",
-        "!quote - Get an inspirational quote.",
-        "!bug - Report a bug.",
-        "!debug - Run diagnostics.",
-        "!meme - Get a random meme.",
-        "!gif - Get a random GIF.",
-        "!help - Get help with commands.",
-        "!about - Learn more about me."
     ]
 }
