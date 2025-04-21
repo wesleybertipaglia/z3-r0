@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Main from "./components/Main";
 
 function App() {
-  const { messages, sendUserMessage, isTyping } = useBot();
+  const { messages, onUserMessage: sendUserMessage, isTyping } = useBot();
   const [input, setInput] = useState("");
 
   const handleSend = () => {

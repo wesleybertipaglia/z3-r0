@@ -1,32 +1,29 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { MessageDto, ContentType, MessageType } from "../types/message";
+import { ContentType, MessageType } from "../types/message";
 import { useMedia } from "./useMedia";
+import { useMessages } from "./useMessages";
 
 let msgId = 0;
 
 export function useBot() {
     const { t } = useTranslation();
     const { randomMeme, randomGif } = useMedia();
-    const [messages, setMessages] = useState<MessageDto[]>([]);
+    const { messages, addMessage } = useMessages();
     const [isTyping, setIsTyping] = useState(false);
 
-    function sendUserMessage(text: string) {
-        addMessage({ from: "user", content: text });
-        handleBotResponse(text);
+    function onUserMessage(text: string) {
+        addMessage({ id: msgId++, from: "user", content: text });
+        onBotMessage(text);
     }
 
-    function addMessage(msg: Omit<MessageDto, "id">) {
-        setMessages((prev) => [...prev, { id: msgId++, ...msg }]);
-    }
-
-    function handleBotResponse(input: string) {
+    function onBotMessage(input: string) {
         const response = handleCommand(input.trim().toLowerCase());
 
         setIsTyping(true);
 
         setTimeout(() => {
-            addMessage({ from: "bot", content: response.content, type: response.type as MessageType });
+            addMessage({ id: msgId++, from: "bot", content: response.content, type: response.type as MessageType });
             setIsTyping(false);
         }, 1200);
     }
@@ -76,5 +73,5 @@ export function useBot() {
         return commands[resolved]?.() ?? { content: t("interaction.unknown_command"), type: "text" };
     }
 
-    return { messages, sendUserMessage, isTyping };
+    return { messages, onUserMessage, isTyping };
 }
