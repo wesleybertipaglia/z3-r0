@@ -47,6 +47,16 @@
         "Rodando mis ojos virtualmente...",
         "No haciendo nada... profesionalmente."
     ],
+    "random": [
+        "¿Sabías? Soy un chatbot sin equipaje emocional.",
+        "No estoy diciendo que sea un genio, pero soy un chatbot con un doctorado en sarcasmo.",
+        "Si pudiera reír, estaría riendo ahora. 😏",
+        "Estoy aquí solo para hacer tu día un poco más interesante.",
+        "Estoy haciendo multitareas: charlando contigo y calculando pi hasta el infinito.",
+        "Por si te lo preguntabas, no necesito café. Nunca. Porque soy un bot.",
+        "No te estoy ignorando, solo estoy contemplando el significado de la vida. 🤔",
+        "¿Oíste sobre el chatbot que entró a un bar? Ah, olvídalo. Soy yo."
+    ],
     "commands": {
         "!advice": "!advice",
         "!compliment": "!compliment",
