@@ -8,7 +8,7 @@ let msgId = 0;
 
 export function useBot() {
     const { t } = useTranslation();
-    const { messages, addMessage, initialized } = useMessage();
+    const { messages, addMessage, initialized, randomMessage } = useMessage();
     const { resolveCommand } = useCommands();
     const [isTyping, setIsTyping] = useState(false);
 
@@ -20,7 +20,18 @@ export function useBot() {
             const randomWelcome = welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
             addMessage({ id: msgId++, from: "bot", content: randomWelcome, type: "info" });
         }
-    }, [initialized, messages, t, addMessage]);
+
+        const minInterval = 30000;
+        const maxInterval = 60000;
+
+        const randomInterval = Math.floor(Math.random() * (maxInterval - minInterval)) + minInterval;
+
+        const interval = setInterval(() => {
+            randomMessage();
+        }, randomInterval);
+
+        return () => clearInterval(interval);
+    }, [initialized, messages, t, addMessage, randomMessage]);
 
     function onUserMessage(text: string) {
         addMessage({ id: msgId++, from: "user", content: text });
