@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { useMedia } from "./useMedia";
 import { MessageDto } from "../types/message";
 
-const STORAGE_KEY = "chat_messages";
+const STORAGE_KEY = "messages";
 
 export function useMessage() {
     const [messages, setMessages] = useState<MessageDto[]>([]);
     const [initialized, setInitialized] = useState(false);
+    const { t } = useTranslation();
+    const { randomMeme, randomGif } = useMedia();
 
     useEffect(() => {
         const stored = localStorage.getItem(STORAGE_KEY);
@@ -26,5 +30,24 @@ export function useMessage() {
         setMessages((prev) => [...prev, message]);
     }
 
-    return { messages, addMessage, initialized };
+    function randomMessage() {
+        const randomTextMessages = t("random", { returnObjects: true }) as string[];
+
+        const randomMessageType = Math.floor(Math.random() * 3);
+        const randomText = randomTextMessages[Math.floor(Math.random() * randomTextMessages.length)];
+
+        switch (randomMessageType) {
+            case 0:
+                addMessage({ id: Date.now(), from: "bot", content: randomText, type: "text" });
+                break;
+            case 1:
+                addMessage({ id: Date.now(), from: "bot", content: randomMeme(), type: "image" });
+                break;
+            case 2:
+                addMessage({ id: Date.now(), from: "bot", content: randomGif(), type: "image" });
+                break;
+        }
+    }
+
+    return { messages, addMessage, initialized, randomMessage };
 }
