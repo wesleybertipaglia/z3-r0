@@ -1,13 +1,13 @@
-import { useTranslation } from "react-i18next";
+import { useLanguage } from "../hooks/useLanguage";
 
 export function LanguageSwitcher() {
-    const { i18n } = useTranslation();
+    const { language, changeLanguage } = useLanguage();
     const langs = ["en", "pt", "es", "cn", "hi"];
 
     return (
         <select
-            value={i18n.language}
-            onChange={(e) => i18n.changeLanguage(e.target.value)}
+            value={language}
+            onChange={(e) => changeLanguage(e.target.value)}
             className="bg-neutral-800 text-neutral-50 text-sm px-3 py-1 rounded border border-neutral-700 focus:outline-none focus:ring-2"
         >
             {langs.map((lng) => (

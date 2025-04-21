@@ -7,6 +7,9 @@ import es from "./locales/es.json";
 import cn from "./locales/cn.json";
 import hi from "./locales/hi.json";
 
+const savedLang = localStorage.getItem("app-language");
+const browserLang = navigator.language.split("-")[0];
+
 i18n.use(initReactI18next).init({
     resources: {
         en: { translation: en },
@@ -15,7 +18,7 @@ i18n.use(initReactI18next).init({
         cn: { translation: cn },
         hi: { translation: hi }
     },
-    lng: navigator.language.split("-")[0], // ex: "en-US" -> "en"
+    lng: savedLang || browserLang,
     fallbackLng: "en",
     interpolation: { escapeValue: false }
 });
