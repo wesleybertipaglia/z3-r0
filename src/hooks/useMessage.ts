@@ -33,7 +33,7 @@ export function useMessage() {
     function randomMessage() {
         const randomTextMessages = t("random", { returnObjects: true }) as string[];
 
-        const randomMessageType = Math.floor(Math.random() * 3);
+        const randomMessageType = Math.floor(Math.random() * 4);
         const randomText = randomTextMessages[Math.floor(Math.random() * randomTextMessages.length)];
 
         switch (randomMessageType) {
@@ -45,6 +45,9 @@ export function useMessage() {
                 break;
             case 2:
                 addMessage({ id: Date.now(), from: "bot", content: randomGif(), type: "image" });
+                break;
+            case 4:
+                addMessage({ id: Date.now(), from: "bot", content: randomText, type: "audio" });
                 break;
         }
     }

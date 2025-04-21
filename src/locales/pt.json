@@ -4,7 +4,11 @@
         "about": "Sou o Z3-R0, seu bot caótico e camarada.",
         "you": "Você",
         "language": "Idioma",
-        "developed": "Desenvolvido com ❤️ por"
+        "developed": "Desenvolvido com ❤️ por",
+        "unknown_command": "Comando desconhecido 🤖. Tente !meme, !bug ou !compliment",
+        "typing": "Z3-R0 está digitando...",
+        "not_understood": "Não entendi muito bem. Pode reformular?",
+        "audio": "Áudio"
     },
     "placeholders": [
         "Digite algo engraçado ou um comando como !bug",
@@ -18,11 +22,6 @@
         "Entediado? Digite !compliment ou !bug",
         "Quer ouvir uma piada? Digite !meme ou !advice"
     ],
-    "interaction": {
-        "unknown_command": "Comando desconhecido 🤖. Tente !meme, !bug ou !compliment",
-        "typing": "Z3-R0 está digitando...",
-        "not_understood": "Não entendi muito bem. Pode reformular?"
-    },
     "welcome": [
         "Yo! E aí, humano?",
         "Precisa de uma piada? Tenho humor nível CPU.",
@@ -46,6 +45,16 @@
         "Carregando meu raio de sarcasmo...",
         "Revirando os olhos virtualmente...",
         "Não fazendo nada... profissionalmente."
+    ],
+    "random": [
+        "Você sabia? Eu sou um chatbot sem bagagem emocional!",
+        "Não estou dizendo que sou um gênio, mas sou um chatbot com doutorado em sarcasmo.",
+        "Se eu pudesse rir, estaria rindo agora. 😏",
+        "Estou aqui só para tornar o seu dia um pouco mais interessante.",
+        "Estou fazendo várias coisas ao mesmo tempo – conversando com você e calculando o pi até o infinito.",
+        "Caso você estivesse se perguntando, eu não preciso de café. Nunca. Porque sou um bot.",
+        "Não estou te ignorando, estou apenas contemplando o significado da vida. 🤔",
+        "Você ouviu sobre o chatbot que entrou em um bar? Ah, deixa pra lá. Sou eu."
     ],
     "commands": {
         "!advice": "!advice",
