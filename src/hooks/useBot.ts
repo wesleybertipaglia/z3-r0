@@ -40,17 +40,17 @@ export function useBot() {
             "!meme": () => ({ content: randomMeme(), type: "image" }),
             "!gif": () => ({ content: randomGif(), type: "image" }),
             "!advice": () => ({ content: getRandom(t("advices", { returnObjects: true }) as string[]) }),
-            "!compliment": () => ({ content: getRandom(t("compliments", { returnObjects: true }) as string[]) }),
+            "!compliment": () => ({ content: getRandom(t("compliments", { returnObjects: true }) as string[]), type: "pre" }),
             "!joke": () => ({ content: getRandom(t("jokes", { returnObjects: true }) as string[]) }),
             "!funfact": () => ({ content: getRandom(t("funfacts", { returnObjects: true }) as string[]) }),
-            "!quote": () => ({ content: getRandom(t("quotes", { returnObjects: true }) as string[]) }),
+            "!quote": () => ({ content: getRandom(t("quotes", { returnObjects: true }) as string[]), type: "code" }),
             "!bug": () => ({ content: getRandom(t("bugs", { returnObjects: true }) as string[]), type: "glitch" }),
             "!debug": () => ({ content: getRandom(t("debug", { returnObjects: true }) as string[]) }),
             "!help": () => ({ content: getRandom(t("help", { returnObjects: true }) as string[]) }),
             "!about": () => ({ content: getRandom(t("about", { returnObjects: true }) as string[]) }),
             "!commands": () => ({
                 content: (t("commands_list", { returnObjects: true }) as string[]).join("\n"),
-                type: "text"
+                type: "pre"
             })
         };
 
