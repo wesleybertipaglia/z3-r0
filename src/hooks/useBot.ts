@@ -1,16 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ContentType, MessageType } from "../types/message";
 import { useMedia } from "./useMedia";
-import { useMessages } from "./useMessages";
+import { useMessage } from "./useMessage";
 
 let msgId = 0;
 
 export function useBot() {
     const { t } = useTranslation();
     const { randomMeme, randomGif } = useMedia();
-    const { messages, addMessage } = useMessages();
+    const { messages, addMessage, initialized } = useMessage();
     const [isTyping, setIsTyping] = useState(false);
+
+    useEffect(() => {
+        if (!initialized) return;
+
+        if (messages.length === 0) {
+            const welcomeMessages = t("welcome", { returnObjects: true }) as string[];
+            const randomWelcome = welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
+            addMessage({ id: msgId++, from: "bot", content: randomWelcome, type: "info" });
+        }
+    }, [initialized, messages, t, addMessage]);
 
     function onUserMessage(text: string) {
         addMessage({ id: msgId++, from: "user", content: text });
