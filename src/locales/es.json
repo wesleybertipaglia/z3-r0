@@ -1,0 +1,44 @@
+{
+    "ui": {
+        "title": "Z3-R0, el Bot Raro",
+        "about": "Soy Z3-R0, tu compa caótico de chat.",
+        "you": "Tú",
+        "language": "Idioma",
+        "developed": "Desarrollado con ❤️ por"
+    },
+    "placeholders": [
+        "Escribe algo gracioso o un comando como !bug",
+        "¿Y tú qué quieres charlar?",
+        "Escribe un comando o solo saluda",
+        "¿Necesitas reír? Prueba con !meme o !consejo",
+        "¿Aburrido? Escribe !piropo o !bug",
+        "¿Quieres un chiste? Prueba con !meme o !consejo",
+        "Escribe un comando o solo saluda",
+        "¿Necesitas reír? Prueba con !meme o !consejo",
+        "¿Aburrido? Escribe !piropo o !bug",
+        "¿Quieres un chiste? Prueba con !meme o !consejo"
+    ],
+    "interaction": {
+        "unknown_command": "Comando desconocido 🤖. Prueba !meme, !bug o !piropo",
+        "typing": "Z3-R0 está escribiendo...",
+        "not_understood": "No entendí eso. ¿Puedes reformularlo?"
+    },
+    "welcome": [
+        "¡Ey! ¿Qué tal, humano?",
+        "¿Quieres un chiste? Tengo humor digital.",
+        "¡Bip bip! Hablo sarcasmo nivel experto.",
+        "¡Hola! ¿Listo para una charla loca?",
+        "¡Saludos, terrícola! Vamos a descontrolarnos.",
+        "¡Hola! Soy Z3-R0, tu colega cibernético.",
+        "¡Aquí estoy para ponerle rareza a tu día!",
+        "¡Hola! Vamos a sumergirnos en el caos juntos.",
+        "¡Bienvenido al lado raro del chat!",
+        "¡Hey! Soy Z3-R0, tu compa caótico."
+    ],
+    "commands": {
+        "!advice": "!consejo",
+        "!compliment": "!piropo",
+        "!bug": "!bug",
+        "!meme": "!meme"
+    }
+}

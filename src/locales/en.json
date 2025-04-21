@@ -1,6 +1,44 @@
 {
-    "title": "Z3-R0 the Weird Bot",
-    "input_placeholder": "Type something funny or a command like !bug",
-    "send": "Send",
-    "unknown_command": "Unknown command 🤖. Try !meme, !bug or !compliment"
+    "ui": {
+        "title": "Z3-R0 the Weird Bot",
+        "about": "I am Z3-R0, your chaotic bot buddy.",
+        "you": "You",
+        "language": "Language",
+        "developed": "Developed with ❤️ by"
+    },
+    "placeholders": [
+        "Type something funny or a command like !bug",
+        "Hey, what do you want to talk about?",
+        "Type a command or just say hi!",
+        "Need a laugh? Type !meme or !advice",
+        "Feeling bored? Type !compliment or !bug",
+        "Want to hear a joke? Type !meme or !advice",
+        "Type a command or just say hi!",
+        "Need a laugh? Type !meme or !advice",
+        "Feeling bored? Type !compliment or !bug",
+        "Want to hear a joke? Type !meme or !advice"
+    ],
+    "interaction": {
+        "unknown_command": "Unknown command 🤖. Try !meme, !bug or !compliment",
+        "typing": "Z3-R0 is typing...",
+        "not_understood": "I didn't quite get that. Can you rephrase?"
+    },
+    "welcome": [
+        "Yo! What's up, human?",
+        "Need a joke? I got CPU-level humor.",
+        "Bleep bloop! I speak sarcasm.",
+        "Hey there! Ready for some wild chat?",
+        "Greetings, Earthling! Let's get weird.",
+        "Hello! I'm Z3-R0, your digital buddy.",
+        "Hey! I'm here to make your day a bit weirder.",
+        "Hi! Let's dive into the chaos together.",
+        "Welcome to the weird side of the chat!",
+        "Hey! I'm Z3-R0, your chaotic companion."
+    ],
+    "commands": {
+        "!advice": "!advice",
+        "!compliment": "!compliment",
+        "!bug": "!bug",
+        "!meme": "!meme"
+    }
 }

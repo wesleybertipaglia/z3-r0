@@ -1,6 +1,44 @@
 {
-    "title": "Z3-R0 o Robô Desajustado",
-    "input_placeholder": "Digite algo engraçado ou um comando tipo !bug",
-    "send": "Enviar",
-    "unknown_command": "Comando não reconhecido 🤖. Tente !meme, !bug ou !elogie-me"
+    "ui": {
+        "title": "Z3-R0, o Bot Maluco",
+        "about": "Eu sou o Z3-R0, seu bot caótico de estimação.",
+        "you": "Você",
+        "language": "Idioma",
+        "developed": "Desenvolvido com ❤️ por"
+    },
+    "placeholders": [
+        "Digite algo engraçado ou um comando tipo !bug",
+        "E aí, sobre o que vamos conversar?",
+        "Manda um comando ou só dá um oi!",
+        "Quer rir? Digita !meme ou !conselho",
+        "Entediado? Tenta !elogio ou !bug",
+        "Quer ouvir uma piada? Digita !meme ou !conselho",
+        "Manda um comando ou só dá um oi!",
+        "Quer rir? Digita !meme ou !conselho",
+        "Entediado? Tenta !elogio ou !bug",
+        "Quer ouvir uma piada? Digita !meme ou !conselho"
+    ],
+    "interaction": {
+        "unknown_command": "Comando desconhecido 🤖. Tente !meme, !bug ou !elogio",
+        "typing": "Z3-R0 está digitando...",
+        "not_understood": "Não entendi muito bem. Pode reformular?"
+    },
+    "welcome": [
+        "E aí! Tudo certo, humano?",
+        "Quer uma piada? Tenho humor de processador.",
+        "Bip bop! Falo sarcasmo fluente.",
+        "Oi! Preparado pra uma conversa maluca?",
+        "Saudações, terráqueo! Vamos ficar doidos.",
+        "Olá! Sou o Z3-R0, seu parceiro digital.",
+        "Cheguei pra deixar seu dia mais estranho.",
+        "Oi! Bora mergulhar no caos juntos.",
+        "Bem-vindo ao lado maluco do chat!",
+        "Fala aí! Sou o Z3-R0, seu companheiro doido."
+    ],
+    "commands": {
+        "!advice": "!conselho",
+        "!compliment": "!elogio",
+        "!bug": "!bug",
+        "!meme": "!meme"
+    }
 }
