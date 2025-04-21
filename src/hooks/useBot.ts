@@ -1,16 +1,13 @@
 import { useState } from "react";
-
-type Message = {
-    id: number;
-    from: "user" | "bot";
-    content: string;
-    type?: "text" | "image" | "glitch";
-};
+import { useTranslation } from "react-i18next";
+import { Message, ContentType, MessageType } from "../types/message";
 
 let msgId = 0;
 
 export function useBot() {
+    const { t } = useTranslation();
     const [messages, setMessages] = useState<Message[]>([]);
+    const [isTyping, setIsTyping] = useState(false);
 
     function sendUserMessage(text: string) {
         addMessage({ from: "user", content: text });
@@ -18,41 +15,45 @@ export function useBot() {
     }
 
     function addMessage(msg: Omit<Message, "id">) {
-        setMessages(prev => [...prev, { id: msgId++, ...msg }]);
+        setMessages((prev) => [...prev, { id: msgId++, ...msg }]);
     }
 
     function handleBotResponse(input: string) {
-        const resposta = interpretarComando(input.trim());
+        const response = handleCommand(input.trim().toLowerCase());
+
+        setIsTyping(true);
 
         setTimeout(() => {
-            return addMessage({ from: "bot", ...resposta });
-        }, 1000);
+            addMessage({ from: "bot", content: response.content, type: response.type as MessageType });
+            setIsTyping(false);
+        }, 1200);
     }
 
-    function interpretarComando(input: string) {
-        if (!input.startsWith("!")) {
-            return { content: "Não entendi, mas tudo bem... 🤖", type: "text" };
-        }
+    function handleCommand(input: string) {
+        const normalized = input.trim().toLowerCase();
 
-        const comandos: Record<string, () => { content: string; type?: "text" | "image" | "glitch" | undefined }> = {
-            "!meme": () => ({
-                content: "Toma esse meme: 😂",
-                type: "image",
-            }),
-            "!bug": () => ({
-                content: "*erro 404 de respeito encontrado* ⚠️",
-                type: "glitch",
-            }),
-            "!conselho": () => ({
-                content: "Nunca confie num robô que usa crocs. 👟",
-            }),
-            "!elogie-me": () => ({
-                content: "Você é tão bom que faria até o Clippy se aposentar de orgulho.",
-            }),
+        const commands: Record<string, () => { content: ContentType; type?: MessageType }> = {
+            "!meme": () => ({ content: t("meme"), type: "image" }),
+            "!bug": () => ({ content: t("bug"), type: "glitch" }),
+            "!advice": () => ({ content: t("advice") }),
+            "!compliment": () => ({ content: t("compliment") }),
         };
 
-        return comandos[input]?.() ?? { content: "Comando desconhecido 🤖", type: "text" as "text" };
+        const commandTranslations: Record<string, string> = {
+            [t("commands.!meme")]: "!meme",
+            [t("commands.!bug")]: "!bug",
+            [t("commands.!advice")]: "!advice",
+            [t("commands.!compliment")]: "!compliment",
+        };
+
+        const resolved = commandTranslations[normalized] || normalized;
+
+        if (!resolved.startsWith("!")) {
+            return { content: t("interaction.not_understood"), type: "text" };
+        }
+
+        return commands[resolved]?.() ?? { content: t("interaction.unknown_command"), type: "text" };
     }
 
-    return { messages, sendUserMessage };
+    return { messages, sendUserMessage, isTyping };
 }
