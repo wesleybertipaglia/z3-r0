@@ -6,7 +6,7 @@ type CommandResult = { content: ContentType; type?: MessageType };
 
 export function useCommands() {
     const { t } = useTranslation();
-    const { randomMeme, randomGif } = useMedia();
+    const { randomMeme, randomGif, randomTrack } = useMedia();
 
     const getRandom = (items: string[]) => items[Math.floor(Math.random() * items.length)];
 
@@ -21,6 +21,12 @@ export function useCommands() {
         "!bug": () => ({ content: getRandom(t("bugs", { returnObjects: true }) as string[]), type: "glitch" }),
         "!debug": () => ({ content: getRandom(t("debug", { returnObjects: true }) as string[]), type: "glitch" }),
         "!about": () => ({ content: getRandom(t("about", { returnObjects: true }) as string[]) }),
+        "!music": () => ({
+            content: `<iframe src="${randomTrack()}?utm_source=generator&theme=0" width="100%" height="80" frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>`,
+            type: "html"
+        }),
         "!help": () => ({
             content: (t("commands_list", { returnObjects: true }) as string[]).join("\n"),
             type: "pre"
@@ -38,7 +44,8 @@ export function useCommands() {
         [t("commands.!bug")]: "!bug",
         [t("commands.!debug")]: "!debug",
         [t("commands.!help")]: "!help",
-        [t("commands.!about")]: "!about"
+        [t("commands.!about")]: "!about",
+        [t("commands.!music")]: "!music",
     };
 
     function resolveCommand(input: string): CommandResult | undefined {

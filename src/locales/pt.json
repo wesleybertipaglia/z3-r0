@@ -66,6 +66,7 @@
         "!debug": "!debug",
         "!meme": "!meme",
         "!gif": "!gif",
+        "!music": "!music",
         "!help": "!help",
         "!about": "!about"
     },
@@ -165,6 +166,7 @@
         "!debug - Rode diagnósticos.",
         "!meme - Receba um meme aleatório.",
         "!gif - Receba um GIF aleatório.",
+        "!music - Ouça uma música aleatória.",
         "!help - Obtenha ajuda com os comandos.",
         "!about - Saiba mais sobre mim."
     ]
