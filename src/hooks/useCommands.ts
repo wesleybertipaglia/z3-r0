@@ -41,14 +41,11 @@ export function useCommands() {
         [t("commands.!about")]: "!about"
     };
 
-    function resolveCommand(input: string): CommandResult {
+    function resolveCommand(input: string): CommandResult | undefined {
         const normalized = input.trim().toLowerCase();
         const resolved = commandTranslations[normalized] || normalized;
 
-        if (!resolved.startsWith("!")) {
-            return { content: t("ui.not_understood"), type: "text" };
-        }
-
+        if (!resolved.startsWith("!")) return undefined;
         return commands[resolved]?.() ?? { content: t("ui.unknown_command"), type: "text" };
     }
 
