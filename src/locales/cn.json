@@ -67,7 +67,8 @@
         "!meme": "!meme",
         "!gif": "!gif",
         "!help": "!help",
-        "!about": "!about"
+        "!about": "!about",
+        "!music": "!music"
     },
     "advices": [
         "别担心，要开心！",
@@ -166,6 +167,7 @@
         "!meme - 获取一个随机 meme。",
         "!gif - 获取一个随机 GIF。",
         "!help - 获取命令帮助。",
-        "!about - 了解关于我的信息。"
+        "!about - 了解关于我的信息。",
+        "!music - 获取随机音乐推荐。"
     ]
 }

@@ -67,7 +67,8 @@
         "!meme": "!meme",
         "!gif": "!gif",
         "!help": "!help",
-        "!about": "!about"
+        "!about": "!about",
+        "!music": "!music"
     },
     "advices": [
         "¡No te preocupes, sé feliz!",
@@ -165,6 +166,7 @@
         "!debug - Ejecuta diagnósticos.",
         "!meme - Recibe un meme aleatorio.",
         "!gif - Recibe un GIF aleatorio.",
+        "!music - Escucha música aleatoria.",
         "!help - Obtén ayuda con los comandos.",
         "!about - Aprende más sobre mí."
     ]

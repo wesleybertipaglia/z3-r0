@@ -41,7 +41,8 @@
         "!meme": "!meme",
         "!gif": "!gif",
         "!help": "!help",
-        "!about": "!about"
+        "!about": "!about",
+        "!music": "!music"
     },
     "commands_list": [
         "!advice - Get some random advice.",
@@ -53,6 +54,7 @@
         "!debug - Run diagnostics.",
         "!meme - Get a random meme.",
         "!gif - Get a random GIF.",
+        "!music - Play some music.",
         "!help - Get help with commands.",
         "!about - Learn more about me."
     ],

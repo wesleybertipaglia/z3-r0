@@ -1,4 +1,3 @@
-
 export function useSound() {
     const play = (name: string) => {
         const audio = new Audio(`/assets/sounds/${name}`);
