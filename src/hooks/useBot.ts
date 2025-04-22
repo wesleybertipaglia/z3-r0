@@ -1,42 +1,30 @@
-import { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { MessageType } from "../types/message";
+import { useState, useRef } from "react";
 import { useMessage } from "./useMessage";
 import { useCommands } from "./useCommands";
 import { useSound } from "./useSound";
+import { MessageType } from "../types/message";
+import { useWelcome } from "./useWelcome";
+import { useInactivity } from "./useInactivity";
 
 let msgId = 0;
 
 export function useBot() {
-    const { t } = useTranslation();
     const { messages, addMessage, initialized, randomMessage } = useMessage();
     const { resolveCommand } = useCommands();
-    const [isTyping, setIsTyping] = useState(false);
     const { play } = useSound();
+    const [isTyping, setIsTyping] = useState(false);
+    const lastInteractionRef = useRef(Date.now());
 
-    useEffect(() => {
-        if (!initialized) return;
+    // 👋 Welcome logic
+    useWelcome(initialized, messages.length, onBotMessage);
 
-        if (messages.length === 0) {
-            const welcomeMessages = t("welcome", { returnObjects: true }) as string[];
-            const randomWelcome = welcomeMessages[Math.floor(Math.random() * welcomeMessages.length)];
-            onBotMessage({ type: "info", content: randomWelcome });
-        }
-
-        const minInterval = 30000;
-        const maxInterval = 60000;
-
-        const randomInterval = Math.floor(Math.random() * (maxInterval - minInterval)) + minInterval;
-
-        const interval = setInterval(() => {
-            randomMessage();
-        }, randomInterval);
-
-        return () => clearInterval(interval);
-    }, [initialized, t]);
+    // 💤 Inactivity logic
+    useInactivity(initialized, lastInteractionRef, randomMessage);
 
     function onUserMessage(text: string) {
+        lastInteractionRef.current = Date.now();
         addMessage({ id: msgId++, from: "user", content: text });
+
         const response = resolveCommand(text.trim());
         onBotMessage({ type: response.type as MessageType, content: response.content });
     }

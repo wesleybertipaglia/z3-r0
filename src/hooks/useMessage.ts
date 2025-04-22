@@ -46,7 +46,7 @@ export function useMessage() {
             case 2:
                 addMessage({ id: Date.now(), from: "bot", content: randomGif(), type: "image" });
                 break;
-            case 4:
+            case 3:
                 addMessage({ id: Date.now(), from: "bot", content: randomText, type: "audio" });
                 break;
         }

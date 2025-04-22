@@ -19,7 +19,7 @@ export function useCommands() {
         "!funfact": () => ({ content: getRandom(t("funfacts", { returnObjects: true }) as string[]) }),
         "!quote": () => ({ content: getRandom(t("quotes", { returnObjects: true }) as string[]), type: "code" }),
         "!bug": () => ({ content: getRandom(t("bugs", { returnObjects: true }) as string[]), type: "glitch" }),
-        "!debug": () => ({ content: getRandom(t("debug", { returnObjects: true }) as string[]) }),
+        "!debug": () => ({ content: getRandom(t("debug", { returnObjects: true }) as string[]), type: "glitch" }),
         "!about": () => ({ content: getRandom(t("about", { returnObjects: true }) as string[]) }),
         "!help": () => ({
             content: (t("commands_list", { returnObjects: true }) as string[]).join("\n"),
