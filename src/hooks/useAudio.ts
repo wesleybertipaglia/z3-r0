@@ -13,7 +13,7 @@ const useAudio = () => {
         }
 
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = "pt-BR";
+        utterance.lang = navigator.language || "en-US";
         utterance.rate = 1;
         utterance.pitch = 1;
 
