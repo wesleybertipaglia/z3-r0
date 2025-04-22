@@ -39,7 +39,7 @@ export function useBot() {
         }
     }
 
-    // 🎤 Bot message logic
+    // 🤖 Bot message logic
     function onBotMessage({ type, content }: { type: MessageType; content: string }) {
         setIsTyping(true);
         setTimeout(() => {
