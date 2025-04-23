@@ -7,7 +7,7 @@ import es from "./locales/es.json";
 import cn from "./locales/cn.json";
 import hi from "./locales/hi.json";
 
-const savedLang = localStorage.getItem("app-language");
+const savedLang = localStorage.getItem("language");
 const browserLang = navigator.language.split("-")[0];
 
 i18n.use(initReactI18next).init({

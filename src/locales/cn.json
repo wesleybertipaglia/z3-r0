@@ -56,20 +56,6 @@
         "正在虚拟翻白眼...",
         "什么都不做... 专业地。"
     ],
-    "commands": {
-        "!advice": "!advice",
-        "!compliment": "!compliment",
-        "!joke": "!joke",
-        "!funfact": "!funfact",
-        "!quote": "!quote",
-        "!bug": "!bug",
-        "!debug": "!debug",
-        "!meme": "!meme",
-        "!gif": "!gif",
-        "!help": "!help",
-        "!about": "!about",
-        "!music": "!music"
-    },
     "advices": [
         "别担心，要开心！",
         "保持冷静，继续前行。",

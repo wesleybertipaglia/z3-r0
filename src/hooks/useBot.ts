@@ -10,18 +10,18 @@ import { useConversation } from "./useConversation";
 let msgId = 0;
 
 export function useBot() {
-    const { messages, addMessage, initialized, randomMessage } = useMessage();
+    const { messages, addMessage, initialized, sendRandomMessage } = useMessage();
     const { resolveCommand } = useCommands();
     const { play } = useSound();
     const [isTyping, setIsTyping] = useState(false);
     const lastInteractionRef = useRef(Date.now());
-    const { analyzeMessage } = useConversation();
+    const { handleMessage } = useConversation();
 
     // 👋 Welcome logic
     useWelcome(initialized, messages.length, onBotMessage);
 
     // 💤 Inactivity logic
-    useInactivity(initialized, lastInteractionRef, randomMessage);
+    useInactivity(initialized, lastInteractionRef, sendRandomMessage);
 
     // 💬 User message logic
     function onUserMessage(text: string) {
@@ -34,7 +34,7 @@ export function useBot() {
         if (commandResult) {
             onBotMessage({ type: commandResult.type ?? "text", content: commandResult.content });
         } else {
-            const conversationReply = analyzeMessage(text);
+            const conversationReply = handleMessage(text);
             onBotMessage({ type: "text", content: conversationReply });
         }
     }
