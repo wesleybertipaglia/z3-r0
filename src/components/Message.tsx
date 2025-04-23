@@ -38,6 +38,8 @@ const Message = ({ from, content, type, style }: MessageDto) => {
         }
 
         switch (type) {
+            case "text":
+                return <p className={`break-words overflow-hidden text-ellipsis ${getStyleClass()}`}>{content as string}</p>;
             case "code":
                 return <pre className={`bg-neutral-700 p-2 rounded-md whitespace-pre-wrap ${getStyleClass()}`}>{content as string}</pre>;
             case "quote":
@@ -63,7 +65,7 @@ const Message = ({ from, content, type, style }: MessageDto) => {
 
     return (
         <div className={`flex ${isUser ? "justify-end" : "justify-start"} my-2 overflow-hidden`}>
-            <div className={`space-y-2 w-[70%] hover:shadow-md hover:bg-neutral-800 transition rounded p-2 ${isUser ? "text-end" : ""}`}>
+            <div className={`space-y-2 w-[70%] hover:shadow-md hover:bg-neutral-800/30 transition rounded p-2 ${isUser ? "text-end" : ""}`}>
                 <p className={`text-sm ${isUser ? "text-cyan-500" : "text-emerald-500"}`}>
                     {isUser ? t("ui.you") : "Z3-R0"}
                 </p>
