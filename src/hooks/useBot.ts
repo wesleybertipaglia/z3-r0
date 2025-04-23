@@ -15,7 +15,7 @@ export function useBot() {
     const { play } = useSound();
     const [isTyping, setIsTyping] = useState(false);
     const lastInteractionRef = useRef(Date.now());
-    const { analyzeMessage } = useConversation();
+    const { handleMessage } = useConversation();
 
     // 👋 Welcome logic
     useWelcome(initialized, messages.length, onBotMessage);
@@ -34,7 +34,7 @@ export function useBot() {
         if (commandResult) {
             onBotMessage({ type: commandResult.type ?? "text", content: commandResult.content });
         } else {
-            const conversationReply = analyzeMessage(text);
+            const conversationReply = handleMessage(text);
             onBotMessage({ type: "text", content: conversationReply });
         }
     }
