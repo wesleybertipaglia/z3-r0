@@ -2,11 +2,14 @@ export type From = "user" | "bot";
 
 export const messageTypes = [
     "text",
+    "code",
+    "quote",
     "link",
     "html",
     "component",
     "image",
     "audio",
+    "music",
     "video",
     "file"
 ];
@@ -24,12 +27,12 @@ export const messageStyles = [
 
 export type MessageType = (typeof messageTypes)[number];
 
-export type MessageStyleType = (typeof messageStyles)[number];
+export type MessageStyle = (typeof messageStyles)[number];
 
 export type MessageDto = {
     id: number;
     from: From;
     type?: MessageType;
     style?: MessageStyle;
-    content: string;
+    content: string | React.FC;
 };
