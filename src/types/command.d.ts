@@ -1,7 +1,7 @@
-import { ContentType, MessageType, MessageStyle } from "./message";
+import { MessageType, MessageStyle } from "./message";
 
 export type CommandResult = {
-    content: ContentType;
+    content: string;
     type?: MessageType;
     style?: MessageStyle;
 };

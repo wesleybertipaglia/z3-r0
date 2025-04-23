@@ -10,7 +10,7 @@ import { useConversation } from "./useConversation";
 let msgId = 0;
 
 export function useBot() {
-    const { messages, addMessage, initialized, randomMessage } = useMessage();
+    const { messages, addMessage, initialized, sendRandomMessage } = useMessage();
     const { resolveCommand } = useCommands();
     const { play } = useSound();
     const [isTyping, setIsTyping] = useState(false);
@@ -21,7 +21,7 @@ export function useBot() {
     useWelcome(initialized, messages.length, onBotMessage);
 
     // 💤 Inactivity logic
-    useInactivity(initialized, lastInteractionRef, randomMessage);
+    useInactivity(initialized, lastInteractionRef, sendRandomMessage);
 
     // 💬 User message logic
     function onUserMessage(text: string) {

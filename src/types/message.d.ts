@@ -26,12 +26,10 @@ export type MessageType = (typeof messageTypes)[number];
 
 export type MessageStyleType = (typeof messageStyles)[number];
 
-export type ContentType = string | React.ReactElement | null;
-
 export type MessageDto = {
     id: number;
     from: From;
     type?: MessageType;
     style?: MessageStyle;
-    content: ContentType;
+    content: string;
 };
