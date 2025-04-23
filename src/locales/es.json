@@ -56,20 +56,6 @@
         "No te estoy ignorando, solo estoy contemplando el significado de la vida. 🤔",
         "¿Oíste sobre el chatbot que entró a un bar? Ah, olvídalo. Soy yo."
     ],
-    "commands": {
-        "!advice": "!advice",
-        "!compliment": "!compliment",
-        "!joke": "!joke",
-        "!funfact": "!funfact",
-        "!quote": "!quote",
-        "!bug": "!bug",
-        "!debug": "!debug",
-        "!meme": "!meme",
-        "!gif": "!gif",
-        "!help": "!help",
-        "!about": "!about",
-        "!music": "!music"
-    },
     "advices": [
         "¡No te preocupes, sé feliz!",
         "Mantén la calma y sigue adelante.",

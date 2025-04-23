@@ -30,20 +30,6 @@
         "Feeling bored? Type !compliment or !bug",
         "Want to hear a joke? Type !meme or !advice"
     ],
-    "commands": {
-        "!advice": "!advice",
-        "!compliment": "!compliment",
-        "!joke": "!joke",
-        "!funfact": "!funfact",
-        "!quote": "!quote",
-        "!bug": "!bug",
-        "!debug": "!debug",
-        "!meme": "!meme",
-        "!gif": "!gif",
-        "!help": "!help",
-        "!about": "!about",
-        "!music": "!music"
-    },
     "commands_list": [
         "!advice - Get some random advice.",
         "!compliment - Receive a compliment.",

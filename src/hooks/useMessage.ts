@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import { useMedia } from "./useMedia";
-import { MessageDto } from "../types/message";
+import { useRandom } from "./useRandom";
+import { MessageDto, MessageType } from "../types/message";
 
 const STORAGE_KEY = "messages";
 
 export function useMessage() {
     const [messages, setMessages] = useState<MessageDto[]>([]);
     const [initialized, setInitialized] = useState(false);
-    const { t } = useTranslation();
-    const { randomMeme, randomGif } = useMedia();
+    const { getRandomType, getCompleteRandomSentence, getRandomGif, getRandomMeme, getRandomMusic } = useRandom();
 
     useEffect(() => {
         const stored = localStorage.getItem(STORAGE_KEY);
@@ -30,27 +28,38 @@ export function useMessage() {
         setMessages((prev) => [...prev, message]);
     }
 
-    function randomMessage() {
-        const randomTextMessages = t("random", { returnObjects: true }) as string[];
+    function message({ content, type, style }: { content: string, type: MessageType, style?: string }) {
+        addMessage({
+            id: Date.now(),
+            from: "bot",
+            content,
+            type,
+            style
+        });
+    }
 
-        const randomMessageType = Math.floor(Math.random() * 4);
-        const randomText = randomTextMessages[Math.floor(Math.random() * randomTextMessages.length)];
+    function sendRandomMessage() {
+        const randomType = getRandomType();
 
-        switch (randomMessageType) {
-            case 0:
-                addMessage({ id: Date.now(), from: "bot", content: randomText, type: "text" });
+        switch (randomType) {
+            case "text": message({ content: getCompleteRandomSentence(), type: "text" })
                 break;
-            case 1:
-                addMessage({ id: Date.now(), from: "bot", content: randomMeme(), type: "image" });
+            case "image": {
+                const gifOrMeme = Math.random() < 0.5 ? getRandomMeme() : getRandomGif();
+                message({ content: gifOrMeme, type: "image" });
                 break;
-            case 2:
-                addMessage({ id: Date.now(), from: "bot", content: randomGif(), type: "image" });
+            }
+            case "audio":
+                message({ content: getCompleteRandomSentence(), type: "audio" });
                 break;
-            case 3:
-                addMessage({ id: Date.now(), from: "bot", content: randomText, type: "audio" });
+            case "component":
+                message({ content: getRandomMusic(), type: "component" });
+                break;
+            default:
+                message({ content: getCompleteRandomSentence(), type: "text" });
                 break;
         }
     }
 
-    return { messages, addMessage, initialized, randomMessage };
+    return { messages, addMessage, initialized, sendRandomMessage };
 }
