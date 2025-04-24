@@ -1,11 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { useRandom } from "./useRandom";
 import { CommandResult } from "../types/command";
+import { useRPSGame } from "./useRPSGame";
+import { useGamesManager } from "./useGamesManager";
 
 export function useCommands() {
     const { t } = useTranslation();
     const { getRandomMeme, getRandomGif, getRandomMusic, getRandomSentence, getCompleteRandomSentence } =
         useRandom();
+    const gamesManager = useGamesManager();
+    const rpsGame = useRPSGame(gamesManager);
 
     function help(): CommandResult {
         return {
@@ -15,8 +19,7 @@ export function useCommands() {
         };
     }
 
-    const memeCommand = () => ({ content: getRandomMeme(), type: "image" });
-    const gifCommand = () => ({ content: getRandomGif(), type: "image" });
+    // Commands
     const adviceCommand = () => ({ content: getRandomSentence("advices"), type: "text" });
     const complimentCommand = () => ({ content: getRandomSentence("compliments"), type: "text" });
     const jokeCommand = () => ({ content: getRandomSentence("jokes"), type: "text" });
@@ -25,10 +28,20 @@ export function useCommands() {
     const bugCommand = () => ({ content: getRandomSentence("bugs"), type: "code", style: "glitch" });
     const debugCommand = () => ({ content: getRandomSentence("debug"), type: "code", style: "glitch" });
     const aboutCommand = () => ({ content: getRandomSentence("about"), type: "text" });
+
+    // Media commands
+    const memeCommand = () => ({ content: getRandomMeme(), type: "image" });
+    const gifCommand = () => ({ content: getRandomGif(), type: "image" });
     const musicCommand = () => ({ content: getRandomMusic(), type: "music" });
     const audioCommand = () => ({ content: getCompleteRandomSentence(), type: "audio" });
 
-    const commands: Record<string, () => CommandResult> = {
+
+    // Game commands
+    const pongCommand = () => ({ content: "🏓 ~pong", type: "text" });
+    const echoCommand = (message: string) => ({ content: message, type: "text" });
+    const rpsCommand = () => gamesManager.startGame(rpsGame.session());
+
+    const commands: Record<string, (...args: string[]) => CommandResult> = {
         "!meme": memeCommand,
         "!memes": memeCommand,
         "!gif": gifCommand,
@@ -52,13 +65,22 @@ export function useCommands() {
         "!help": help,
         "!commands": help,
         "!cmds": help,
+        "!pong": pongCommand,
+        "!echo": echoCommand,
+        "!rps": rpsCommand,
+        "!stop": () => gamesManager.stopGame(),
     };
 
     function resolveCommand(input: string): CommandResult | undefined {
         const normalized = input.trim().toLowerCase();
-        if (!normalized.startsWith("!")) return undefined;
-        const commandFn = commands[normalized];
-        return commandFn ? commandFn() : { content: t("ui.unknown_command"), type: "text" };
+
+        if (gamesManager.currentGame) {
+            return gamesManager.handleGameInput(normalized);
+        }
+
+        const [command, ...args] = normalized.split(" ");
+        const commandFn = commands[command];
+        return commandFn ? commandFn(...args) : { content: t("ui.unknown_command"), type: "text" };
     }
 
     return { resolveCommand };
