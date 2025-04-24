@@ -219,5 +219,13 @@
         "no_attempts_left": "Sem tentativas! 😵",
         "answer_was": "O número correto era",
         "stop": "Parando o jogo de Adivinhe o Número."
+    },
+    "game_scramble": {
+        "scrambled": "Embaralhada",
+        "correct": "Acertou! 🎉",
+        "try_again": "Errou, tenta de novo!",
+        "stop": "Parando o jogo de Palavras Embaralhadas.",
+        "max_attempts": "Tentativas máximas",
+        "attempts": "Tentativas"
     }
 }

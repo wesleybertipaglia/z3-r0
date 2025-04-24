@@ -218,5 +218,13 @@
         "no_attempts_left": "¡Sin intentos! 😵",
         "answer_was": "El número correcto era",
         "stop": "Deteniendo el juego de Adivina el Número."
+    },
+    "game_scramble": {
+        "scrambled": "Revuelta",
+        "correct": "¡Correcto! 🎉",
+        "try_again": "Nope, inténtalo de nuevo.",
+        "stop": "Deteniendo el juego de Palabras Revuelta.",
+        "max_attempts": "Intentos máximos",
+        "attempts": "Intentos"
     }
 }

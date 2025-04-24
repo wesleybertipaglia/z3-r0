@@ -175,7 +175,8 @@
         "!hangman - Play Hangman.",
         "!quiz - Test your knowledge with a quiz.",
         "!emoji - Guess the phrase from emojis.",
-        "!guessnumber - Guess the number game."
+        "!guess - Guess the number game.",
+        "!scramble - Unscramble the word."
     ],
     "game_rps": {
         "welcome": "🎮 Rock, Paper, or Scissors? Type 'rock', 'paper', or 'scissors' to play.",
@@ -212,13 +213,21 @@
     "game_guessnumber": {
         "start": "Guess the number!",
         "invalid_input": "Invalid input. Enter a number between",
-        "higher": "🔺 Higher!",
-        "lower": "🔻 Lower!",
+        "higher": "🔺 Too High!",
+        "lower": "🔻 Too Low!",
         "correct": "You got it!",
         "attempts": "Attempts",
         "max_attempts": "Maximum attempts",
         "no_attempts_left": "Out of attempts! 😵",
         "answer_was": "The correct number was",
         "stop": "Stopping Guess the Number."
+    },
+    "game_scramble": {
+        "scrambled": "Scrambled",
+        "correct": "Correct!",
+        "try_again": "Nope, try again!",
+        "stop": "Stopping Word Scramble.",
+        "max_attempts": "Maximum attempts",
+        "attempts": "Attempts"
     }
 }
