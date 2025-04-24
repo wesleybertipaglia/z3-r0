@@ -5,16 +5,16 @@ import { useGamesManager } from "./useGamesManager";
 export function useRPSGame(gamesManager: ReturnType<typeof useGamesManager>) {
     const { t } = useTranslation();
 
-    const choices = [t("rps.rock"), t("rps.paper"), t("rps.scissors")];
+    const choices = [t("game_rps.rock"), t("game_rps.paper"), t("game_rps.scissors")];
     const winMap: Record<string, string> = {
-        [t("rps.rock")]: t("rps.scissors"),
-        [t("rps.paper")]: t("rps.rock"),
-        [t("rps.scissors")]: t("rps.paper"),
+        [t("game_rps.rock")]: t("game_rps.scissors"),
+        [t("game_rps.paper")]: t("game_rps.rock"),
+        [t("game_rps.scissors")]: t("game_rps.paper"),
     };
 
     return {
         session: (): GameSession => ({
-            type: "rps",
+            type: "game_rps",
             firstPlay: true,
             handleInput: function (input: string) {
                 input = input.toLowerCase();
@@ -22,7 +22,7 @@ export function useRPSGame(gamesManager: ReturnType<typeof useGamesManager>) {
                 // Check if this is the first play
                 if (this.firstPlay) {
                     this.firstPlay = false;
-                    return { content: t("rps.welcome"), type: "text" };
+                    return { content: t("game_rps.welcome"), type: "text" };
                 }
 
                 // Check if the input is valid
@@ -42,7 +42,7 @@ export function useRPSGame(gamesManager: ReturnType<typeof useGamesManager>) {
                 gamesManager.stopGame();
                 return { content: result, type: "text" };
             },
-            stop: () => ({ content: t("rps.stop"), type: "text" }),
+            stop: () => ({ content: t("game_rps.stop"), type: "text" }),
         }),
     };
 }

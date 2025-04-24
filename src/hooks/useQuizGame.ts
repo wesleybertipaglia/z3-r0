@@ -13,19 +13,19 @@ export function useQuizGame(gamesManager: ReturnType<typeof useGamesManager>) {
             const question = questions[Math.floor(Math.random() * questions.length)];
 
             return {
-                type: "quiz",
+                type: "game_quiz",
                 firstPlay: true,
                 handleInput: function (input: string) {
                     // Check if it's the first play
                     if (this.firstPlay) {
                         this.firstPlay = false;
-                        return { content: `🤔 ${t("quiz.question")}: **${question.q}**`, type: "text" };
+                        return { content: `🤔 ${t("game_quiz.question")}: **${question.q}**`, type: "text" };
                     }
 
                     // If the answer is empty or invalid, repeat the question
                     const normalizedInput = input.trim().toLowerCase();
                     if (normalizedInput === "") {
-                        return { content: `❓ ${t("quiz.question")}: **${question.q}**`, type: "text" };
+                        return { content: `❓ ${t("game_quiz.question")}: **${question.q}**`, type: "text" };
                     }
 
                     // Check the answer and stop the game if answered
@@ -34,12 +34,12 @@ export function useQuizGame(gamesManager: ReturnType<typeof useGamesManager>) {
 
                     return {
                         content: isCorrect
-                            ? `🎉 ${t("quiz.you_got_it")} 🏆`
-                            : `❌ ${t("quiz.correct_answer_was")} **${question.a}**. ${t("quiz.better_luck")} 🧐`,
+                            ? `🎉 ${t("game_quiz.you_got_it")} 🏆`
+                            : `❌ ${t("game_quiz.correct_answer_was")} **${question.a}**. ${t("game_quiz.better_luck")} 🧐`,
                         type: "text",
                     };
                 },
-                stop: () => ({ content: `🛑 ${t("quiz.stop")}`, type: "text" }),
+                stop: () => ({ content: `🛑 ${t("game_quiz.stop")}`, type: "text" }),
             };
         },
     };

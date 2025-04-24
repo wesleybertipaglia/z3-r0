@@ -27,7 +27,7 @@ export function useCommands() {
 
     function gameCommand(): CommandResult {
         return {
-            content: (t("games_list", { returnObjects: true }) as string[]).join("\n"),
+            content: (t("game_list", { returnObjects: true }) as string[]).join("\n"),
             type: "code",
             style: "pre",
         };
