@@ -53,7 +53,7 @@ export function useCommands() {
     // Game commands
     const pingCommand = () => ({ content: "🏓 ~ping", type: "text" });
     const pongCommand = () => ({ content: "🏓 ~pong", type: "text" });
-    const echoCommand = (message: string) => ({ content: message, type: "text" });
+    const echoCommand = (message: string) => ({ content: message || t("ui.say_something"), type: "text" });
     const rpsCommand = () => gamesManager.startGame(rpsGame.session());
     const hangmanCommand = () => gamesManager.startGame(hangmanGame.session());
     const quizCommand = () => gamesManager.startGame(quizGame.session());

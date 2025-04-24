@@ -15,15 +15,21 @@ export function useRPSGame(gamesManager: ReturnType<typeof useGamesManager>) {
     return {
         session: (): GameSession => ({
             type: "rps",
-            handleInput: (input: string) => {
+            firstPlay: true,
+            handleInput: function (input: string) {
                 input = input.toLowerCase();
-                if (!choices.includes(input)) {
+
+                // Check if this is the first play
+                if (this.firstPlay) {
+                    this.firstPlay = false;
                     return { content: t("rps.welcome"), type: "text" };
                 }
 
+                // Check if the input is valid
                 const botMove = choices[Math.floor(Math.random() * choices.length)];
                 let result = `${t("ui.you")}: ${input}, ${t("ui.me")}: ${botMove}. `;
 
+                // Check the winner
                 if (input === botMove) {
                     result += `${t("game.draw")}! 🙂‍↕️`;
                 } else if (winMap[input] === botMove) {
@@ -32,6 +38,7 @@ export function useRPSGame(gamesManager: ReturnType<typeof useGamesManager>) {
                     result += `${t("ui.i")} ${t("game.i_win")}! 😜`;
                 }
 
+                // stop the game
                 gamesManager.stopGame();
                 return { content: result, type: "text" };
             },

@@ -13,6 +13,7 @@ export function useHangmanGame(gamesManager: ReturnType<typeof useGamesManager>)
             let attempts = 6;
             const guessed: string[] = [];
             const wrongGuesses: string[] = [];
+            let firstPlay = true;
 
             const getDisplayWord = () =>
                 word
@@ -38,15 +39,24 @@ export function useHangmanGame(gamesManager: ReturnType<typeof useGamesManager>)
             const progressMessage = () =>
                 `📝 ${t("hangman.progress")}: ${getDisplayWord()}\n❤️ ${t("hangman.attempts_left")}: ${attempts}\n❌ ${t("hangman.wrong_guesses")}: ${wrongGuesses.join(", ") || "none yet!"}`;
 
-            return {
+            const session: GameSession = {
                 type: "hangman",
+                firstPlay: true,
                 handleInput: (input: string) => {
                     input = input.toLowerCase();
 
+                    // First play logic
+                    if (firstPlay) {
+                        firstPlay = false;
+                        return { content: `🤔 ${t("hangman.prompt")}: ${getDisplayWord()}`, type: "text" };
+                    }
+
+                    // Validate input
                     if (!/^[a-z]+$/.test(input)) {
                         return { content: `🤨 ${t("hangman.prompt")}`, type: "text" };
                     }
 
+                    // Guessing whole word
                     if (input.length > 1) {
                         if (input === word) {
                             return { content: endGameMessage(`🎉 ${t("game.you_win")}! Nailed it! 🔥`), type: "text" };
@@ -56,16 +66,24 @@ export function useHangmanGame(gamesManager: ReturnType<typeof useGamesManager>)
                             if (endMessage) return { content: endMessage, type: "text" };
 
                             wrongGuesses.push(input);
-                            return { content: `🙈 ${t("hangman.wrong_word")} Keep trying!\n\n${progressMessage()}`, type: "text" };
+                            return {
+                                content: `🙈 ${t("hangman.wrong_word")} Keep trying!\n\n${progressMessage()}`,
+                                type: "text",
+                            };
                         }
                     }
 
+                    // Check if letter already guessed
                     if (guessed.includes(input) || wrongGuesses.includes(input)) {
                         return { content: `⚠️ ${t("hangman.already_guessed")} ${getDisplayWord()}`, type: "text" };
                     }
 
+                    // Correct guess
                     if (word.includes(input)) {
                         guessed.push(input);
+                        const endMessage = checkGameEnd();
+                        if (endMessage) return { content: endMessage, type: "text" };
+
                         return { content: `✅ Good one!\n\n${progressMessage()}`, type: "text" };
                     } else {
                         attempts--;
@@ -78,6 +96,8 @@ export function useHangmanGame(gamesManager: ReturnType<typeof useGamesManager>)
                 },
                 stop: () => ({ content: `🛑 ${t("hangman.stop")} Game over.`, type: "text" }),
             };
+
+            return session;
         },
     };
 }

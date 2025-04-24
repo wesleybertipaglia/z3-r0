@@ -11,33 +11,33 @@ export function useQuizGame(gamesManager: ReturnType<typeof useGamesManager>) {
     return {
         session: (): GameSession => {
             const question = questions[Math.floor(Math.random() * questions.length)];
-            let answered = false;
-
-            const getResultMessage = (correct: boolean) => {
-                gamesManager.stopGame();
-                return correct
-                    ? `🎉 ${t("quiz.you_got_it")} 🏆`
-                    : `❌ ${t("quiz.correct_answer_was")} **${question.a}**. ${t("quiz.better_luck")} 🧐`;
-            };
 
             return {
                 type: "quiz",
-                handleInput: (input: string) => {
-                    if (input == "")
+                firstPlay: true,
+                handleInput: function (input: string) {
+                    // Check if it's the first play
+                    if (this.firstPlay) {
+                        this.firstPlay = false;
                         return { content: `🤔 ${t("quiz.question")}: **${question.q}**`, type: "text" };
-
-                    if (answered) {
-                        return { content: `📚 ${t("quiz.already_answered")}`, type: "text" };
                     }
 
+                    // If the answer is empty or invalid, repeat the question
                     const normalizedInput = input.trim().toLowerCase();
                     if (normalizedInput === "") {
                         return { content: `❓ ${t("quiz.question")}: **${question.q}**`, type: "text" };
                     }
 
-                    answered = true;
+                    // Check the answer and stop the game if answered
                     const isCorrect = normalizedInput === question.a;
-                    return { content: getResultMessage(isCorrect), type: "text" };
+                    gamesManager.stopGame();
+
+                    return {
+                        content: isCorrect
+                            ? `🎉 ${t("quiz.you_got_it")} 🏆`
+                            : `❌ ${t("quiz.correct_answer_was")} **${question.a}**. ${t("quiz.better_luck")} 🧐`,
+                        type: "text",
+                    };
                 },
                 stop: () => ({ content: `🛑 ${t("quiz.stop")}`, type: "text" }),
             };
