@@ -174,7 +174,7 @@
         "!rps - Play Rock, Paper, Scissors.",
         "!hangman - Play Hangman.",
         "!quiz - Test your knowledge with a quiz.",
-        "!stop - Stop the current game."
+        "!emoji - Guess the phrase from emojis."
     ],
     "game_rps": {
         "welcome": "🎮 Rock, Paper, or Scissors? Type 'rock', 'paper', or 'scissors' to play.",
@@ -199,5 +199,13 @@
         "better_luck": "Better luck next time, genius!",
         "already_answered": "Hey now, you've already answered this one!",
         "stop": "Quiz aborted. Maybe next time you'll have the courage. 😏"
+    },
+    "game_emoji": {
+        "guess_this": "Can you crack this one? 🤔",
+        "repeat": "Alright smarty, guess this:",
+        "you_got_it": "🎉 Boom! Nailed it!",
+        "correct_answer_was": "The right one was 👉",
+        "better_luck": "Oof, close! Better luck next time 😅",
+        "stop": "Emoji madness stopped 🛑"
     }
 }

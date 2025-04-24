@@ -19,13 +19,13 @@ export function useQuizGame(gamesManager: ReturnType<typeof useGamesManager>) {
                     // Check if it's the first play
                     if (this.firstPlay) {
                         this.firstPlay = false;
-                        return { content: `🤔 ${t("game_quiz.question")}: **${question.q}**`, type: "text" };
+                        return { content: `🤔 ${t("game_quiz.question")}: \n${question.q}`, type: "text" };
                     }
 
                     // If the answer is empty or invalid, repeat the question
                     const normalizedInput = input.trim().toLowerCase();
                     if (normalizedInput === "") {
-                        return { content: `❓ ${t("game_quiz.question")}: **${question.q}**`, type: "text" };
+                        return { content: `❓ ${t("game_quiz.question")}: \n${question.q}`, type: "text" };
                     }
 
                     // Check the answer and stop the game if answered
@@ -35,7 +35,7 @@ export function useQuizGame(gamesManager: ReturnType<typeof useGamesManager>) {
                     return {
                         content: isCorrect
                             ? `🎉 ${t("game_quiz.you_got_it")} 🏆`
-                            : `❌ ${t("game_quiz.correct_answer_was")} **${question.a}**. ${t("game_quiz.better_luck")} 🧐`,
+                            : `❌ ${t("game_quiz.correct_answer_was")} \n${question.a}. ${t("game_quiz.better_luck")} 🧐`,
                         type: "text",
                     };
                 },

@@ -6,6 +6,7 @@ import { useGamesManager } from "./useGamesManager";
 import { useConversation } from "./useConversation";
 import { useHangmanGame } from "./useHangmanGame";
 import { useQuizGame } from "./useQuizGame";
+import { useEmojiGame } from "./useEmojiGame";
 
 export function useCommands() {
     const { t } = useTranslation();
@@ -16,6 +17,7 @@ export function useCommands() {
     const rpsGame = useRPSGame(gamesManager);
     const hangmanGame = useHangmanGame(gamesManager);
     const quizGame = useQuizGame(gamesManager);
+    const emojiGame = useEmojiGame(gamesManager);
 
     function helpCommand(): CommandResult {
         return {
@@ -57,6 +59,7 @@ export function useCommands() {
     const rpsCommand = () => gamesManager.startGame(rpsGame.session());
     const hangmanCommand = () => gamesManager.startGame(hangmanGame.session());
     const quizCommand = () => gamesManager.startGame(quizGame.session());
+    const emojiGameCommand = () => gamesManager.startGame(emojiGame.session());
 
     const commands: Record<string, (...args: string[]) => CommandResult> = {
         "!meme": memeCommand,
@@ -91,6 +94,8 @@ export function useCommands() {
         "!hangman": hangmanCommand,
         "!quiz": quizCommand,
         "!trivia": quizCommand,
+        "!emoji": emojiGameCommand,
+        "!emotion": emojiGameCommand,
     };
 
     function resolveCommand(input: string): CommandResult | undefined {

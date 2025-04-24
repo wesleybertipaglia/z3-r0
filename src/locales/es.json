@@ -198,5 +198,13 @@
         "better_luck": "¡Mejor suerte la próxima, crack!",
         "already_answered": "¡Oye! Esa ya la respondiste.",
         "stop": "Quiz cancelado. Tal vez la próxima te animas. 😏"
+    },
+    "game_emoji": {
+        "guess_this": "¿Te animas con esta? 🤔",
+        "repeat": "A ver genio, adivina esto:",
+        "you_got_it": "🎉 ¡BOOM! ¡La rompiste!",
+        "correct_answer_was": "La respuesta correcta era 👉",
+        "better_luck": "Uff, casi. ¡A la próxima 😅!",
+        "stop": "Juego de emojis detenido 🛑"
     }
 }

@@ -199,5 +199,13 @@
         "better_luck": "Tente de novo, gênio!",
         "already_answered": "Ei, você já respondeu essa!",
         "stop": "Quiz encerrado. Quem sabe na próxima você encara. 😏"
+    },
+    "game_emoji": {
+        "guess_this": "Consegue decifrar essa? 🤔",
+        "repeat": "Manda ver nessa aqui:",
+        "you_got_it": "🎉 BOOOM! Acertou na lata!",
+        "correct_answer_was": "A resposta certa era 👉",
+        "better_luck": "Quase hein! Tenta de novo na próxima 😅",
+        "stop": "Jogo de emoji encerrado 🛑"
     }
 }
