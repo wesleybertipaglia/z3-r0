@@ -1,0 +1,29 @@
+import { useState, useEffect, useCallback } from "react";
+
+export function useNotification() {
+    const [permission, setPermission] = useState<NotificationPermission>(Notification.permission);
+
+    const requestPermission = useCallback(() => {
+        if (!("Notification" in window)) return;
+
+        Notification.requestPermission().then((result) => {
+            setPermission(result);
+        });
+    }, []);
+
+    useEffect(() => {
+        // If permission is "default" ask the user for permission.
+        if (permission === "default") {
+            requestPermission();
+        }
+    }, [permission, requestPermission]);
+
+
+    const sendNotification = useCallback((title: string, options?: NotificationOptions) => {
+        if (permission === "granted") {
+            new Notification(title, options);
+        }
+    }, [permission]);
+
+    return { permission, requestPermission, sendNotification };
+}
