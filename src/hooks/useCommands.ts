@@ -5,6 +5,7 @@ import { useRPSGame } from "./useRPSGame";
 import { useGamesManager } from "./useGamesManager";
 import { useConversation } from "./useConversation";
 import { useHangmanGame } from "./useHangmanGame";
+import { useQuizGame } from "./useQuizGame";
 
 export function useCommands() {
     const { t } = useTranslation();
@@ -14,10 +15,19 @@ export function useCommands() {
     const gamesManager = useGamesManager();
     const rpsGame = useRPSGame(gamesManager);
     const hangmanGame = useHangmanGame(gamesManager);
+    const quizGame = useQuizGame(gamesManager);
 
-    function help(): CommandResult {
+    function helpCommand(): CommandResult {
         return {
             content: (t("commands_list", { returnObjects: true }) as string[]).join("\n"),
+            type: "code",
+            style: "pre",
+        };
+    }
+
+    function gameCommand(): CommandResult {
+        return {
+            content: (t("games_list", { returnObjects: true }) as string[]).join("\n"),
             type: "code",
             style: "pre",
         };
@@ -46,6 +56,7 @@ export function useCommands() {
     const echoCommand = (message: string) => ({ content: message, type: "text" });
     const rpsCommand = () => gamesManager.startGame(rpsGame.session());
     const hangmanCommand = () => gamesManager.startGame(hangmanGame.session());
+    const quizCommand = () => gamesManager.startGame(quizGame.session());
 
     const commands: Record<string, (...args: string[]) => CommandResult> = {
         "!meme": memeCommand,
@@ -68,14 +79,18 @@ export function useCommands() {
         "!track": musicCommand,
         "!playlist": musicCommand,
         "!album": musicCommand,
-        "!help": help,
-        "!commands": help,
-        "!cmds": help,
+        "!help": helpCommand,
+        "!commands": helpCommand,
+        "!cmds": helpCommand,
+        "!game": gameCommand,
+        "!games": gameCommand,
         "!ping": pongCommand,
         "!pong": pingCommand,
         "!echo": echoCommand,
         "!rps": rpsCommand,
-        "!hangman": hangmanCommand
+        "!hangman": hangmanCommand,
+        "!quiz": quizCommand,
+        "!trivia": quizCommand,
     };
 
     function resolveCommand(input: string): CommandResult | undefined {

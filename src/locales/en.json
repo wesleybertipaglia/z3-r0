@@ -34,18 +34,19 @@
         "Want to hear a joke? Type !meme or !advice"
     ],
     "commands_list": [
+        "!help - Get help with commands.",
+        "!about - Learn more about me.",
+        "!meme - Get a random meme.",
+        "!gif - Get a random GIF.",
+        "!music - Play some music.",
+        "!game - Get a list of games.",
         "!advice - Get some random advice.",
         "!compliment - Receive a compliment.",
         "!joke - Hear a funny joke.",
         "!funfact - Learn a fun fact.",
         "!quote - Get an inspirational quote.",
         "!bug - Report a bug.",
-        "!debug - Run diagnostics.",
-        "!meme - Get a random meme.",
-        "!gif - Get a random GIF.",
-        "!music - Play some music.",
-        "!help - Get help with commands.",
-        "!about - Learn more about me."
+        "!debug - Run diagnostics."
     ],
     "status": [
         "Running sarcasm.exe...",
@@ -159,6 +160,21 @@
         "The only way to do great work is to love what you do. - Steve Jobs",
         "Don't watch the clock; do what it does. Keep going. - Sam Levenson"
     ],
+    "game": {
+        "you_win": "Win",
+        "you_lose": "Lose",
+        "i_win": "Win",
+        "i_lose": "Lose",
+        "draw": "Draw"
+    },
+    "games_list": [
+        "!pong/!ping - Play a game of Pong.",
+        "!echo - Echo your message.",
+        "!rps - Play Rock, Paper, Scissors.",
+        "!hangman - Play Hangman.",
+        "!quiz - Test your knowledge with a quiz.",
+        "!stop - Stop the current game."
+    ],
     "rps": {
         "welcome": "🎮 Rock, Paper, or Scissors? Type 'rock', 'paper', or 'scissors' to play.",
         "rock": "rock",
@@ -167,13 +183,6 @@
         "invalid": "Invalid choice! Please type 'rock', 'paper', or 'scissors'.",
         "stop": "Game stopped. Type '!rps' to play again."
     },
-    "game": {
-        "you_win": "Win",
-        "you_lose": "Lose",
-        "i_win": "Win",
-        "i_lose": "Lose",
-        "draw": "Draw"
-    },
     "hangman": {
         "prompt": "Type a letter (a-z) or guess the whole word.",
         "already_guessed": "You already tried that one!",
@@ -181,5 +190,13 @@
         "attempts_left": "Lives left",
         "wrong_guesses": "Misses",
         "wrong_word": "Nope, that’s not it!"
+    },
+    "quiz": {
+        "question": "Here's your brain-buster",
+        "you_got_it": "Boom! You nailed it!",
+        "correct_answer_was": "Oof, not quite. The right answer was",
+        "better_luck": "Better luck next time, genius!",
+        "already_answered": "Hey now, you've already answered this one!",
+        "stop": "Quiz aborted. Maybe next time you'll have the courage. 😏"
     }
 }
