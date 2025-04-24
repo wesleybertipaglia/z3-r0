@@ -207,5 +207,17 @@
         "correct_answer_was": "A resposta certa era 👉",
         "better_luck": "Quase hein! Tenta de novo na próxima 😅",
         "stop": "Jogo de emoji encerrado 🛑"
+    },
+    "game_guessnumber": {
+        "start": "Adivinhe o número!",
+        "invalid_input": "Entrada inválida. Digite um número entre",
+        "higher": "🔺 Muito alto!",
+        "lower": "🔻 Muito baixo!",
+        "correct": "Acertou! 🎉",
+        "attempts": "Tentativas",
+        "max_attempts": "Tentativas máximas",
+        "no_attempts_left": "Sem tentativas! 😵",
+        "answer_was": "O número correto era",
+        "stop": "Parando o jogo de Adivinhe o Número."
     }
 }

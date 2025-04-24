@@ -174,7 +174,8 @@
         "!rps - Play Rock, Paper, Scissors.",
         "!hangman - Play Hangman.",
         "!quiz - Test your knowledge with a quiz.",
-        "!emoji - Guess the phrase from emojis."
+        "!emoji - Guess the phrase from emojis.",
+        "!guessnumber - Guess the number game."
     ],
     "game_rps": {
         "welcome": "🎮 Rock, Paper, or Scissors? Type 'rock', 'paper', or 'scissors' to play.",
@@ -207,5 +208,17 @@
         "correct_answer_was": "The right one was 👉",
         "better_luck": "Oof, close! Better luck next time 😅",
         "stop": "Emoji madness stopped 🛑"
+    },
+    "game_guessnumber": {
+        "start": "Guess the number!",
+        "invalid_input": "Invalid input. Enter a number between",
+        "higher": "🔺 Higher!",
+        "lower": "🔻 Lower!",
+        "correct": "You got it!",
+        "attempts": "Attempts",
+        "max_attempts": "Maximum attempts",
+        "no_attempts_left": "Out of attempts! 😵",
+        "answer_was": "The correct number was",
+        "stop": "Stopping Guess the Number."
     }
 }

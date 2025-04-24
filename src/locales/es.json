@@ -206,5 +206,17 @@
         "correct_answer_was": "La respuesta correcta era 👉",
         "better_luck": "Uff, casi. ¡A la próxima 😅!",
         "stop": "Juego de emojis detenido 🛑"
+    },
+    "game_guessnumber": {
+        "start": "¡Adivina el número!",
+        "invalid_input": "Entrada inválida. Ingresa un número entre",
+        "higher": "🔺 ¡Muy alto!",
+        "lower": "🔻 ¡Muy bajo!",
+        "correct": "¡Lo lograste! 🎉",
+        "attempts": "Intentos",
+        "max_attempts": "Intentos máximos",
+        "no_attempts_left": "¡Sin intentos! 😵",
+        "answer_was": "El número correcto era",
+        "stop": "Deteniendo el juego de Adivina el Número."
     }
 }
