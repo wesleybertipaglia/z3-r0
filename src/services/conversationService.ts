@@ -1,5 +1,6 @@
 import { intents } from "../data/intents";
 import { responses } from "../data/responses";
+import { t } from "i18next";
 
 export class ConversationService {
     analyzeMessage(text: string): string {
@@ -8,7 +9,10 @@ export class ConversationService {
 
         Object.keys(intents).forEach((intent) => {
             if (this.matchesCategory(normalized, intents[intent as keyof typeof intents])) {
-                matchedResponses.push(this.randomFrom(responses[intent as keyof typeof responses]));
+                const possibleResponses = responses[intent as keyof typeof responses] || [];
+                if (possibleResponses.length > 0) {
+                    matchedResponses.push(this.randomFrom(possibleResponses));
+                }
             }
         });
 
@@ -24,6 +28,7 @@ export class ConversationService {
     }
 
     private randomFrom(array: string[]): string {
+        if (!array || array.length === 0) return t("not_understood");
         return array[Math.floor(Math.random() * array.length)];
     }
 }

@@ -3,12 +3,16 @@
         "title": "Z3-R0 the Weird Bot",
         "about": "I am Z3-R0, your chaotic bot buddy.",
         "you": "You",
+        "me": "Me",
+        "i": "I",
         "language": "Language",
         "developed": "Developed with ❤️ by",
         "unknown_command": "Unknown command 🤖. Try !meme, !bug or !compliment",
         "typing": "Z3-R0 is typing...",
         "not_understood": "I didn't quite get that. Can you rephrase?",
-        "audio": "Audio"
+        "audio": "Audio",
+        "word": "Word",
+        "say_something": "Say something..."
     },
     "about": [
         "I'm Z3-R0, your chaotic bot buddy. I love to chat and make you laugh!",
@@ -31,18 +35,19 @@
         "Want to hear a joke? Type !meme or !advice"
     ],
     "commands_list": [
+        "!help - Get help with commands.",
+        "!about - Learn more about me.",
+        "!meme - Get a random meme.",
+        "!gif - Get a random GIF.",
+        "!music - Play some music.",
+        "!game - Get a list of games.",
         "!advice - Get some random advice.",
         "!compliment - Receive a compliment.",
         "!joke - Hear a funny joke.",
         "!funfact - Learn a fun fact.",
         "!quote - Get an inspirational quote.",
         "!bug - Report a bug.",
-        "!debug - Run diagnostics.",
-        "!meme - Get a random meme.",
-        "!gif - Get a random GIF.",
-        "!music - Play some music.",
-        "!help - Get help with commands.",
-        "!about - Learn more about me."
+        "!debug - Run diagnostics."
     ],
     "status": [
         "Running sarcasm.exe...",
@@ -155,5 +160,74 @@
         "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston S. Churchill",
         "The only way to do great work is to love what you do. - Steve Jobs",
         "Don't watch the clock; do what it does. Keep going. - Sam Levenson"
-    ]
+    ],
+    "game": {
+        "you_win": "Win",
+        "you_lose": "Lose",
+        "i_win": "Win",
+        "i_lose": "Lose",
+        "draw": "Draw"
+    },
+    "game_list": [
+        "!pong/!ping - Play a game of Pong.",
+        "!echo - Echo your message.",
+        "!rps - Play Rock, Paper, Scissors.",
+        "!hangman - Play Hangman.",
+        "!quiz - Test your knowledge with a quiz.",
+        "!emoji - Guess the phrase from emojis.",
+        "!guess - Guess the number game.",
+        "!scramble - Unscramble the word."
+    ],
+    "game_rps": {
+        "welcome": "🎮 Rock, Paper, or Scissors? Type 'rock', 'paper', or 'scissors' to play.",
+        "rock": "rock",
+        "paper": "paper",
+        "scissors": "scissors",
+        "invalid": "Invalid choice! Please type 'rock', 'paper', or 'scissors'.",
+        "stop": "Game stopped. Type '!rps' to play again."
+    },
+    "game_hangman": {
+        "prompt": "Type a letter (a-z) or guess the whole word.",
+        "already_guessed": "You already tried that one!",
+        "progress": "Word",
+        "attempts_left": "Lives left",
+        "wrong_guesses": "Misses",
+        "wrong_word": "Nope, that’s not it!"
+    },
+    "game_quiz": {
+        "question": "Here's your brain-buster",
+        "you_got_it": "Boom! You nailed it!",
+        "correct_answer_was": "Oof, not quite. The right answer was",
+        "better_luck": "Better luck next time, genius!",
+        "already_answered": "Hey now, you've already answered this one!",
+        "stop": "Quiz aborted. Maybe next time you'll have the courage. 😏"
+    },
+    "game_emoji": {
+        "guess_this": "Can you crack this one? 🤔",
+        "repeat": "Alright smarty, guess this:",
+        "you_got_it": "🎉 Boom! Nailed it!",
+        "correct_answer_was": "The right one was 👉",
+        "better_luck": "Oof, close! Better luck next time 😅",
+        "stop": "Emoji madness stopped 🛑"
+    },
+    "game_guessnumber": {
+        "start": "Guess the number!",
+        "invalid_input": "Invalid input. Enter a number between",
+        "higher": "🔺 Too High!",
+        "lower": "🔻 Too Low!",
+        "correct": "You got it!",
+        "attempts": "Attempts",
+        "max_attempts": "Maximum attempts",
+        "no_attempts_left": "Out of attempts! 😵",
+        "answer_was": "The correct number was",
+        "stop": "Stopping Guess the Number."
+    },
+    "game_scramble": {
+        "scrambled": "Scrambled",
+        "correct": "Correct!",
+        "try_again": "Nope, try again!",
+        "stop": "Stopping Word Scramble.",
+        "max_attempts": "Maximum attempts",
+        "attempts": "Attempts"
+    }
 }

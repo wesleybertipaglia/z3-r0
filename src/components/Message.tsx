@@ -39,11 +39,11 @@ const Message = ({ from, content, type, style }: MessageDto) => {
 
         switch (type) {
             case "text":
-                return <p className={`break-words overflow-hidden text-ellipsis ${getStyleClass()}`}>{content as string}</p>;
+                return <p className={`break-words overflow-hidden text-ellipsis whitespace-pre-wrap ${getStyleClass()}`}>{content as string}</p>;
             case "code":
                 return <pre className={`bg-neutral-700 p-2 rounded-md whitespace-pre-wrap ${getStyleClass()}`}>{content as string}</pre>;
             case "quote":
-                return <blockquote className={`border-l-4 border-neutral-500 pl-4 italic ${getStyleClass()}`}>{content as string}</blockquote>;
+                return <blockquote className={`border-l-4 border-neutral-500 pl-4 italic whitespace-pre-wrap ${getStyleClass()}`}>{content as string}</blockquote>;
             case "link":
                 return (
                     <a href={content as string} target="_blank" rel="noopener noreferrer" className={`text-blue-500 ${getStyleClass()}`}>

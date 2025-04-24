@@ -1,14 +1,18 @@
 {
     "ui": {
-        "title": "Z3-R0, o Bot Estranho",
-        "about": "Sou o Z3-R0, seu bot caótico e camarada.",
+        "title": "Z3-R0, o Bot doido",
+        "about": "Eu sou o Z3-R0, seu bot caótico de estimação.",
         "you": "Você",
+        "me": "Eu",
+        "i": "Eu",
         "language": "Idioma",
         "developed": "Desenvolvido com ❤️ por",
-        "unknown_command": "Comando desconhecido 🤖. Tente !meme, !bug ou !compliment",
+        "unknown_command": "Comando desconhecido 🤖. Tente !meme, !bug ou !elogio",
         "typing": "Z3-R0 está digitando...",
-        "not_understood": "Não entendi muito bem. Pode reformular?",
-        "audio": "Áudio"
+        "not_understood": "Não entendi muito bem. Pode dizer de outro jeito?",
+        "audio": "Áudio",
+        "word": "Palavra",
+        "say_something": "Diga alguma coisa..."
     },
     "placeholders": [
         "Digite algo engraçado ou um comando como !bug",
@@ -143,17 +147,85 @@
         "Fui criado para trazer um pouco de caos e diversão pro seu dia."
     ],
     "commands_list": [
+        "!help - Obtenha ajuda com os comandos.",
+        "!about - Saiba mais sobre mim.",
+        "!meme - Receba um meme aleatório.",
+        "!gif - Receba um GIF aleatório.",
+        "!music - Ouça uma música aleatória.",
+        "!game - Lista de jogos disponíveis.",
         "!advice - Receba um conselho aleatório.",
         "!compliment - Receba um elogio.",
         "!joke - Ouça uma piada engraçada.",
         "!funfact - Aprenda uma curiosidade divertida.",
         "!quote - Receba uma citação inspiradora.",
         "!bug - Reporte um bug.",
-        "!debug - Rode diagnósticos.",
-        "!meme - Receba um meme aleatório.",
-        "!gif - Receba um GIF aleatório.",
-        "!music - Ouça uma música aleatória.",
-        "!help - Obtenha ajuda com os comandos.",
-        "!about - Saiba mais sobre mim."
-    ]
+        "!debug - Rode diagnósticos."
+    ],
+    "game": {
+        "you_win": "Vitória",
+        "you_lose": "Derrota",
+        "i_win": "Ganhei",
+        "i_lose": "Perdi",
+        "draw": "Empate"
+    },
+    "game_list": [
+        "!pong/!ping - Jogue uma partida de Pong.",
+        "!echo - Repito sua mensagem.",
+        "!rps - Pedra, Papel ou Tesoura, bora?",
+        "!hangman - Jogo da Forca.",
+        "!quiz - Teste seus conhecimentos num quiz.",
+        "!stop - Para o jogo atual."
+    ],
+    "game_rps": {
+        "welcome": "🎮 Pedra, Papel ou Tesoura? Digite 'pedra', 'papel' ou 'tesoura' pra jogar.",
+        "rock": "pedra",
+        "paper": "papel",
+        "scissors": "tesoura",
+        "invalid": "Opção inválida! Escolha entre 'pedra', 'papel' ou 'tesoura'.",
+        "stop": "Jogo encerrado. Digite '!rps' pra jogar de novo."
+    },
+    "game_hangman": {
+        "prompt": "Digite uma letra (a-z) ou tente adivinhar a palavra inteira.",
+        "already_guessed": "Você já tentou essa!",
+        "progress": "Palavra",
+        "attempts_left": "Vidas restantes",
+        "wrong_guesses": "Erros",
+        "wrong_word": "Ih, não foi dessa vez!"
+    },
+    "game_quiz": {
+        "question": "Hora de colocar o cérebro pra funcionar",
+        "you_got_it": "Boa! Acertou em cheio!",
+        "correct_answer_was": "Eita… a certa era",
+        "better_luck": "Tente de novo, gênio!",
+        "already_answered": "Ei, você já respondeu essa!",
+        "stop": "Quiz encerrado. Quem sabe na próxima você encara. 😏"
+    },
+    "game_emoji": {
+        "guess_this": "Consegue decifrar essa? 🤔",
+        "repeat": "Manda ver nessa aqui:",
+        "you_got_it": "🎉 BOOOM! Acertou na lata!",
+        "correct_answer_was": "A resposta certa era 👉",
+        "better_luck": "Quase hein! Tenta de novo na próxima 😅",
+        "stop": "Jogo de emoji encerrado 🛑"
+    },
+    "game_guessnumber": {
+        "start": "Adivinhe o número!",
+        "invalid_input": "Entrada inválida. Digite um número entre",
+        "higher": "🔺 Muito alto!",
+        "lower": "🔻 Muito baixo!",
+        "correct": "Acertou! 🎉",
+        "attempts": "Tentativas",
+        "max_attempts": "Tentativas máximas",
+        "no_attempts_left": "Sem tentativas! 😵",
+        "answer_was": "O número correto era",
+        "stop": "Parando o jogo de Adivinhe o Número."
+    },
+    "game_scramble": {
+        "scrambled": "Embaralhada",
+        "correct": "Acertou! 🎉",
+        "try_again": "Errou, tenta de novo!",
+        "stop": "Parando o jogo de Palavras Embaralhadas.",
+        "max_attempts": "Tentativas máximas",
+        "attempts": "Tentativas"
+    }
 }

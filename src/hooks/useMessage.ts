@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRandom } from "./useRandom";
-import { MessageDto, MessageType } from "../types/message";
+import { From, MessageDto, MessageType } from "../types/message";
+import { nanoid } from "nanoid";
 
 const STORAGE_KEY = "messages";
 
@@ -28,10 +29,10 @@ export function useMessage() {
         setMessages((prev) => [...prev, message]);
     }
 
-    function message({ content, type, style }: { content: string, type: MessageType, style?: string }) {
+    function send({ from, content, type, style }: { from: From, content: string, type?: MessageType, style?: string }) {
         addMessage({
-            id: Date.now(),
-            from: "bot",
+            id: nanoid(),
+            from,
             content,
             type,
             style
@@ -42,24 +43,24 @@ export function useMessage() {
         const randomType = getRandomType();
 
         switch (randomType) {
-            case "text": message({ content: getCompleteRandomSentence(), type: "text" })
+            case "text": send({ from: "bot", content: getCompleteRandomSentence(), type: "text" })
                 break;
             case "image": {
                 const gifOrMeme = Math.random() < 0.5 ? getRandomMeme() : getRandomGif();
-                message({ content: gifOrMeme, type: "image" });
+                send({ from: "bot", content: gifOrMeme, type: "image" });
                 break;
             }
             case "audio":
-                message({ content: getCompleteRandomSentence(), type: "audio" });
+                send({ from: "bot", content: getCompleteRandomSentence(), type: "audio" });
                 break;
             case "component":
-                message({ content: getRandomMusic(), type: "component" });
+                send({ from: "bot", content: getRandomMusic(), type: "component" });
                 break;
             default:
-                message({ content: getCompleteRandomSentence(), type: "text" });
+                send({ from: "bot", content: getCompleteRandomSentence(), type: "text" });
                 break;
         }
     }
 
-    return { messages, addMessage, initialized, sendRandomMessage };
+    return { messages, send, initialized, sendRandomMessage };
 }
