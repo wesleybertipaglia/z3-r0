@@ -30,7 +30,7 @@ export type MessageType = (typeof messageTypes)[number];
 export type MessageStyle = (typeof messageStyles)[number];
 
 export type MessageDto = {
-    id: number;
+    id?: string;
     from: From;
     type?: MessageType;
     style?: MessageStyle;

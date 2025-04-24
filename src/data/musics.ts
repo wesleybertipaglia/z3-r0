@@ -29,7 +29,6 @@ const musics = [
     "album/55RTkgUCP7t80hiTUhATMH",
     "album/6v6VCAaPl3G08OeNhuk6za",
     "album/3n5LVLSSN1eeAjYhNy3Evk",
-    "album/3MCUHjDo3wSm2QuLh1Fyrfw",
     "album/3B61kSKTxlY36cYgzvf3cP",
     "album/2qvA7HmSg1iM6XMiFF76dp",
     "album/1t1mLWKZz9OLIiWHMQsMUB",

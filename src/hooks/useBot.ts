@@ -7,10 +7,8 @@ import { useWelcome } from "./useWelcome";
 import { useInactivity } from "./useInactivity";
 import { useConversation } from "./useConversation";
 
-let msgId = 0;
-
 export function useBot() {
-    const { messages, addMessage, initialized, sendRandomMessage } = useMessage();
+    const { messages, send, initialized, sendRandomMessage } = useMessage();
     const { resolveCommand } = useCommands();
     const { play } = useSound();
     const [isTyping, setIsTyping] = useState(false);
@@ -27,7 +25,7 @@ export function useBot() {
     function onUserMessage(text: string) {
         lastInteractionRef.current = Date.now();
 
-        addMessage({ id: msgId++, from: "user", content: text });
+        send({ from: "user", content: text });
 
         const commandResult = resolveCommand(text.trim());
 
@@ -43,7 +41,7 @@ export function useBot() {
     function onBotMessage({ type, content }: { type: MessageType; content: string }) {
         setIsTyping(true);
         setTimeout(() => {
-            addMessage({ id: msgId++, from: "bot", content, type });
+            send({ from: "bot", content, type });
             setIsTyping(false);
             play("pop.mp3");
         }, 1200);
