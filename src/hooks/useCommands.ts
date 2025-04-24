@@ -41,6 +41,7 @@ export function useCommands() {
 
 
     // Game commands
+    const pingCommand = () => ({ content: "🏓 ~ping", type: "text" });
     const pongCommand = () => ({ content: "🏓 ~pong", type: "text" });
     const echoCommand = (message: string) => ({ content: message, type: "text" });
     const rpsCommand = () => gamesManager.startGame(rpsGame.session());
@@ -70,7 +71,8 @@ export function useCommands() {
         "!help": help,
         "!commands": help,
         "!cmds": help,
-        "!pong": pongCommand,
+        "!ping": pongCommand,
+        "!pong": pingCommand,
         "!echo": echoCommand,
         "!rps": rpsCommand,
         "!hangman": hangmanCommand
