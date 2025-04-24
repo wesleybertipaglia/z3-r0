@@ -10,7 +10,8 @@
         "unknown_command": "Unknown command 🤖. Try !meme, !bug or !compliment",
         "typing": "Z3-R0 is typing...",
         "not_understood": "I didn't quite get that. Can you rephrase?",
-        "audio": "Audio"
+        "audio": "Audio",
+        "word": "Word"
     },
     "about": [
         "I'm Z3-R0, your chaotic bot buddy. I love to chat and make you laugh!",
@@ -172,5 +173,13 @@
         "i_win": "Win",
         "i_lose": "Lose",
         "draw": "Draw"
+    },
+    "hangman": {
+        "prompt": "Type a letter (a-z) or guess the whole word.",
+        "already_guessed": "You already tried that one!",
+        "progress": "Word",
+        "attempts_left": "Lives left",
+        "wrong_guesses": "Misses",
+        "wrong_word": "Nope, that’s not it!"
     }
 }

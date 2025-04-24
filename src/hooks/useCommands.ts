@@ -4,6 +4,7 @@ import { CommandResult } from "../types/command";
 import { useRPSGame } from "./useRPSGame";
 import { useGamesManager } from "./useGamesManager";
 import { useConversation } from "./useConversation";
+import { useHangmanGame } from "./useHangmanGame";
 
 export function useCommands() {
     const { t } = useTranslation();
@@ -12,6 +13,7 @@ export function useCommands() {
         useRandom();
     const gamesManager = useGamesManager();
     const rpsGame = useRPSGame(gamesManager);
+    const hangmanGame = useHangmanGame(gamesManager);
 
     function help(): CommandResult {
         return {
@@ -42,6 +44,7 @@ export function useCommands() {
     const pongCommand = () => ({ content: "🏓 ~pong", type: "text" });
     const echoCommand = (message: string) => ({ content: message, type: "text" });
     const rpsCommand = () => gamesManager.startGame(rpsGame.session());
+    const hangmanCommand = () => gamesManager.startGame(hangmanGame.session());
 
     const commands: Record<string, (...args: string[]) => CommandResult> = {
         "!meme": memeCommand,
@@ -70,7 +73,7 @@ export function useCommands() {
         "!pong": pongCommand,
         "!echo": echoCommand,
         "!rps": rpsCommand,
-        "!stop": () => gamesManager.stopGame(),
+        "!hangman": hangmanCommand
     };
 
     function resolveCommand(input: string): CommandResult | undefined {

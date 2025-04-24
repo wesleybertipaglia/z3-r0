@@ -68,5 +68,23 @@ export const intents = {
         "help me", "i need help", "give me a hand", "walk me through", "tell me what you can do",
         "how does this work", "show commands", "what are the commands", "what are you capable of",
         "what can i ask", "show me", "how do i", "instructions", "manual", "assistance", "can you help"
+    ],
+    nouns: [
+        "dog", "cat", "car", "house", "tree", "computer", "phone", "book", "table", "chair",
+        "food", "water", "music", "movie", "game", "friend", "family", "work", "school", "life",
+        "love", "happiness", "sadness", "anger", "fear", "joy", "peace", "adventure", "journey",
+        "dream", "goal", "success", "failure", "challenge", "opportunity", "experience", "memory",
+        "knowledge", "wisdom", "understanding", "insight", "perspective", "imagination", "creativity",
+        "innovation", "inspiration", "motivation", "determination", "perseverance", "resilience",
+        "strength", "courage", "bravery", "kindness", "compassion", "empathy", "gratitude", "forgiveness",
+        "humor", "laughter", "fun", "play", "exploration", "discovery", "learning", "growth",
+        "development", "transformation", "change", "evolution", "progress", "future", "possibility",
+        "potential", "dreams", "aspirations", "ambitions", "desires", "wishes", "hopes", "fears",
+        "anxieties", "concerns", "thoughts", "feelings", "emotions", "moods", "states of mind",
+        "attitudes", "beliefs", "values", "principles", "ethics", "morals", "standards", "norms",
+        "customs", "traditions", "cultures", "societies", "communities", "groups", "teams", "organizations",
+        "institutions", "systems", "structures", "networks", "connections", "relationships", "interactions",
+        "dynamics", "patterns", "trends", "phenomena", "events", "occurrences", "situations", "circumstances",
+        "contexts", "environments", "settings", "scenarios", "landscapes", "ecosystems", "worlds", "universes",
     ]
 };

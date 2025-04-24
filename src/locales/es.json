@@ -10,7 +10,8 @@
         "unknown_command": "Comando desconocido 🤖. Prueba con !meme, !bug o !compliment",
         "typing": "Z3-R0 está escribiendo...",
         "not_understood": "No entendí muy bien. ¿Puedes decirlo de otra manera?",
-        "audio": "Audio"
+        "audio": "Audio",
+        "word": "Palabra"
     },
     "placeholders": [
         "Escribe algo gracioso o un comando como !bug",
@@ -172,5 +173,14 @@
         "i_win": "Gano",
         "i_lose": "Pierdo",
         "draw": "Empate"
+    },
+    "hangman": {
+        "prompt": "Adivina la palabra o una letra (a-z)",
+        "already_guessed": "¡Ya intentaste esa letra!",
+        "progress": "palabra",
+        "attempts_left": "Intentos restantes",
+        "stop": "Juego detenido. Escribe '!hangman' para jugar de nuevo.",
+        "word": "La palabra era",
+        "wrong_word": "Palabra incorrecta!"
     }
 }
