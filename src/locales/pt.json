@@ -1,17 +1,18 @@
 {
     "ui": {
-        "title": "Z3-R0, o Bot Estranho",
-        "about": "Sou o Z3-R0, seu bot caótico e camarada.",
+        "title": "Z3-R0, o Bot doido",
+        "about": "Eu sou o Z3-R0, seu bot caótico de estimação.",
         "you": "Você",
         "me": "Eu",
         "i": "Eu",
         "language": "Idioma",
         "developed": "Desenvolvido com ❤️ por",
-        "unknown_command": "Comando desconhecido 🤖. Tente !meme, !bug ou !compliment",
+        "unknown_command": "Comando desconhecido 🤖. Tente !meme, !bug ou !elogio",
         "typing": "Z3-R0 está digitando...",
-        "not_understood": "Não entendi muito bem. Pode reformular?",
+        "not_understood": "Não entendi muito bem. Pode dizer de outro jeito?",
         "audio": "Áudio",
-        "word": "Palavra"
+        "word": "Palavra",
+        "say_something": "Diga alguma coisa..."
     },
     "placeholders": [
         "Digite algo engraçado ou um comando como !bug",
@@ -146,41 +147,57 @@
         "Fui criado para trazer um pouco de caos e diversão pro seu dia."
     ],
     "commands_list": [
+        "!help - Obtenha ajuda com os comandos.",
+        "!about - Saiba mais sobre mim.",
+        "!meme - Receba um meme aleatório.",
+        "!gif - Receba um GIF aleatório.",
+        "!music - Ouça uma música aleatória.",
+        "!game - Lista de jogos disponíveis.",
         "!advice - Receba um conselho aleatório.",
         "!compliment - Receba um elogio.",
         "!joke - Ouça uma piada engraçada.",
         "!funfact - Aprenda uma curiosidade divertida.",
         "!quote - Receba uma citação inspiradora.",
         "!bug - Reporte um bug.",
-        "!debug - Rode diagnósticos.",
-        "!meme - Receba um meme aleatório.",
-        "!gif - Receba um GIF aleatório.",
-        "!music - Ouça uma música aleatória.",
-        "!help - Obtenha ajuda com os comandos.",
-        "!about - Saiba mais sobre mim."
+        "!debug - Rode diagnósticos."
     ],
-    "rps": {
-        "welcome": "🎮 Pedra, Papel ou Tesoura? Digite Digite 'pedra', 'papel' ou 'tesoura' para jogar!",
-        "rock": "pedra",
-        "paper": "papel",
-        "scissors": "tesoura",
-        "invalid": "Escolha inválida! Digite 'pedra', 'papel' ou 'tesoura'.",
-        "stop": "Jogo parado. Digite '!rps' para jogar novamente."
-    },
     "game": {
-        "you_win": "Ganhou",
-        "you_lose": "Perdeu",
+        "you_win": "Vitória",
+        "you_lose": "Derrota",
         "i_win": "Ganhei",
         "i_lose": "Perdi",
         "draw": "Empate"
     },
-    "hangman": {
-        "prompt": "Adivinhe a palavra ou uma letra (a-z)",
-        "already_guessed": "Você já tentou essa letra!",
-        "progress": "palavra",
-        "attempts_left": "Tentativas restantes",
-        "stop": "Jogo parado. Digite '!hangman' para jogar novamente.",
-        "word": "A palavra era",
-        "wrong_word": "Palavra errada!"
+    "game_list": [
+        "!pong/!ping - Jogue uma partida de Pong.",
+        "!echo - Repito sua mensagem.",
+        "!rps - Pedra, Papel ou Tesoura, bora?",
+        "!hangman - Jogo da Forca.",
+        "!quiz - Teste seus conhecimentos num quiz.",
+        "!stop - Para o jogo atual."
+    ],
+    "game_rps": {
+        "welcome": "🎮 Pedra, Papel ou Tesoura? Digite 'pedra', 'papel' ou 'tesoura' pra jogar.",
+        "rock": "pedra",
+        "paper": "papel",
+        "scissors": "tesoura",
+        "invalid": "Opção inválida! Escolha entre 'pedra', 'papel' ou 'tesoura'.",
+        "stop": "Jogo encerrado. Digite '!rps' pra jogar de novo."
+    },
+    "game_hangman": {
+        "prompt": "Digite uma letra (a-z) ou tente adivinhar a palavra inteira.",
+        "already_guessed": "Você já tentou essa!",
+        "progress": "Palavra",
+        "attempts_left": "Vidas restantes",
+        "wrong_guesses": "Erros",
+        "wrong_word": "Ih, não foi dessa vez!"
+    },
+    "game_quiz": {
+        "question": "Hora de colocar o cérebro pra funcionar",
+        "you_got_it": "Boa! Acertou em cheio!",
+        "correct_answer_was": "Eita… a certa era",
+        "better_luck": "Tente de novo, gênio!",
+        "already_answered": "Ei, você já respondeu essa!",
+        "stop": "Quiz encerrado. Quem sabe na próxima você encara. 😏"
     }
 }

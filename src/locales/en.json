@@ -11,7 +11,8 @@
         "typing": "Z3-R0 is typing...",
         "not_understood": "I didn't quite get that. Can you rephrase?",
         "audio": "Audio",
-        "word": "Word"
+        "word": "Word",
+        "say_something": "Say something..."
     },
     "about": [
         "I'm Z3-R0, your chaotic bot buddy. I love to chat and make you laugh!",
@@ -167,7 +168,7 @@
         "i_lose": "Lose",
         "draw": "Draw"
     },
-    "games_list": [
+    "game_list": [
         "!pong/!ping - Play a game of Pong.",
         "!echo - Echo your message.",
         "!rps - Play Rock, Paper, Scissors.",
@@ -175,7 +176,7 @@
         "!quiz - Test your knowledge with a quiz.",
         "!stop - Stop the current game."
     ],
-    "rps": {
+    "game_rps": {
         "welcome": "🎮 Rock, Paper, or Scissors? Type 'rock', 'paper', or 'scissors' to play.",
         "rock": "rock",
         "paper": "paper",
@@ -183,7 +184,7 @@
         "invalid": "Invalid choice! Please type 'rock', 'paper', or 'scissors'.",
         "stop": "Game stopped. Type '!rps' to play again."
     },
-    "hangman": {
+    "game_hangman": {
         "prompt": "Type a letter (a-z) or guess the whole word.",
         "already_guessed": "You already tried that one!",
         "progress": "Word",
@@ -191,7 +192,7 @@
         "wrong_guesses": "Misses",
         "wrong_word": "Nope, that’s not it!"
     },
-    "quiz": {
+    "game_quiz": {
         "question": "Here's your brain-buster",
         "you_got_it": "Boom! You nailed it!",
         "correct_answer_was": "Oof, not quite. The right answer was",

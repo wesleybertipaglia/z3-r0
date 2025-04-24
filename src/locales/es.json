@@ -1,17 +1,18 @@
 {
     "ui": {
-        "title": "Z3-R0, el Bot Extraño",
-        "about": "Soy Z3-R0, tu caótico amigo bot.",
+        "title": "Z3-R0, el Bot Raro",
+        "about": "Soy Z3-R0, tu bot caótico de confianza.",
         "you": "Tú",
         "me": "Yo",
         "i": "Yo",
         "language": "Idioma",
         "developed": "Desarrollado con ❤️ por",
-        "unknown_command": "Comando desconocido 🤖. Prueba con !meme, !bug o !compliment",
+        "unknown_command": "Comando desconocido 🤖. Prueba !meme, !bug o !piropo",
         "typing": "Z3-R0 está escribiendo...",
-        "not_understood": "No entendí muy bien. ¿Puedes decirlo de otra manera?",
+        "not_understood": "No entendí eso. ¿Lo puedes decir de otra forma?",
         "audio": "Audio",
-        "word": "Palabra"
+        "word": "Palabra",
+        "say_something": "Di algo..."
     },
     "placeholders": [
         "Escribe algo gracioso o un comando como !bug",
@@ -159,28 +160,43 @@
         "!help - Obtén ayuda con los comandos.",
         "!about - Aprende más sobre mí."
     ],
-    "rps": {
-        "welcome": "🎮 Piedra, papel o tijera. Escribe 'piedra', 'papel' o 'tijera' para jugar.",
+    "game": {
+        "you_win": "Ganaste",
+        "you_lose": "Perdiste",
+        "i_win": "Gané",
+        "i_lose": "Perdí",
+        "draw": "Empate"
+    },
+    "game_list": [
+        "!pong/!ping - Juega una partida de Pong.",
+        "!echo - Repito lo que dices.",
+        "!rps - Piedra, Papel o Tijera. ¡Dale!",
+        "!hangman - Ahorcado.",
+        "!quiz - Demuestra lo que sabes con un quiz.",
+        "!stop - Detiene el juego actual."
+    ],
+    "game_rps": {
+        "welcome": "🎮 ¿Piedra, Papel o Tijera? Escribe 'piedra', 'papel' o 'tijera' para jugar.",
         "rock": "piedra",
         "paper": "papel",
         "scissors": "tijera",
-        "invalid": "¡Elección inválida! Por favor, escribe 'piedra', 'papel' o 'tijera'.",
-        "stop": "Juego detenido. Escribe '!rps' para jugar de nuevo."
+        "invalid": "¡Opción inválida! Escribe 'piedra', 'papel' o 'tijera'.",
+        "stop": "Juego detenido. Escribe '!rps' para jugar otra vez."
     },
-    "game": {
-        "you_win": "Ganas",
-        "you_lose": "Pierdes",
-        "i_win": "Gano",
-        "i_lose": "Pierdo",
-        "draw": "Empate"
+    "game_hangman": {
+        "prompt": "Escribe una letra (a-z) o intenta adivinar la palabra completa.",
+        "already_guessed": "¡Ya intentaste esa!",
+        "progress": "Palabra",
+        "attempts_left": "Vidas restantes",
+        "wrong_guesses": "Errores",
+        "wrong_word": "¡Nada que ver!"
     },
-    "hangman": {
-        "prompt": "Adivina la palabra o una letra (a-z)",
-        "already_guessed": "¡Ya intentaste esa letra!",
-        "progress": "palabra",
-        "attempts_left": "Intentos restantes",
-        "stop": "Juego detenido. Escribe '!hangman' para jugar de nuevo.",
-        "word": "La palabra era",
-        "wrong_word": "Palabra incorrecta!"
+    "game_quiz": {
+        "question": "Prepárate, ahí va una buena",
+        "you_got_it": "¡Boom! ¡La clavaste!",
+        "correct_answer_was": "Uff… la respuesta correcta era",
+        "better_luck": "¡Mejor suerte la próxima, crack!",
+        "already_answered": "¡Oye! Esa ya la respondiste.",
+        "stop": "Quiz cancelado. Tal vez la próxima te animas. 😏"
     }
 }
