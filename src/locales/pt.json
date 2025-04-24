@@ -3,6 +3,8 @@
         "title": "Z3-R0, o Bot Estranho",
         "about": "Sou o Z3-R0, seu bot caótico e camarada.",
         "you": "Você",
+        "me": "Eu",
+        "i": "Eu",
         "language": "Idioma",
         "developed": "Desenvolvido com ❤️ por",
         "unknown_command": "Comando desconhecido 🤖. Tente !meme, !bug ou !compliment",
@@ -155,5 +157,20 @@
         "!music - Ouça uma música aleatória.",
         "!help - Obtenha ajuda com os comandos.",
         "!about - Saiba mais sobre mim."
-    ]
+    ],
+    "rps": {
+        "welcome": "🎮 Pedra, Papel ou Tesoura? Digite Digite 'pedra', 'papel' ou 'tesoura' para jogar!",
+        "rock": "pedra",
+        "paper": "papel",
+        "scissors": "tesoura",
+        "invalid": "Escolha inválida! Digite 'pedra', 'papel' ou 'tesoura'.",
+        "stop": "Jogo parado. Digite '!rps' para jogar novamente."
+    },
+    "game": {
+        "you_win": "Ganhou",
+        "you_lose": "Perdeu",
+        "i_win": "Ganhei",
+        "i_lose": "Perdi",
+        "draw": "Empate"
+    }
 }

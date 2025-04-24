@@ -3,9 +3,11 @@ import { useRandom } from "./useRandom";
 import { CommandResult } from "../types/command";
 import { useRPSGame } from "./useRPSGame";
 import { useGamesManager } from "./useGamesManager";
+import { useConversation } from "./useConversation";
 
 export function useCommands() {
     const { t } = useTranslation();
+    const { handleMessage } = useConversation();
     const { getRandomMeme, getRandomGif, getRandomMusic, getRandomSentence, getCompleteRandomSentence } =
         useRandom();
     const gamesManager = useGamesManager();
@@ -80,8 +82,9 @@ export function useCommands() {
 
         const [command, ...args] = normalized.split(" ");
         const commandFn = commands[command];
-        return commandFn ? commandFn(...args) : { content: t("ui.unknown_command"), type: "text" };
+        return commandFn ? commandFn(...args) : { content: handleMessage(input), type: "text" };
     }
+
 
     return { resolveCommand };
 }

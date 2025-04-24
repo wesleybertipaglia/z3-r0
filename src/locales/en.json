@@ -3,6 +3,8 @@
         "title": "Z3-R0 the Weird Bot",
         "about": "I am Z3-R0, your chaotic bot buddy.",
         "you": "You",
+        "me": "Me",
+        "i": "I",
         "language": "Language",
         "developed": "Developed with ❤️ by",
         "unknown_command": "Unknown command 🤖. Try !meme, !bug or !compliment",
@@ -155,5 +157,20 @@
         "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston S. Churchill",
         "The only way to do great work is to love what you do. - Steve Jobs",
         "Don't watch the clock; do what it does. Keep going. - Sam Levenson"
-    ]
+    ],
+    "rps": {
+        "welcome": "🎮 Rock, Paper, or Scissors? Type 'rock', 'paper', or 'scissors' to play.",
+        "rock": "rock",
+        "paper": "paper",
+        "scissors": "scissors",
+        "invalid": "Invalid choice! Please type 'rock', 'paper', or 'scissors'.",
+        "stop": "Game stopped. Type '!rps' to play again."
+    },
+    "game": {
+        "you_win": "Win",
+        "you_lose": "Lose",
+        "i_win": "Win",
+        "i_lose": "Lose",
+        "draw": "Draw"
+    }
 }
