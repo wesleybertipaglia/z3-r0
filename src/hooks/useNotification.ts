@@ -33,8 +33,6 @@ export function useNotification() {
 
 
     const sendNotification = useCallback((title: string, options?: NotificationOptions) => {
-        console.log("isPageVisible", isPageVisible);
-        console.log("permission", permission);
         if (permission === "granted" && !isPageVisible) {
             new Notification(title, options);
         }
