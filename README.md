@@ -4,9 +4,9 @@
 
 ![Z3-R0](./demo/z3r0.jpg)
 
-Instead of a traditional game, I created an **interactive AI chatbot with a bold personality**, packed with entertainment features and lightweight design choices. Z3-R0 is your virtual sidekick: it chats, jokes, plays minigames, speaks aloud, and even reacts when you go AFK.
+Rather than using real AI or NLP services, **Z3-R0 simulates a chatbot experience** through a custom-built intent-matching algorithm. It analyzes user input patterns and responds with scripted interactions, creating the illusion of intelligence and personality — all handled entirely on the frontend with no backend or cloud processing required.
 
-Built with **React**, **TypeScript**, and **Vite**, Z3-R0 was designed to be fast, fun, and easily deployable — even in resource-limited environments.
+Built with **React**, **TypeScript**, and **Vite**, Z3-R0 is designed to be fast, playful, and easy to deploy, making it perfect for lightweight hosting environments like Alibaba Cloud's OSS or ECS.
 
 ## 📌 Table of Contents
 
