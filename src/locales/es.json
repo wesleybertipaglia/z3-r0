@@ -12,7 +12,8 @@
         "not_understood": "No entendí eso. ¿Lo puedes decir de otra forma?",
         "audio": "Audio",
         "word": "Palabra",
-        "say_something": "Di algo..."
+        "say_something": "Di algo...",
+        "notification": "¡Ey, ey! Tienes un nuevo mensaje de Z3-R0! 😎"
     },
     "placeholders": [
         "Escribe algo gracioso o un comando como !bug",

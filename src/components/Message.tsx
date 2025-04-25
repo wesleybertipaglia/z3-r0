@@ -9,6 +9,11 @@ const Message = ({ from, content, type, style }: MessageDto) => {
     const isUser = from === "user";
     const { t } = useTranslation();
 
+    const isSingleEmoji = (text: string) => {
+        const emojiRegex = /^(\p{Extended_Pictographic}|\p{Emoji_Presentation})$/u;
+        return emojiRegex.test(text);
+    };
+
     const getStyleClass = () => {
         switch (style) {
             case "glitch":
@@ -59,7 +64,14 @@ const Message = ({ from, content, type, style }: MessageDto) => {
             case "audio":
                 return <Audio text={content as string} />;
             default:
-                return <p className={`break-words overflow-hidden text-ellipsis ${getStyleClass()}`}>{content as string}</p>;
+                return (
+                    <p
+                        className={`break-words overflow-hidden text-ellipsis ${getStyleClass()} ${isSingleEmoji(content as string) ? "text-4xl" : ""
+                            }`}
+                    >
+                        {content as string}
+                    </p>
+                );
         }
     };
 

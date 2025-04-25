@@ -12,7 +12,8 @@
         "not_understood": "I didn't quite get that. Can you rephrase?",
         "audio": "Audio",
         "word": "Word",
-        "say_something": "Say something..."
+        "say_something": "Say something...",
+        "notification": "Hey, hey! You've got a new message from Z3-R0! 😎"
     },
     "about": [
         "I'm Z3-R0, your chaotic bot buddy. I love to chat and make you laugh!",

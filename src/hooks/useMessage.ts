@@ -3,10 +3,12 @@ import { useRandom } from "./useRandom";
 import { From, MessageDto, MessageType } from "../types/message";
 import { nanoid } from "nanoid";
 import { useNotification } from "./useNotification";
+import { useTranslation } from "react-i18next";
 
 const STORAGE_KEY = "messages";
 
 export function useMessage() {
+    const { t } = useTranslation();
     const [messages, setMessages] = useState<MessageDto[]>([]);
     const [initialized, setInitialized] = useState(false);
     const { getRandomType, getCompleteRandomSentence, getRandomGif, getRandomMeme, getRandomMusic, } = useRandom();
@@ -31,7 +33,7 @@ export function useMessage() {
         setMessages((prev) => [...prev, message]);
 
         if (message.from === "bot") {
-            sendNotification("New message from Z3-R0", {
+            sendNotification(t("ui.notification"), {
                 body: typeof message.content === "string" ? message.content : undefined,
                 icon: "/profile.jpg",
             });
@@ -57,8 +59,8 @@ export function useMessage() {
             case "audio":
                 send({ from: "bot", content: getCompleteRandomSentence(), type: "audio" });
                 break;
-            case "component":
-                send({ from: "bot", content: getRandomMusic(), type: "component" });
+            case "music":
+                send({ from: "bot", content: getRandomMusic(), type: "music" });
                 break;
             default:
                 send({ from: "bot", content: getCompleteRandomSentence(), type: "text" });
