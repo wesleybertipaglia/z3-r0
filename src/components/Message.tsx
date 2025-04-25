@@ -14,8 +14,6 @@ const Message = ({ from, content, type, style }: MessageDto) => {
         return emojiRegex.test(text);
     };
 
-
-
     const getStyleClass = () => {
         switch (style) {
             case "glitch":
