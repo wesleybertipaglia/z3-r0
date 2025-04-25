@@ -3,6 +3,7 @@ import gifs from "../data/gifs";
 import memes from "../data/memes";
 import musics from "../data/musics";
 import { MessageType, messageTypes } from "../types/message.d";
+import lirics from "../data/lirics";
 
 export function useRandom() {
     const { t } = useTranslation();
@@ -17,6 +18,10 @@ export function useRandom() {
 
     function getRandomMusic() {
         return musics[Math.floor(Math.random() * musics.length)];
+    }
+
+    function getRandomLiric() {
+        return lirics[Math.floor(Math.random() * lirics.length)];
     }
 
     function getRandomSentence(key: string): string {
@@ -35,5 +40,5 @@ export function useRandom() {
         return messageTypes[Math.floor(Math.random() * messageTypes.length)];
     }
 
-    return { getRandomMeme, getRandomGif, getRandomMusic, getRandomSentence, getCompleteRandomSentence, getRandomType };
+    return { getRandomMeme, getRandomGif, getRandomMusic, getRandomLiric, getRandomSentence, getCompleteRandomSentence, getRandomType };
 }

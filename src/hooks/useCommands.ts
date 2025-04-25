@@ -13,7 +13,7 @@ import { useWordScrambleGame } from "./useWordScrambleGame";
 export function useCommands() {
     const { t } = useTranslation();
     const { handleMessage } = useConversation();
-    const { getRandomMeme, getRandomGif, getRandomMusic, getRandomSentence, getCompleteRandomSentence } =
+    const { getRandomMeme, getRandomGif, getRandomMusic, getRandomLiric, getRandomSentence, getCompleteRandomSentence } =
         useRandom();
     const gamesManager = useGamesManager();
     const rpsGame = useRPSGame(gamesManager);
@@ -54,7 +54,7 @@ export function useCommands() {
     const gifCommand = () => ({ content: getRandomGif(), type: "image" });
     const musicCommand = () => ({ content: getRandomMusic(), type: "music" });
     const audioCommand = () => ({ content: getCompleteRandomSentence(), type: "audio" });
-
+    const singCommand = () => ({ content: getRandomLiric(), type: "audio" });
 
     // Game commands
     const pingCommand = () => ({ content: "🏓 ~ping", type: "text" });
@@ -105,6 +105,7 @@ export function useCommands() {
         "!guessnumber": guessNumberGameCommand,
         "!guess": guessNumberGameCommand,
         "!scramble": wordScrambleGameCommand,
+        "!sing": singCommand
     };
 
     function resolveCommand(input: string): CommandResult | undefined {
