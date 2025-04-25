@@ -28,7 +28,7 @@ const Audio = ({ text }: Props) => {
                     className="w-10 h-10 rounded-full object-cover"
                 />
                 <button
-                    className="absolute -bottom-1 -right-1 shadow"
+                    className="absolute -bottom-1 -right-1 shadow cursor-pointer" onClick={() => speak(text)}
                 >
                     {isPlaying ? "⏹️" : "▶️"}
                 </button>
