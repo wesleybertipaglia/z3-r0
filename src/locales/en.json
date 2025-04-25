@@ -37,6 +37,7 @@
     ],
     "commands_list": [
         "!help - Get help with commands.",
+        "!lore - Learn about my backstory.",
         "!about - Learn more about me.",
         "!meme - Get a random meme.",
         "!gif - Get a random GIF.",

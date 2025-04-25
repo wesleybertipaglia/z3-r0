@@ -148,6 +148,7 @@
         "Fui creado para traerte un poco de caos y diversión a tu día."
     ],
     "commands_list": [
+        "!lore - Conoce la historia de Z3-R0.",
         "!advice - Recibe un consejo aleatorio.",
         "!compliment - Recibe un cumplido.",
         "!joke - Escucha un chiste gracioso.",

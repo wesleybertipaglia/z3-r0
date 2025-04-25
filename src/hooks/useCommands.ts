@@ -48,6 +48,7 @@ export function useCommands() {
     const bugCommand = () => ({ content: getRandomSentence("bugs"), type: "code", style: "glitch" });
     const debugCommand = () => ({ content: getRandomSentence("debug"), type: "code", style: "glitch" });
     const aboutCommand = () => ({ content: getRandomSentence("about"), type: "text" });
+    const loreCommand = () => ({ content: "", type: "lore" });
 
     // Media commands
     const memeCommand = () => ({ content: getRandomMeme(), type: "image" });
@@ -105,7 +106,8 @@ export function useCommands() {
         "!guessnumber": guessNumberGameCommand,
         "!guess": guessNumberGameCommand,
         "!scramble": wordScrambleGameCommand,
-        "!sing": singCommand
+        "!sing": singCommand,
+        "!lore": loreCommand
     };
 
     function resolveCommand(input: string): CommandResult | undefined {

@@ -4,6 +4,7 @@ import Audio from "./Audio";
 import HtmlMessage from "./HtmlMessage";
 import React from "react";
 import SpotifyFrame from "./SpotifyFrame";
+import LoreCrawl from "./LoreCrawl";
 
 const Message = ({ from, content, type, style }: MessageDto) => {
     const isUser = from === "user";
@@ -63,6 +64,8 @@ const Message = ({ from, content, type, style }: MessageDto) => {
                 return <SpotifyFrame track={content as string} />;
             case "audio":
                 return <Audio text={content as string} />;
+            case "lore":
+                return <LoreCrawl />;
             default:
                 return (
                     <p
@@ -77,7 +80,9 @@ const Message = ({ from, content, type, style }: MessageDto) => {
 
     return (
         <div className={`flex ${isUser ? "justify-end" : "justify-start"} my-2 overflow-hidden`}>
-            <div className={`space-y-2 w-[70%] hover:shadow-md hover:bg-neutral-800/30 transition rounded p-2 ${isUser ? "text-end" : ""}`}>
+            <div
+                className={`space-y-2 ${type !== "lore" ? "w-[70%]" : "w-full"} hover:shadow-md hover:bg-neutral-800/30 transition rounded p-2 ${isUser ? "text-end" : ""}`}>
+
                 <p className={`text-sm ${isUser ? "text-cyan-500" : "text-emerald-500"}`}>
                     {isUser ? t("ui.you") : "Z3-R0"}
                 </p>

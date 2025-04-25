@@ -11,7 +11,8 @@ export const messageTypes = [
     "audio",
     "music",
     "video",
-    "file"
+    "file",
+    "lore",
 ];
 
 export const messageStyles = [
