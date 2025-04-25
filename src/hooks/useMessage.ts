@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import { useRandom } from "./useRandom";
 import { From, MessageDto, MessageType } from "../types/message";
 import { nanoid } from "nanoid";
+import { useNotification } from "./useNotification";
 
 const STORAGE_KEY = "messages";
 
 export function useMessage() {
     const [messages, setMessages] = useState<MessageDto[]>([]);
     const [initialized, setInitialized] = useState(false);
-    const { getRandomType, getCompleteRandomSentence, getRandomGif, getRandomMeme, getRandomMusic } = useRandom();
+    const { getRandomType, getCompleteRandomSentence, getRandomGif, getRandomMeme, getRandomMusic, } = useRandom();
+    const { sendNotification } = useNotification();
 
     useEffect(() => {
         const stored = localStorage.getItem(STORAGE_KEY);
@@ -27,23 +29,25 @@ export function useMessage() {
 
     function addMessage(message: MessageDto) {
         setMessages((prev) => [...prev, message]);
+
+        if (message.from === "bot") {
+            sendNotification("New message from Z3-R0", {
+                body: typeof message.content === "string" ? message.content : undefined,
+                icon: "/profile.jpg",
+            });
+        }
     }
 
-    function send({ from, content, type, style }: { from: From, content: string, type?: MessageType, style?: string }) {
-        addMessage({
-            id: nanoid(),
-            from,
-            content,
-            type,
-            style
-        });
+    function send({ from, content, type, style, }: { from: From; content: string; type?: MessageType; style?: string; }) {
+        addMessage({ id: nanoid(), from, content, type, style, });
     }
 
     function sendRandomMessage() {
         const randomType = getRandomType();
 
         switch (randomType) {
-            case "text": send({ from: "bot", content: getCompleteRandomSentence(), type: "text" })
+            case "text":
+                send({ from: "bot", content: getCompleteRandomSentence(), type: "text" });
                 break;
             case "image": {
                 const gifOrMeme = Math.random() < 0.5 ? getRandomMeme() : getRandomGif();
