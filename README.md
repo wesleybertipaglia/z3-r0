@@ -1,31 +1,35 @@
 # 🤖 Z3-R0
 
-This repository contains my submission for the [Alibaba Cloud Game Challenge](https://dev.to/devteam/join-us-for-the-alibaba-cloud-web-game-challenge-3000-in-prizes-1n5d?bb=220943), where participants were asked to build a creative game or interactive experience with a **robot-themed concept**.
+**Z3-R0** is my submission for the [Alibaba Cloud Web Game Challenge](https://dev.to/devteam/join-us-for-the-alibaba-cloud-web-game-challenge-3000-in-prizes-1n5d?bb=220943) — a creative contest that invites developers to build robot-themed games or experiences using web technologies and Alibaba Cloud services.
 
-**Z3-R0** is a sassy AI chatbot that plays games, cracks jokes, speaks out loud, and even entertains you when you're inactive. Built for fun and engagement, Z3-R0 is powered by web tech, AI vibes, and a dash of personality.
+![Z3-R0](./demo/z3r0.jpg)
+
+Instead of a traditional game, I created an **interactive AI chatbot with a bold personality**, packed with entertainment features and lightweight design choices. Z3-R0 is your virtual sidekick: it chats, jokes, plays minigames, speaks aloud, and even reacts when you go AFK.
+
+Built with **React**, **TypeScript**, and **Vite**, Z3-R0 was designed to be fast, fun, and easily deployable — even in resource-limited environments.
 
 ## 📌 Table of Contents
 
-- [Features](#features)
-- [Demo](#demo)
-- [Get Started](#get-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
+- [Features](#-features)
+- [Demo](#-demo)
+- [Getting Started](#-getting-started)
+- [Usage](#-usage)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Acknowledgements](#-acknowledgements)
 
 ## 💡 Features
 
-- 🎮 Interactive commands for gifs, memes, jokes, quotes, games, and music
-- 🗣️ Voice messages using `SpeechSynthesisUtterance` API
-- 🧠 Simulated conversational engine
-- 💤 Inactivity detection with random responses (images, jokes, etc.)
-- 🌍 Multi-language support: EN, ES, PT, CH, HI
-- 💾 Local storage for user language + recent chat history (20 messages)
-- 🛰️ Fun status bar messages like “Feeding the AI ego…”
-- 🎭 Animations for online/offline transitions
-- 🔊 Integrated sound effects
-- 🐳 Docker support for static build and easy deployment
+- 🎮 **Interactive commands**: gifs, memes, jokes, quotes, games, music & more
+- 🗣️ **Text-to-speech**: Uses the Web Speech API to speak responses aloud
+- 🧠 **Simulated conversation**: Predefined behavior patterns for quirky dialogue
+- 💤 **Idle detection**: Reacts with surprises when you’re inactive
+- 🌍 **Multi-language support**: EN, ES, PT, CH, HI
+- 💾 **Persistent local storage**: Saves language preference and last 20 messages
+- 🛰️ **Dynamic status messages**: Adds personality with randomized system statuses
+- 🎭 **Smooth UI transitions**: Online/offline animations and effects
+- 🔊 **Sound effects integration**
+- 🐳 **Docker-ready**: For clean builds and easy deployment
 
 ## 🚀 Demo
 
@@ -77,7 +81,9 @@ Once the bot is live, try typing:
 - `!meme` to fetch a meme
 - `!joke` for a random joke
 - `!quote` for a motivational quote
-- `!game` to play a game
+- `!game` to get a list of available games
+- `!hangman` to play Hangman
+- `!trivia` to test your trivia knowledge
 - `!music` to listen to some tunes
 - `!help` for a list of commands
 
