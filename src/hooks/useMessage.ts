@@ -59,8 +59,8 @@ export function useMessage() {
             case "audio":
                 send({ from: "bot", content: getCompleteRandomSentence(), type: "audio" });
                 break;
-            case "component":
-                send({ from: "bot", content: getRandomMusic(), type: "component" });
+            case "music":
+                send({ from: "bot", content: getRandomMusic(), type: "music" });
                 break;
             default:
                 send({ from: "bot", content: getCompleteRandomSentence(), type: "text" });
