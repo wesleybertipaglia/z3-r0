@@ -86,5 +86,33 @@ export const intents = {
         "institutions", "systems", "structures", "networks", "connections", "relationships", "interactions",
         "dynamics", "patterns", "trends", "phenomena", "events", "occurrences", "situations", "circumstances",
         "contexts", "environments", "settings", "scenarios", "landscapes", "ecosystems", "worlds", "universes",
+    ],
+    years_old: [
+        "years old", "age", "old", "young", "youth", "teenager", "adult", "senior", "elderly",
+        "middle-aged", "child", "kid", "baby", "toddler", "preteen", "teen", "twenty-something",
+        "thirty-something", "forty-something", "fifty-something"
+    ],
+    where_you_from: [
+        "where are you from", "where do you live", "where do you come from", "where's home", "where's your base",
+        "where's your origin", "where's your headquarters", "where's your location", "where's your place",
+        "where's your city", "where's your country", "where's your continent", "where's your planet",
+        "where's your universe", "you from", "u from", "where are you located", "where's your roots",
+    ],
+    how_are: [
+        "how are you", "how's it going", "how are things", "how's life", "how do you do", "how's your day",
+        "how's everything", "how's your week", "how's your month", "how's your year", "how's your health",
+        "how's your family", "how's your job", "how's your school", "how's your life"
+    ],
+    hobbies: [
+        "hobbie", "hobbies", "interests", "activities", "What are your hobbies", "What do you like to do", "What are your interests",
+        "What do you enjoy", "What are your favorite activities", "What do you do for fun", "What are your pastimes",
+        "What are your leisure activities", "What are your favorite things to do", "What are your passions",
+        "What are your favorite pastimes", "What do you like to do in your free time", "What are your favorite hobbies",
+    ],
+    "capabilities": [
+        "what can you do", "what are your capabilities", "what are your features", "what are your abilities",
+        "what can you do for me", "what can you help with", "what can you assist with", "what can you offer",
+        "what can you provide", "what can you show me", "what can you tell me", "what can you explain",
+        "what can you teach me", "what can you share with me", "what can you do for us"
     ]
 };
