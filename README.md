@@ -28,7 +28,7 @@ Built with **React**, **TypeScript**, and **Vite**, Z3-R0 is designed to be fast
 - 💾 **Persistent local storage**: Saves language preference and last 20 messages
 - 🛰️ **Dynamic status messages**: Adds personality with randomized system statuses
 - 🎭 **Smooth UI transitions**: Online/offline animations and effects
-- 🔊 **Sound effects integration**
+- 🔔 **Browser Notifications**: Alerts you when Z3-R0 is ready to chat
 - 🐳 **Docker-ready**: For clean builds and easy deployment
 
 ## 🚀 Demo
