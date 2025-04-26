@@ -20,7 +20,7 @@ class CommandService {
         const commandFn = this.commands[command];
         if (commandFn) return commandFn(...args);
 
-        return { content: input, type: "text" };
+        return undefined;
     }
 }
 

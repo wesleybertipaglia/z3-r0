@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { MessageType } from "../../types/message";
-import { useRandom } from "./useRandom";
+import { useRandom } from "../media/useRandom";
 
 export function useWelcome(
     initialized: boolean,

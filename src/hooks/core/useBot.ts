@@ -1,20 +1,17 @@
 import { useState, useRef } from "react";
-import { useMessage } from "./useMessage";
-import { useCommands } from "./useCommands";
-import { useSound } from "./useSound";
+import { useMessage } from "../message/useMessage";
+import { useSound } from "../media/useSound";
 import { MessageType } from "../../types/message";
-import { useWelcome } from "./useWelcome";
+import { useWelcome } from "../message/useWelcome";
 import { useInactivity } from "./useInactivity";
-import { useConversation } from "./useConversation";
-import { useCommandRegister } from "./useCommandRegister";
+import { useCommandRegister } from "../command/useCommandRegister";
+import { useMessageRouter } from "../message/useMessageRouter";
 
 export function useBot() {
     const { messages, send, initialized, sendRandomMessage } = useMessage();
-    const { resolveCommand } = useCommands();
     const { play } = useSound();
     const [isTyping, setIsTyping] = useState(false);
     const lastInteractionRef = useRef(Date.now());
-    const { handleMessage } = useConversation();
 
     // 👋 Welcome logic
     useWelcome(initialized, messages.length, onBotMessage);
@@ -26,17 +23,14 @@ export function useBot() {
     useCommandRegister();
 
     // 💬 User message logic
+    const { resolve } = useMessageRouter();
+
     function onUserMessage(text: string) {
         lastInteractionRef.current = Date.now();
         send({ from: "user", content: text });
-        const commandResult = resolveCommand(text.trim());
 
-        if (commandResult) {
-            onBotMessage({ type: commandResult.type ?? "text", content: commandResult.content });
-        } else {
-            const conversationReply = handleMessage(text);
-            onBotMessage({ type: "text", content: conversationReply });
-        }
+        const result = resolve(text.trim());
+        onBotMessage({ type: result.type ?? "text", content: result.content });
     }
 
     // 🤖 Bot message logic

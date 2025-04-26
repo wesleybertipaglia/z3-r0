@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { useRandom } from "./useRandom";
 import { From, MessageDto, MessageType } from "../../types/message";
 import { nanoid } from "nanoid";
-import { useNotification } from "./useNotification";
+import { useNotification } from "../core/useNotification";
 import { useTranslation } from "react-i18next";
+import { useRandom } from "../media/useRandom";
 
 const STORAGE_KEY = "messages";
 
