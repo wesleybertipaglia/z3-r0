@@ -18,14 +18,14 @@ const Audio = ({ text }: Props) => {
         return `${min}:${sec}`;
     };
 
-
     return (
         <div className="flex items-start gap-4 bg-zinc-800 text-white rounded-2xl p-3 max-w-xs shadow-sm cursor-pointer" onClick={() => speak(text)}>
             <div className='relative'>
                 <img
                     src="/profile.jpg"
                     alt="Avatar"
-                    className="w-10 h-10 rounded-full object-cover" />
+                    className="w-10 h-10 rounded-full object-cover"
+                    loading='lazy' />
                 <button className="absolute -bottom-1 -right-1 shadow">
                     {isPlaying ? "⏹️" : "▶️"}
                 </button>
