@@ -12,6 +12,7 @@ export function useBot() {
     const { play } = useSound();
     const [isTyping, setIsTyping] = useState(false);
     const lastInteractionRef = useRef(Date.now());
+    const { resolve } = useMessageRouter();
 
     // 👋 Welcome logic
     useWelcome(initialized, messages.length, onBotMessage);
@@ -23,8 +24,6 @@ export function useBot() {
     useCommandRegister();
 
     // 💬 User message logic
-    const { resolve } = useMessageRouter();
-
     function onUserMessage(text: string) {
         lastInteractionRef.current = Date.now();
         send({ from: "user", content: text });
