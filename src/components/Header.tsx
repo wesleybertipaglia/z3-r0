@@ -21,7 +21,7 @@ const Header = () => {
                 <nav className="flex items-center justify-between">
                     <div className="inline-flex items-center gap-4">
                         <div className="relative">
-                            <img src="/profile.jpg" alt="Z3-R0" className="h-10 w-10 rounded-full" loading='lazy' />
+                            <img src="/profile.webp" alt="Z3-R0" className="h-10 w-10 rounded-full" loading='lazy' />
                             {isOnline && (
                                 <span className="absolute -top-0 -right-1 w-1 h-1 rounded-full bg-green-500 animate-ping"></span>
                             )}

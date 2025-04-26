@@ -35,7 +35,7 @@ export function useMessage() {
         if (message.from === "bot") {
             sendNotification(t("ui.notification"), {
                 body: typeof message.content === "string" ? message.content : undefined,
-                icon: "/profile.jpg",
+                icon: "/profile.webp",
             });
         }
     }
