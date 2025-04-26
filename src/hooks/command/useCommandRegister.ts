@@ -10,6 +10,7 @@ import { useWordScrambleGame } from "../game/useWordScrambleGame";
 import { useTranslation } from "react-i18next";
 import { useRandom } from "../media/useRandom";
 import { CommandFunction, CommandResult } from "../../types/command";
+import { useCowsay } from "../game/useCowSay";
 
 export function useCommandRegister() {
     const { t } = useTranslation();
@@ -62,11 +63,10 @@ export function useCommandRegister() {
     registerCommand(["!joke", "!jokes"], () => ({ content: getRandomSentence("jokes"), type: "text" }));
     registerCommand(["quote", "!quotes"], () => ({ content: getRandomSentence("quotes"), type: "quote" }));
     registerCommand(["!fact", "!funfact", "!funfacts"], () => ({ content: getRandomSentence("funfacts"), type: "text" }));
+    registerCommand(["!cowsay", "!cows", "!moo", "!cow", "!saymoo"], useCowsay);
     registerCommand(["!ping"], () => ({ content: "🏓 ~ping", type: "text" }));
     registerCommand(["!pong"], () => ({ content: "🏓 ~pong", type: "text" }));
-    registerCommand(["!e", "!echo", "!say"], (message: string) => {
-        return { content: message || t("ui.say_something"), type: "text" };
-    });
+    registerCommand(["!e", "!echo", "!say"], (message: string) => { return { content: message || t("ui.say_something"), type: "text" }; });
 
     // 🖼️ Media Commands
     registerCommand(["!meme", "!memes"], () => ({ content: getRandomMeme(), type: "image" }));
