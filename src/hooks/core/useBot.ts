@@ -1,11 +1,11 @@
 import { useState, useRef } from "react";
 import { useMessage } from "../message/useMessage";
 import { useSound } from "../media/useSound";
-import { MessageType } from "../../types/message";
 import { useWelcome } from "../message/useWelcome";
 import { useInactivity } from "./useInactivity";
 import { useCommandRegister } from "../command/useCommandRegister";
 import { useMessageRouter } from "../message/useMessageRouter";
+import { CommandResult } from "../../types/command";
 
 export function useBot() {
     const { messages, send, initialized, sendRandomMessage } = useMessage();
@@ -29,15 +29,15 @@ export function useBot() {
         send({ from: "user", content: text });
 
         const result = resolve(text.trim());
-        onBotMessage({ type: result.type ?? "text", content: result.content });
+        onBotMessage(result);
     }
 
     // 🤖 Bot message logic
-    function onBotMessage({ type, content }: { type: MessageType; content: string }) {
+    function onBotMessage({ content, type, style }: CommandResult) {
         setIsTyping(true);
 
         setTimeout(() => {
-            send({ from: "bot", content, type });
+            send({ from: "bot", content, type, style });
             setIsTyping(false);
             play("pop.mp3");
         }, 1200);
