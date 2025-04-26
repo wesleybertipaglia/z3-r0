@@ -7,42 +7,17 @@ import { useRPSGame } from "../game/useRPSGame";
 import { useWordScrambleGame } from "../game/useWordScrambleGame";
 import { useTranslation } from "react-i18next";
 import { useRandom } from "../media/useRandom";
-import { CommandResult } from "../../types/command";
 import { useCowsay } from "../game/useCowSay";
-import { registerCommand, useRegisterGameCommand } from "../../utils/command.util";
+import { listCommands, registerCommand, useRegisterGameCommand } from "../../utils/command.util";
 
 export function useCommandRegister() {
     const { t } = useTranslation();
-    const { getRandomMeme, getRandomGif, getRandomMusic, getRandomLiric, getRandomSentence, getCompleteRandomSentence } =
-        useRandom();
+    const { getRandomMeme, getRandomGif, getRandomMusic, getRandomLiric, getRandomSentence, getCompleteRandomSentence } = useRandom();
 
     // 💡 Helper Commands
-    function helpCommand(): CommandResult {
-        return {
-            content: (t("commands_categories.commands", { returnObjects: true }) as string[]).join("\n"),
-            type: "code",
-            style: "pre",
-        };
-    }
-    registerCommand(["!h", "!help", "!commands", "!command"], () => helpCommand());
-
-    function funCommand(): CommandResult {
-        return {
-            content: (t("commands_categories.fun", { returnObjects: true }) as string[]).join("\n"),
-            type: "code",
-            style: "pre",
-        };
-    }
-    registerCommand(["!f", "!fun", "!funny"], () => funCommand());
-
-    function gameCommand(): CommandResult {
-        return {
-            content: (t("commands_categories.games", { returnObjects: true }) as string[]).join("\n"),
-            type: "code",
-            style: "pre",
-        };
-    }
-    registerCommand(["!g", "!game", "!games"], () => gameCommand());
+    registerCommand(["!h", "!help", "!commands", "!command"], () => listCommands("commands_categories.commands"));
+    registerCommand(["!f", "!fun", "!funny"], () => listCommands("commands_categories.fun"));
+    registerCommand(["!g", "!game", "!games"], () => listCommands("commands_categories.games"));
 
     // 💬 Conversation Commands
     registerCommand(["!l", "!lore"], () => ({ content: "", type: "lore" }));

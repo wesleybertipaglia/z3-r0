@@ -20,9 +20,9 @@ const Message = ({ from, content, type, style }: MessageDto) => {
             case "glitch":
                 return "text-amber-500";
             case "pre":
-                return "bg-neutral-700 p-2 rounded-md whitespace-pre-wrap";
+                return "bg-neutral-800/60 p-2 rounded-md whitespace-pre-wrap";
             case "code":
-                return "bg-neutral-700 p-1 rounded-md whitespace-pre-wrap font-mono";
+                return "bg-neutral-800/60 p-1 rounded-md whitespace-pre-wrap font-mono";
             case "error":
                 return "text-red-500";
             case "warning":
@@ -47,9 +47,9 @@ const Message = ({ from, content, type, style }: MessageDto) => {
             case "text":
                 return <p className={`break-words overflow-hidden text-ellipsis whitespace-pre-wrap ${getStyleClass()}`}>{content as string}</p>;
             case "code":
-                return <pre className={`bg-neutral-700 p-2 rounded-md whitespace-pre-wrap ${getStyleClass()}`}>{content as string}</pre>;
+                return <pre className={`p-2 rounded-md whitespace-pre-wrap ${getStyleClass()}`}>{content as string}</pre>;
             case "quote":
-                return <blockquote className={`border-l-4 border-neutral-500 pl-4 italic whitespace-pre-wrap ${getStyleClass()}`}>{content as string}</blockquote>;
+                return <blockquote className={`border-l-4 pl-4 italic whitespace-pre-wrap ${getStyleClass()}`}>{content as string}</blockquote>;
             case "link":
                 return (
                     <a href={content as string} target="_blank" rel="noopener noreferrer" className={`text-blue-500 ${getStyleClass()}`}>
