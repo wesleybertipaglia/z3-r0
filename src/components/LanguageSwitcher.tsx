@@ -1,4 +1,4 @@
-import { useLanguage } from "../hooks/useLanguage";
+import { useLanguage } from "../hooks/core/useLanguage";
 
 export function LanguageSwitcher() {
     const { language, changeLanguage } = useLanguage();

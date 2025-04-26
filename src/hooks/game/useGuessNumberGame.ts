@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { GameSession } from "../types/game";
+import { GameSession } from "../../types/game";
 import { useGamesManager } from "./useGamesManager";
 
 export function useGuessNumberGame(gamesManager: ReturnType<typeof useGamesManager>) {

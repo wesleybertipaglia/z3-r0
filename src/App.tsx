@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useBot } from "./hooks/useBot";
+import { useBot } from "./hooks/core/useBot";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Main from "./components/Main";

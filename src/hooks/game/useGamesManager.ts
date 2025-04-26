@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { CommandResult } from "../types/command";
-import { GameSession } from "../types/game";
+import { CommandResult } from "../../types/command";
+import { GameSession } from "../../types/game";
 
 export function useGamesManager() {
     const [currentGame, setCurrentGame] = useState<GameSession | null>(null);

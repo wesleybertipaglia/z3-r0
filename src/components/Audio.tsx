@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import useAudio from '../hooks/useAudio';
+import useAudio from '../hooks/media/useAudio';
 
 interface Props {
     text: string;
@@ -20,16 +20,13 @@ const Audio = ({ text }: Props) => {
 
 
     return (
-        <div className="flex items-start gap-4 bg-zinc-800 text-white rounded-2xl p-3 max-w-xs shadow-sm">
-            <div className='relative' onClick={() => speak(text)}>
+        <div className="flex items-start gap-4 bg-zinc-800 text-white rounded-2xl p-3 max-w-xs shadow-sm cursor-pointer" onClick={() => speak(text)}>
+            <div className='relative'>
                 <img
                     src="/profile.jpg"
                     alt="Avatar"
-                    className="w-10 h-10 rounded-full object-cover"
-                />
-                <button
-                    className="absolute -bottom-1 -right-1 shadow cursor-pointer" onClick={() => speak(text)}
-                >
+                    className="w-10 h-10 rounded-full object-cover" />
+                <button className="absolute -bottom-1 -right-1 shadow">
                     {isPlaying ? "⏹️" : "▶️"}
                 </button>
             </div>
@@ -37,7 +34,7 @@ const Audio = ({ text }: Props) => {
                 <span className="text-sm font-medium">{t("ui.audio")}</span>
                 <small className="text-xs text-zinc-400">{estimateDuration(text)}</small>
             </div>
-        </div>
+        </div >
     );
 }
 

@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
-import gifs from "../data/gifs";
-import memes from "../data/memes";
-import musics from "../data/musics";
-import { MessageType, messageTypes } from "../types/message.d";
-import lirics from "../data/lirics";
+import gifs from "../../data/gifs";
+import memes from "../../data/memes";
+import musics from "../../data/musics";
+import { MessageType, messageTypes } from "../../types/message.d";
+import lirics from "../../data/lirics";
 
 export function useRandom() {
     const { t } = useTranslation();
