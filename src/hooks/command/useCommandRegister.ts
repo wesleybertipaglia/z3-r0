@@ -38,7 +38,7 @@ export function useCommandRegister() {
             style: "pre",
         };
     }
-    registerCommand(["!h", "!help"], () => helpCommand());
+    registerCommand(["!h", "!help", "!commands", "!command"], () => helpCommand());
 
     function gameCommand(): CommandResult {
         return {
@@ -54,7 +54,6 @@ export function useCommandRegister() {
     registerCommand(["!about", "!info"], () => ({ content: getRandomSentence("about"), type: "info" }));
     registerCommand(["!bug", "!bugs"], () => ({ content: getRandomSentence("bugs"), type: "text" }));
     registerCommand(["!debug", "!debugs"], () => ({ content: getRandomSentence("debug"), type: "text" }));
-    registerCommand(["!help", "!commands"], () => ({ content: getRandomSentence("help"), type: "text" }));
 
     // 😜 Fun Commands
     registerCommand(["!random", "!rand"], () => ({ content: getCompleteRandomSentence(), type: "text" }));
@@ -63,6 +62,11 @@ export function useCommandRegister() {
     registerCommand(["!joke", "!jokes"], () => ({ content: getRandomSentence("jokes"), type: "text" }));
     registerCommand(["quote", "!quotes"], () => ({ content: getRandomSentence("quotes"), type: "quote" }));
     registerCommand(["!fact", "!funfact", "!funfacts"], () => ({ content: getRandomSentence("funfacts"), type: "text" }));
+    registerCommand(["!ping"], () => ({ content: "🏓 ~ping", type: "text" }));
+    registerCommand(["!pong"], () => ({ content: "🏓 ~pong", type: "text" }));
+    registerCommand(["!e", "!echo", "!say"], (message: string) => {
+        return { content: message || t("ui.say_something"), type: "text" };
+    });
 
     // 🖼️ Media Commands
     registerCommand(["!meme", "!memes"], () => ({ content: getRandomMeme(), type: "image" }));
