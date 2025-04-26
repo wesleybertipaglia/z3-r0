@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { GameSession } from "../types/game";
+import { GameSession } from "../../types/game";
 import { useGamesManager } from "./useGamesManager";
-import emojiPhrases from "../data/emojis-phrases";
+import emojiPhrases from "../../data/emojis-phrases";
 
 export function useEmojiGame(gamesManager: ReturnType<typeof useGamesManager>) {
     const { t } = useTranslation();

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import useAudio from '../hooks/useAudio';
+import useAudio from '../hooks/core/useAudio';
 
 interface Props {
     text: string;

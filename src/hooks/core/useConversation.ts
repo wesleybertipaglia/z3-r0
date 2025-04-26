@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { ConversationService } from "../services/conversationService";
+import { ConversationService } from "../../services/conversation.service";
 
 const conversationService = new ConversationService();
 

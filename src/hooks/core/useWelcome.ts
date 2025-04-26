@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { MessageType } from "../types/message";
+import { MessageType } from "../../types/message";
 import { useRandom } from "./useRandom";
 
 export function useWelcome(

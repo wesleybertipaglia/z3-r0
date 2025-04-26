@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { GameSession } from "../types/game";
+import { GameSession } from "../../types/game";
 import { useGamesManager } from "./useGamesManager";
-import { intents } from "../data/intents";
+import { intents } from "../../data/intents";
 
 export function useWordScrambleGame(gamesManager: ReturnType<typeof useGamesManager>) {
     const { t } = useTranslation();

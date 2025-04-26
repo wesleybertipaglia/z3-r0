@@ -4,3 +4,10 @@ export type GameSession = {
     handleInput: (input: string) => CommandResult;
     stop?: () => CommandResult;
 };
+
+export type GameManager = {
+    currentGame: GameSession | null;
+    startGame: (session: GameSession) => CommandResult;
+    handleGameInput: (input: string) => CommandResult;
+    stopGame: () => CommandResult;
+};

@@ -1,11 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { GameSession } from "../types/game";
+import { GameSession } from "../../types/game";
 import { useGamesManager } from "./useGamesManager";
-import trivias from "../data/trivias";
+import trivias from "../../data/trivias";
 
 export function useQuizGame(gamesManager: ReturnType<typeof useGamesManager>) {
     const { t } = useTranslation();
-
     const questions = trivias;
 
     return {

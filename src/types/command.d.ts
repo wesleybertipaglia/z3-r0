@@ -5,3 +5,5 @@ export type CommandResult = {
     type?: MessageType;
     style?: MessageStyle;
 };
+
+export type CommandFunction = (...args: string[]) => CommandResult;

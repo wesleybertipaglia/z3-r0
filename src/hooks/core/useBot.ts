@@ -2,10 +2,11 @@ import { useState, useRef } from "react";
 import { useMessage } from "./useMessage";
 import { useCommands } from "./useCommands";
 import { useSound } from "./useSound";
-import { MessageType } from "../types/message";
+import { MessageType } from "../../types/message";
 import { useWelcome } from "./useWelcome";
 import { useInactivity } from "./useInactivity";
 import { useConversation } from "./useConversation";
+import { useCommandRegister } from "./useCommandRegister";
 
 export function useBot() {
     const { messages, send, initialized, sendRandomMessage } = useMessage();
@@ -21,12 +22,13 @@ export function useBot() {
     // 💤 Inactivity logic
     useInactivity(initialized, lastInteractionRef, sendRandomMessage);
 
+    // ✅ Regerister commands
+    useCommandRegister();
+
     // 💬 User message logic
     function onUserMessage(text: string) {
         lastInteractionRef.current = Date.now();
-
         send({ from: "user", content: text });
-
         const commandResult = resolveCommand(text.trim());
 
         if (commandResult) {
@@ -40,6 +42,7 @@ export function useBot() {
     // 🤖 Bot message logic
     function onBotMessage({ type, content }: { type: MessageType; content: string }) {
         setIsTyping(true);
+
         setTimeout(() => {
             send({ from: "bot", content, type });
             setIsTyping(false);
