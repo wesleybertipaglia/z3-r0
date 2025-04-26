@@ -2,20 +2,41 @@ import { CommandResult } from "../../types/command";
 
 export function useCowsay(...args: string[]): CommandResult {
     const message = args.join(" ") || "Moo!";
-    const top = ` ${"_".repeat(message.length + 2)} `;
-    const middle = `| ${message} |`;
-    const bottom = ` ${"-".repeat(message.length + 2)} `;
+    const maxLineLength = 80;
+    const words = message.split(" ");
+    const lines: string[] = [];
+    let currentLine = "";
+
+    for (const word of words) {
+        if ((currentLine + word).length > maxLineLength) {
+            lines.push(currentLine.trim());
+            currentLine = "";
+        }
+        currentLine += word + " ";
+    }
+    if (currentLine) lines.push(currentLine.trim());
+
+    const longestLine = Math.max(...lines.map(l => l.length));
+    const horizontalLine = "_".repeat(longestLine + 4);
+    const bottomLine = "-".repeat(longestLine + 4);
+
+    const bubble = [
+        ` ${horizontalLine} `,
+        ...lines.map(line => `|  ${line.padEnd(longestLine, " ")}  |`),
+        ` ${bottomLine} `,
+    ].join("\n");
 
     const cow = `
-        ${top}
-        ${middle}
-        ${bottom}
-                \\   ^__^
-                \\  (oo)\\_______
-                    (__)\\       )\\/\\
-                        ||----w |
-                        ||     ||
-        `;
+        \\   ^__^
+         \\  (oo)\\_______
+            (__)\\       )\\/\\
+                ||----w |
+                ||     ||
+    `;
 
-    return { content: cow, type: "code", style: "pre", };
+    return {
+        content: `${bubble}\n${cow}`,
+        type: "code",
+        style: "pre",
+    };
 }

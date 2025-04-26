@@ -20,7 +20,7 @@ export class ConversationService {
             matchedResponses.push(this.randomFrom(responses.default));
         }
 
-        return matchedResponses.join(" ");
+        return matchedResponses.join(" \n\n");
     }
 
     private matchesCategory(normalized: string, category: string[]): boolean {

@@ -35,22 +35,38 @@
         "Feeling bored? Type !compliment or !bug",
         "Want to hear a joke? Type !meme or !advice"
     ],
-    "commands_list": [
-        "!help - Get help with commands.",
-        "!lore - Learn about my backstory.",
-        "!about - Learn more about me.",
-        "!meme - Get a random meme.",
-        "!gif - Get a random GIF.",
-        "!music - Play some music.",
-        "!game - Get a list of games.",
-        "!advice - Get some random advice.",
-        "!compliment - Receive a compliment.",
-        "!joke - Hear a funny joke.",
-        "!funfact - Learn a fun fact.",
-        "!quote - Get an inspirational quote.",
-        "!bug - Report a bug.",
-        "!debug - Run diagnostics."
-    ],
+    "commands_categories": {
+        "commands": [
+            "!about - Learn more about me.",
+            "!lore - Learn about my backstory.",
+            "!game - Get a list of games.",
+            "!fun - Get a list of fun commands.",
+            "!bug - Report a bug.",
+            "!debug - Run diagnostics."
+        ],
+        "fun": [
+            "!meme - Get a random meme.",
+            "!gif - Get a random GIF.",
+            "!music - Play some music.",
+            "!advice - Get some random advice.",
+            "!compliment - Receive a compliment.",
+            "!joke - Hear a funny joke.",
+            "!funfact - Learn a fun fact.",
+            "!quote - Get an inspirational quote.",
+            "!cowsay - Make the cow say something.",
+            "!sing - Sing a random lyric."
+        ],
+        "games": [
+            "!ping/!pong - Play a game of Pong.",
+            "!echo - Echo your message.",
+            "!rps - Play Rock, Paper, Scissors.",
+            "!hangman - Play Hangman.",
+            "!quiz - Test your knowledge with a quiz.",
+            "!emoji - Guess the phrase from emojis.",
+            "!guess - Guess the number game.",
+            "!scramble - Unscramble the word."
+        ]
+    },
     "status": [
         "Running sarcasm.exe...",
         "Processing witty remarks...",
@@ -170,16 +186,6 @@
         "i_lose": "Lose",
         "draw": "Draw"
     },
-    "game_list": [
-        "!pong/!ping - Play a game of Pong.",
-        "!echo - Echo your message.",
-        "!rps - Play Rock, Paper, Scissors.",
-        "!hangman - Play Hangman.",
-        "!quiz - Test your knowledge with a quiz.",
-        "!emoji - Guess the phrase from emojis.",
-        "!guess - Guess the number game.",
-        "!scramble - Unscramble the word."
-    ],
     "game_rps": {
         "welcome": "🎮 Rock, Paper, or Scissors? Type 'rock', 'paper', or 'scissors' to play.",
         "rock": "rock",

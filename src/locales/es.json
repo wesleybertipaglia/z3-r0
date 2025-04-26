@@ -147,21 +147,38 @@
         "Soy Z3-R0, tu compañero digital. ¡Vamos a divertirnos!",
         "Fui creado para traerte un poco de caos y diversión a tu día."
     ],
-    "commands_list": [
-        "!lore - Conoce la historia de Z3-R0.",
-        "!advice - Recibe un consejo aleatorio.",
-        "!compliment - Recibe un cumplido.",
-        "!joke - Escucha un chiste gracioso.",
-        "!funfact - Aprende un dato curioso.",
-        "!quote - Obtén una cita inspiradora.",
-        "!bug - Reporta un error.",
-        "!debug - Ejecuta diagnósticos.",
-        "!meme - Recibe un meme aleatorio.",
-        "!gif - Recibe un GIF aleatorio.",
-        "!music - Escucha música aleatoria.",
-        "!help - Obtén ayuda con los comandos.",
-        "!about - Aprende más sobre mí."
-    ],
+    "commands_categories": {
+        "commands": [
+            "!about - Aprende más sobre mí.",
+            "!lore - Aprende sobre mi historia.",
+            "!game - Obtén una lista de juegos.",
+            "!fun - Obtén una lista de comandos divertidos.",
+            "!bug - Reporta un error.",
+            "!debug - Ejecutar diagnóstico."
+        ],
+        "fun": [
+            "!meme - Obtén un meme aleatorio.",
+            "!gif - Obtén un GIF aleatorio.",
+            "!music - Pon algo de música.",
+            "!advice - Obtén algún consejo aleatorio.",
+            "!compliment - Recibe un cumplido.",
+            "!joke - Escucha un chiste divertido.",
+            "!funfact - Aprende un dato curioso.",
+            "!quote - Obtén una cita inspiradora.",
+            "!cowsay - Haz que la vaca diga algo.",
+            "!sing - Canta una letra aleatoria."
+        ],
+        "games": [
+            "!ping/!pong - Juega un juego de Pong.",
+            "!echo - Haz eco de tu mensaje.",
+            "!rps - Juega Piedra, Papel, Tijeras.",
+            "!hangman - Juega al Ahorcado.",
+            "!quiz - Pon a prueba tus conocimientos con un cuestionario.",
+            "!emoji - Adivina la frase a partir de emojis.",
+            "!guess - Adivina el juego de números.",
+            "!scramble - Descifra la palabra."
+        ]
+    },
     "game": {
         "you_win": "Ganaste",
         "you_lose": "Perdiste",
@@ -169,14 +186,6 @@
         "i_lose": "Perdí",
         "draw": "Empate"
     },
-    "game_list": [
-        "!pong/!ping - Juega una partida de Pong.",
-        "!echo - Repito lo que dices.",
-        "!rps - Piedra, Papel o Tijera. ¡Dale!",
-        "!hangman - Ahorcado.",
-        "!quiz - Demuestra lo que sabes con un quiz.",
-        "!stop - Detiene el juego actual."
-    ],
     "game_rps": {
         "welcome": "🎮 ¿Piedra, Papel o Tijera? Escribe 'piedra', 'papel' o 'tijera' para jugar.",
         "rock": "piedra",

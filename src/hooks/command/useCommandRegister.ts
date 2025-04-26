@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import { useQuizGame } from "../game/useQuizGame";
-import { commandService } from "../../services/command.service";
 import { gamesManager } from "../../services/game.service";
 import { useEmojiGame } from "../game/useEmojiGame";
 import { useGuessNumberGame } from "../game/useGuessNumberGame";
@@ -9,41 +7,37 @@ import { useRPSGame } from "../game/useRPSGame";
 import { useWordScrambleGame } from "../game/useWordScrambleGame";
 import { useTranslation } from "react-i18next";
 import { useRandom } from "../media/useRandom";
-import { CommandFunction, CommandResult } from "../../types/command";
+import { CommandResult } from "../../types/command";
 import { useCowsay } from "../game/useCowSay";
+import { registerCommand, useRegisterGameCommand } from "../../utils/command.util";
 
 export function useCommandRegister() {
     const { t } = useTranslation();
     const { getRandomMeme, getRandomGif, getRandomMusic, getRandomLiric, getRandomSentence, getCompleteRandomSentence } =
         useRandom();
 
-    // Helpers
-    function registerCommand(commands: string[], fn: CommandFunction) {
-        commandService.registerCommand(commands, fn);
-    }
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    function useRegisterGameCommand(commands: string[], gameSession: () => any) {
-        useEffect(() => {
-            commandService.registerCommand(commands, () => {
-                return gamesManager.startGame(gameSession());
-            });
-        }, [commands, gameSession]);
-    }
-
     // 💡 Helper Commands
     function helpCommand(): CommandResult {
         return {
-            content: (t("commands_list", { returnObjects: true }) as string[]).join("\n"),
+            content: (t("commands_categories.commands", { returnObjects: true }) as string[]).join("\n"),
             type: "code",
             style: "pre",
         };
     }
     registerCommand(["!h", "!help", "!commands", "!command"], () => helpCommand());
 
+    function funCommand(): CommandResult {
+        return {
+            content: (t("commands_categories.fun", { returnObjects: true }) as string[]).join("\n"),
+            type: "code",
+            style: "pre",
+        };
+    }
+    registerCommand(["!f", "!fun", "!funny"], () => funCommand());
+
     function gameCommand(): CommandResult {
         return {
-            content: (t("game_list", { returnObjects: true }) as string[]).join("\n"),
+            content: (t("commands_categories.games", { returnObjects: true }) as string[]).join("\n"),
             type: "code",
             style: "pre",
         };
