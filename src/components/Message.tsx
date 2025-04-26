@@ -59,7 +59,7 @@ const Message = ({ from, content, type, style }: MessageDto) => {
             case "html":
                 return <HtmlMessage html={content as string} />;
             case "image":
-                return <img src={content as string} alt="Media" className="rounded-md max-w-xs shadow" />;
+                return <img src={content as string} alt="Media" loading='lazy' className="rounded-md max-w-xs shadow" />;
             case "music":
                 return <SpotifyFrame track={content as string} />;
             case "audio":

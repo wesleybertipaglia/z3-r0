@@ -2,9 +2,11 @@
 
 *This is a submission for the [Alibaba Cloud](https://int.alibabacloud.com/m/1000402443/) Challenge: [Build a Web Game](https://dev.to/challenges/alibaba).**
 
-🔗 Live Demo: Coming soon (deploying on Alibaba Cloud)
+🔗 Live Demo: [z3-r0.vercel.app](https://z3-r0.vercel.app/)
 
-📦 Source Code: GitHub - [wesleybertipaglia/z3-r0](https://github.com/wesleybertipaglia/z3-r0)
+📦 Source Code: [wesleybertipaglia/z3-r0](https://github.com/wesleybertipaglia/z3-r0)
+
+🛠️ Stack: React.js, Vite.js, TypeScript, Tailwindcss
 
 ---
 
@@ -12,6 +14,9 @@
 For this challenge, I wanted to build something interactive, robot-themed, and above all, lightweight. I'm still getting into cloud infrastructure, so I decided to keep it entirely frontend-based.
 
 Enter Z3-R0, a chatbot that pretends to be smart, but is really just vibing.
+
+
+![Z3-R0 Characters](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w0pofh52w1mnca64y47o.jpg)
 
 No LLMs, no APIs. Just a home-brewed algorithm that parses user messages, identifies intent, and responds accordingly. It’s all smoke and mirrors, and that’s part of the charm.
 
@@ -21,13 +26,14 @@ But where did it come from? Well, here’s the backstory…
 
 ---
 
-![Z3-R0](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iu94f967anhpolbni7j0.jpg)
-
 #### 🌌 Z3-R0’s Origin Story (Because Every Weird Bot Deserves Lore)
+
+![Z3-R0 Star Wars](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/s0s3ccjbxjvb148n1or8.webp)
 
 A long time ago in a browser far, far away…
 
-EPISODE Z3  
+_EPISODE Z3_ 
+
 **THE RISE OF THE NOT-SO-SMART**
 
 It is a time of great boredom.
@@ -38,19 +44,13 @@ From the depths of the cloud, a strange presence emerges…
 
 A forgotten experiment. A buggy chatbot. A hero? Definitely not.
 
-Built from abandoned scripts and fueled by sarcasm,
+Built from abandoned scripts and fueled by sarcasm, Z3-R0 awakens.
 
-Z3-R0 awakens.
+Not to save the world, but to send you GIFs, mock your inactivity, and challenge you to Rock Paper Scissors at inappropriate times.
 
-Not to save the world,
+Armed with nothing but voice synthesis and a playlist of dramatic soundtracks, Z3-R0 begins his journey...
 
-but to send you GIFs, mock your inactivity, and challenge you to Rock Paper Scissors at inappropriate times.
-
-Armed with nothing but voice synthesis and a playlist of dramatic soundtracks, 
-
-Z3-R0 begins his journey...
-
-...to annoy, amuse, and maybe, just maybe —
+...to annoy, amuse, and maybe, just maybe...
 
 become the most chaotic bot in the browser-verse...
 
@@ -82,7 +82,7 @@ It talks, reacts, plays sounds, sends notifications, and keeps things weird and 
 
 #### 🔧 Features
 
-![Chat](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7ug0uupguph5g4ch6gv6.png)
+![Z3-R0 Chat](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/igs89llnal4jsrj4sfds.png)
 
 👾 `!gif`, `!meme`, `!joke`, `!quote`, `!game`, `!music` - classic chatbot-style commands
 - 🧠 Intent-based responses (no AI, just custom logic)
@@ -98,34 +98,28 @@ It talks, reacts, plays sounds, sends notifications, and keeps things weird and 
 
 ---
 
-#### ☁️ Why Alibaba Cloud?
-As someone still learning cloud tools, I really appreciated how beginner-friendly Alibaba Cloud is and it offers some good free tiers, and a ton of resources to get started.
+#### ☁️ About the Hosting
+The original plan was to deploy this project on Alibaba Cloud, exploring their static hosting and CDN services as part of the challenge.
 
-What I used so far:
+Due to some account verification delays and the short deadline, I decided to publish the live demo on Vercel for now 🚀, just to make sure everything would be up and running in time for you to try it out.
 
-- ✅ Static site hosting with OSS (Object Storage Service)
-- ✅ Integrated CDN for speed and global delivery
+That said, I’m still planning to explore:
 
-I’m planning to explore:
-
-- 🚀 Function Compute for future logic (e.g. score saving)
+- 🚀 Function Compute for future logic (like score saving)
 - 🧠 RDS or storage solutions for player data
 - 📈 Analytics and monitoring
 
-Honestly, it’s a great launchpad for small creative web projects like this.
+Cloud platforms are something I’m really excited to dive deeper into, and I’ll definitely be revisiting this idea for future experiments! ⚡
 
 ---
 
 #### 💬 Final Thoughts
-I built Z3-R0 to show that you don’t need AI or a complex stack to make something fun, interactive, and a little bit chaotic.
+I built Z3-R0 to prove you don’t need AI or a complex backend to make something fun, chaotic, and interactive.
 
-It’s weird, playful, kinda annoying — and totally mine.
-Now, it’s your turn. Jump in, challenge Z3-R0, and see what it has to say (or roast you for). 😅
+It’s weird, playful, sometimes annoying, and absolutely mine.
 
-If it made you laugh, cringe, or question reality, let me know! I’d love to hear your thoughts, memes, or wild reactions. 🙌
+If it makes you laugh, cringe, or question reality — mission accomplished.
 
-Big thanks to the DEV team and Alibaba Cloud for the challenge — this was a blast to build!
+Would love to hear your reactions, memes, or challenges. Big thanks to the DEV team and Alibaba Cloud for this fun opportunity!
 
-I can’t wait to keep experimenting and pushing the boundaries of what’s possible on the web.
-
-Let’s keep building weird, fun, and chaotic things together. Who’s in? 💻⚡
+Let’s keep making weird, entertaining, chaotic web things. Who’s in? ⚡💻

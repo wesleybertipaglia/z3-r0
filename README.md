@@ -2,7 +2,7 @@
 
 **Z3-R0** is my submission for the [Alibaba Cloud Web Game Challenge](https://dev.to/devteam/join-us-for-the-alibaba-cloud-web-game-challenge-3000-in-prizes-1n5d?bb=220943) — a creative contest that invites developers to build robot-themed games or experiences using web technologies and Alibaba Cloud services.
 
-![Z3-R0](./demo/z3r0_row.jpg)
+![Z3-R0](./demo/z3r0_row.webp)
 
 Rather than using real AI or NLP services, **Z3-R0 simulates a chatbot experience** through a custom-built intent-matching algorithm. It analyzes user input patterns and responds with scripted interactions, creating the illusion of intelligence and personality — all handled entirely on the frontend with no backend or cloud processing required.
 
