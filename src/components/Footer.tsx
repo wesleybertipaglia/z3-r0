@@ -4,16 +4,17 @@ interface Props {
     input: string
     setInput: (value: string) => void
     onSend: () => void
+    onScrollToBottom: () => void;
 }
 
-const Footer = ({ input, setInput, onSend }: Props) => {
+const Footer = ({ input, setInput, onSend, onScrollToBottom }: Props) => {
     const { t } = useTranslation();
     const placeholders: string[] = t("placeholders", { returnObjects: true }) as string[];
     const randomPlaceholder = placeholders[Math.floor(Math.random() * placeholders.length)];
 
     return (
-        <footer className="border-t border-neutral-800">
-            <div className="flex flex-col gap-1 container max-w-2xl mx-auto py-4 px-6 shadow">
+        <footer className="border-t border-neutral-800 py-4 px-6">
+            <div className="flex flex-col gap-1 container max-w-2xl mx-auto shadow relative">
                 <input
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
@@ -30,6 +31,12 @@ const Footer = ({ input, setInput, onSend }: Props) => {
                         </a>
                     </small>
                 </p>
+
+                <div className='absolute -top-full right-0'>
+                    <button onClick={onScrollToBottom} className="px-4 py-2 rounded-full text-sm cursor-pointer bg-neutral-800 hover:bg-neutral-900 border border-neutral-700">
+                        New Messages
+                    </button>
+                </div>
             </div>
         </footer>
     )

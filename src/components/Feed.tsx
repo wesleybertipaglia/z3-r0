@@ -1,18 +1,18 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { MessageDto } from '../types/message';
 import Message from './Message';
 import TypingIndicator from './TypingIndicator';
+import { scrollToBottom } from '../utils/scroll.util';
 
 interface Props {
-    messages: MessageDto[];
-    isTyping: boolean;
+    messages: MessageDto[]
+    isTyping: boolean
+    bottomRef: React.RefObject<HTMLDivElement | null>
 }
 
-const Feed = ({ messages, isTyping }: Props) => {
-    const bottomRef = useRef<HTMLDivElement>(null);
-
+const Feed = ({ messages, isTyping, bottomRef }: Props) => {
     useEffect(() => {
-        bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+        scrollToBottom(bottomRef);
     }, [messages]);
 
     return (
