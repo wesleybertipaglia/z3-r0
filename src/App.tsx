@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useBot } from "./hooks/core/useBot";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Main from "./components/Main";
+import Feed from "./components/Feed";
 
 function App() {
   const { messages, onUserMessage: sendUserMessage, isTyping } = useBot();
@@ -19,10 +19,12 @@ function App() {
       <div className="w-full flex flex-col flex-1 overflow-hidden">
         <Header />
 
-        <Main
-          messages={messages}
-          isTyping={isTyping}
-        />
+        <main className="flex-1 overflow-y-auto">
+          <Feed
+            messages={messages}
+            isTyping={isTyping}
+          />
+        </main>
 
         <Footer
           input={input}
