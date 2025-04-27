@@ -30,7 +30,7 @@ export function useCommandRegister() {
     registerCommand(["!advice", "!advices"], () => ({ content: getRandomSentence("advices"), type: "text" }));
     registerCommand(["!compliment", "!compliments"], () => ({ content: getRandomSentence("compliments"), type: "text" }));
     registerCommand(["!joke", "!jokes"], () => ({ content: getRandomSentence("jokes"), type: "text" }));
-    registerCommand(["quote", "!quotes"], () => ({ content: getRandomSentence("quotes"), type: "quote" }));
+    registerCommand(["!quote", "!quotes"], () => ({ content: getRandomSentence("quotes"), type: "quote" }));
     registerCommand(["!fact", "!funfact", "!funfacts"], () => ({ content: getRandomSentence("funfacts"), type: "text" }));
     registerCommand(["!cowsay", "!cows", "!moo", "!cow", "!saymoo"], useCowsay);
     registerCommand(["!ping"], () => ({ content: "🏓 ~ping", type: "text" }));

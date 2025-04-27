@@ -24,6 +24,43 @@ const LoreCrawl = () => {
                 <p>...to annoy, amuse, and maybe — just maybe —</p>
                 <p>become the most chaotic bot in the browser-verse.</p>
             </div>
+
+            <style>
+                {`
+                    .lore-crawl-wrapper {
+                        position: fixed;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        z-index: 50;
+                        overflow: hidden;
+                    }
+                    .lore-crawl {
+                        background-color: #1a1a1a;
+                        color: #fff;
+                        padding: 20px;
+                        font-size: 18px;
+                        line-height: 1.5;
+                        animation: crawl 60s linear infinite;
+                    }
+                    .title {
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                    .subtitle {
+                        font-size: 20px;
+                        font-style: italic;
+                    }
+                    @keyframes crawl {
+                        from {
+                            transform: translateY(100%);
+                        }
+                        to {
+                            transform: translateY(-100%);
+                        }
+                    }
+                `}
+            </style>
         </div>
     );
 };

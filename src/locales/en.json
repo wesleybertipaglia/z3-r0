@@ -14,7 +14,10 @@
         "audio": "Audio",
         "word": "Word",
         "say_something": "Say something...",
-        "notification": "Hey, hey! You've got a new message from Z3-R0! 😎"
+        "notification": "Hey, hey! You've got a new message from Z3-R0! 😎",
+        "scroll": "New Messages",
+        "settings": "Settings",
+        "clear_chat": "Clear Chat"
     },
     "about": [
         "I'm Z3-R0, your chaotic bot buddy. I love to chat and make you laugh!",

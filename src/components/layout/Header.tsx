@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { LanguageSwitcher } from "./LanguageSwitcher"
-import StatusBar from "./StatusBar";
+import StatusBar from "../animations/StatusBar";
+import Menu from "../settings/Menu";
+import Profile from "./Profile";
 
 const Header = () => {
     const [isOnline, setIsOnline] = useState(false);
@@ -16,12 +17,12 @@ const Header = () => {
     }, []);
 
     return (
-        <header className="border-b border-neutral-800 shadow-lg">
-            <div className="flex flex-col gap-2 container max-w-2xl mx-auto py-4 px-6">
+        <header className="border-b border-neutral-800 shadow-lg py-4 px-6">
+            <div className="flex flex-col gap-2 container max-w-2xl mx-auto">
                 <nav className="flex items-center justify-between">
                     <div className="inline-flex items-center gap-4">
                         <div className="relative">
-                            <img src="/profile.webp" alt="Z3-R0" className="h-10 w-10 rounded-full" loading='lazy' />
+                            <Profile />
                             {isOnline && (
                                 <span className="absolute -top-0 -right-1 w-1 h-1 rounded-full bg-green-500 animate-ping"></span>
                             )}
@@ -33,9 +34,7 @@ const Header = () => {
                         </div>
                     </div>
 
-                    <div>
-                        <LanguageSwitcher />
-                    </div>
+                    <Menu />
                 </nav>
             </div>
         </header>

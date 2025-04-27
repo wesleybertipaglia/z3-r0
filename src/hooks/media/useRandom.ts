@@ -4,9 +4,11 @@ import memes from "../../data/memes";
 import musics from "../../data/musics";
 import { MessageType, messageTypes } from "../../types/message.d";
 import lirics from "../../data/lirics";
+import { useMessage } from "../message/useMessage";
 
 export function useRandom() {
     const { t } = useTranslation();
+    const { send } = useMessage();
 
     function getRandomMeme() {
         return memes[Math.floor(Math.random() * memes.length)];
@@ -40,5 +42,39 @@ export function useRandom() {
         return messageTypes[Math.floor(Math.random() * messageTypes.length)];
     }
 
-    return { getRandomMeme, getRandomGif, getRandomMusic, getRandomLiric, getRandomSentence, getCompleteRandomSentence, getRandomType };
+    // 🧩 Random Message Logic
+    function sendRandomMessage() {
+        const randomType = getRandomType();
+
+        switch (randomType) {
+            case "text":
+                send({ from: "bot", content: getCompleteRandomSentence(), type: "text" });
+                break;
+            case "image": {
+                const gifOrMeme = Math.random() < 0.5 ? getRandomMeme() : getRandomGif();
+                send({ from: "bot", content: gifOrMeme, type: "image" });
+                break;
+            }
+            case "audio":
+                send({ from: "bot", content: getCompleteRandomSentence(), type: "audio" });
+                break;
+            case "music":
+                send({ from: "bot", content: getRandomMusic(), type: "music" });
+                break;
+            default:
+                send({ from: "bot", content: getCompleteRandomSentence(), type: "text" });
+                break;
+        }
+    }
+
+    return {
+        sendRandomMessage,
+        getRandomMeme,
+        getRandomGif,
+        getRandomMusic,
+        getRandomLiric,
+        getRandomSentence,
+        getCompleteRandomSentence,
+        getRandomType
+    };
 }

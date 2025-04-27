@@ -3,17 +3,17 @@ import { From, MessageDto, MessageType } from "../../types/message";
 import { nanoid } from "nanoid";
 import { useNotification } from "../core/useNotification";
 import { useTranslation } from "react-i18next";
-import { useRandom } from "../media/useRandom";
 
 const STORAGE_KEY = "messages";
+const MAX_MESSAGES = 50;
 
 export function useMessage() {
     const { t } = useTranslation();
     const [messages, setMessages] = useState<MessageDto[]>([]);
     const [initialized, setInitialized] = useState(false);
-    const { getRandomType, getCompleteRandomSentence, getRandomGif, getRandomMeme, getRandomMusic, } = useRandom();
     const { sendNotification } = useNotification();
 
+    // 💾 Local Storage Logic
     useEffect(() => {
         const stored = localStorage.getItem(STORAGE_KEY);
         if (stored) {
@@ -24,11 +24,12 @@ export function useMessage() {
 
     useEffect(() => {
         if (initialized) {
-            const trimmed = messages.slice(-20);
+            const trimmed = messages.slice(-MAX_MESSAGES);
             localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed));
         }
     }, [messages, initialized]);
 
+    // 💬 Message Handler
     function addMessage(message: MessageDto) {
         setMessages((prev) => [...prev, message]);
 
@@ -44,29 +45,12 @@ export function useMessage() {
         addMessage({ id: nanoid(), from, content, type, style, });
     }
 
-    function sendRandomMessage() {
-        const randomType = getRandomType();
-
-        switch (randomType) {
-            case "text":
-                send({ from: "bot", content: getCompleteRandomSentence(), type: "text" });
-                break;
-            case "image": {
-                const gifOrMeme = Math.random() < 0.5 ? getRandomMeme() : getRandomGif();
-                send({ from: "bot", content: gifOrMeme, type: "image" });
-                break;
-            }
-            case "audio":
-                send({ from: "bot", content: getCompleteRandomSentence(), type: "audio" });
-                break;
-            case "music":
-                send({ from: "bot", content: getRandomMusic(), type: "music" });
-                break;
-            default:
-                send({ from: "bot", content: getCompleteRandomSentence(), type: "text" });
-                break;
-        }
+    // 🗑️ Clear Messages
+    function clear() {
+        setMessages([]);
+        localStorage.removeItem(STORAGE_KEY);
+        window.location.reload();
     }
 
-    return { messages, send, initialized, sendRandomMessage };
+    return { initialized, messages, send, clear };
 }

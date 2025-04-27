@@ -1,24 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export function useInactivity(
-    initialized: boolean,
-    lastInteraction: React.RefObject<number>,
     onTrigger: () => void,
-    delay: number = 2 * 60 * 1000
+    delay: number = 5 * 60 * 1000
 ) {
-    useEffect(() => {
-        if (!initialized || !lastInteraction.current) return;
+    const lastInteractionRef = useRef(Date.now());
+    const triggered = useRef(false);
 
+    useEffect(() => {
         const interval = setInterval(() => {
             const now = Date.now();
-            const diff = now - lastInteraction.current!;
-
+            const diff = now - lastInteractionRef.current;
             if (diff >= delay) {
+                if (!triggered.current)
                 onTrigger();
-                lastInteraction.current = Date.now();
+                lastInteractionRef.current = Date.now();
+                triggered.current = true
             }
-        }, 15000);
+        }, 5000);
 
+        // Clear the interval on unmount to prevent memory leaks
         return () => clearInterval(interval);
-    }, [initialized, onTrigger, delay, lastInteraction]);
+    }, [delay, onTrigger]);
 }

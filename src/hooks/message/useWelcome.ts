@@ -1,18 +1,18 @@
 import { useEffect } from "react";
-import { MessageType } from "../../types/message";
 import { useRandom } from "../media/useRandom";
+import { CommandResult } from "../../types/command";
 
 export function useWelcome(
     initialized: boolean,
     messageCount: number,
-    onBotMessage: (msg: { type: MessageType; content: string }) => void
+    onBotMessage: ({ content, type, style, playSound }: CommandResult & { playSound?: boolean }) => void
 ) {
     const { getRandomSentence } = useRandom();
 
     useEffect(() => {
         if (!initialized || messageCount > 0) return;
         const randomWelcome = getRandomSentence("welcome");
-        onBotMessage({ type: "info", content: randomWelcome });
+        onBotMessage({ style: "info", content: randomWelcome, playSound: false });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [initialized, messageCount]);
 }

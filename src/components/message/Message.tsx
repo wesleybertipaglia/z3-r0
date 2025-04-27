@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { MessageDto } from "../types/message";
+import { MessageDto } from "../../types/message";
 import Audio from "./Audio";
-import HtmlMessage from "./HtmlMessage";
 import React from "react";
+import LoreCrawl from "../animations/LoreCrawl";
+import HtmlMessage from "./HtmlMessage";
 import SpotifyFrame from "./SpotifyFrame";
-import LoreCrawl from "./LoreCrawl";
 
 const Message = ({ from, content, type, style }: MessageDto) => {
     const isUser = from === "user";

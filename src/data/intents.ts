@@ -101,7 +101,7 @@ export const intents = {
     how_are: [
         "how are you", "how's it going", "how are things", "how's life", "how do you do", "how's your day",
         "how's everything", "how's your week", "how's your month", "how's your year", "how's your health",
-        "how's your family", "how's your job", "how's your school", "how's your life"
+        "how's your family", "how's your job", "how's your school", "how's your life", "how are you doing"
     ],
     hobbies: [
         "hobbie", "hobbies", "interests", "activities", "What are your hobbies", "What do you like to do", "What are your interests",
