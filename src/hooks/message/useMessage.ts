@@ -1,35 +1,39 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { From, MessageDto, MessageType } from "../../types/message";
 import { nanoid } from "nanoid";
 import { useNotification } from "../core/useNotification";
 import { useTranslation } from "react-i18next";
 import { useRandom } from "../media/useRandom";
+import { useInactivity } from "../core/useInactivity";
 
 const STORAGE_KEY = "messages";
+const MAX_MESSAGES = 50;
 
 export function useMessage() {
     const { t } = useTranslation();
     const [messages, setMessages] = useState<MessageDto[]>([]);
-    const [initialized, setInitialized] = useState(false);
-    const { getRandomType, getCompleteRandomSentence, getRandomGif, getRandomMeme, getRandomMusic, } = useRandom();
+    const { getRandomType, getCompleteRandomSentence, getRandomGif, getRandomMeme, getRandomMusic, getRandomSentence } = useRandom();
     const { sendNotification } = useNotification();
+    const loaded = useRef(false)
 
+    // 💾 Local storage logic
     useEffect(() => {
-        const stored = localStorage.getItem(STORAGE_KEY);
-        if (stored) {
-            setMessages(JSON.parse(stored));
+        if (!loaded.current){
+            const stored = localStorage.getItem(STORAGE_KEY);
+            if (stored) {
+                setMessages(JSON.parse(stored));
+            }
+            loaded.current = true
         }
-        setInitialized(true);
     }, []);
 
     useEffect(() => {
-        if (initialized) {
-            const trimmed = messages.slice(-20);
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed));
-        }
-    }, [messages, initialized]);
+        const trimmed = messages.slice(-MAX_MESSAGES);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(trimmed));
+    }, [messages]);
 
-    function addMessage(message: MessageDto) {
+    // 💬 Message handler
+    const addMessage = useCallback((message: MessageDto) => {        
         setMessages((prev) => [...prev, message]);
 
         if (message.from === "bot") {
@@ -38,13 +42,18 @@ export function useMessage() {
                 icon: "/profile.webp",
             });
         }
-    }
+    },[sendNotification, t])
 
-    function send({ from, content, type, style, }: { from: From; content: string; type?: MessageType; style?: string; }) {
-        addMessage({ id: nanoid(), from, content, type, style, });
-    }
+    const send = useCallback(({
+        from, content, type, style,
+    }: {
+        from: From; content: string; type?: MessageType; style?: string;
+    }) => {
+        addMessage({ id: nanoid(), from, content, type, style });
+    },[addMessage]);
 
-    function sendRandomMessage() {
+    // 🔄 Random message handler
+    const sendRandomMessage = useCallback(() => {
         const randomType = getRandomType();
 
         switch (randomType) {
@@ -65,8 +74,19 @@ export function useMessage() {
             default:
                 send({ from: "bot", content: getCompleteRandomSentence(), type: "text" });
                 break;
-        }
-    }
+        }        
+    },[send, getRandomType, getCompleteRandomSentence, getRandomGif, getRandomMeme, getRandomMusic])
 
-    return { messages, send, initialized, sendRandomMessage };
+    // 👋 Welcome message logic
+    useEffect(() => {
+        if (messages.length == 0)
+        {
+            send({ from: "bot", content: getRandomSentence("welcome"), type: "info" });
+        }
+    }, [])
+
+    // 💤 Inactivity message logic
+    useInactivity(sendRandomMessage);
+
+    return { messages, send, sendRandomMessage };
 }
