@@ -3,9 +3,11 @@ import { Settings } from "lucide-react"
 import { Button } from "../ui/button"
 import { LanguageSwitcher } from "./LanguageSwitcher"
 import { useMessage } from "@/hooks/message/useMessage"
+import { useTranslation } from "react-i18next"
 
 const Menu = () => {
     const { clear } = useMessage();
+    const { t } = useTranslation();
 
     return (
         <DropdownMenu>
@@ -15,12 +17,12 @@ const Menu = () => {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="bg-neutral-900 border border-neutral-800 text-neutral-50 w-fit text-end cursor-pointer p-2 rounded-md shadow-lg space-y-2">
-                <DropdownMenuLabel className="font-bold border-b border-neutral-800 pb-1 mb-2">Settings</DropdownMenuLabel>
+                <DropdownMenuLabel className="font-bold border-b border-neutral-800 pb-1 mb-2">{t("ui.settings")}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <LanguageSwitcher />
                 <DropdownMenuItem className="font-normal">
                     <Button onClick={clear} className="bg-transparent hover:bg-neutral-800 w-full text-left cursor-pointer rounded">
-                        <span className="text-sm">Clear Chat</span>
+                        <span className="text-sm">{t("ui.clear_chat")}</span>
                     </Button>
                 </DropdownMenuItem>
             </DropdownMenuContent>

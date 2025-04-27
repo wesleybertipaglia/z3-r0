@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import StatusBar from "../animations/StatusBar";
 import Menu from "../settings/Menu";
+import Profile from "./Profile";
 
 const Header = () => {
     const [isOnline, setIsOnline] = useState(false);
@@ -21,7 +22,7 @@ const Header = () => {
                 <nav className="flex items-center justify-between">
                     <div className="inline-flex items-center gap-4">
                         <div className="relative">
-                            <img src="/profile.webp" alt="Z3-R0" className="h-10 w-10 rounded-full" loading='lazy' />
+                            <Profile />
                             {isOnline && (
                                 <span className="absolute -top-0 -right-1 w-1 h-1 rounded-full bg-green-500 animate-ping"></span>
                             )}
@@ -33,9 +34,7 @@ const Header = () => {
                         </div>
                     </div>
 
-                    <div>
-                        <Menu />
-                    </div>
+                    <Menu />
                 </nav>
             </div>
         </header>

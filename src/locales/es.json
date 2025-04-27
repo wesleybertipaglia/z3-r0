@@ -15,7 +15,9 @@
         "word": "Palabra",
         "say_something": "Di algo...",
         "notification": "¡Ey, ey! Tienes un nuevo mensaje de Z3-R0! 😎",
-        "scroll": "Nuevos mensajes"
+        "scroll": "Nuevos mensajes",
+        "setting": "Configuración",
+        "clear_chat": "Limpiar chat"
     },
     "placeholders": [
         "Escribe algo gracioso o un comando como !bug",

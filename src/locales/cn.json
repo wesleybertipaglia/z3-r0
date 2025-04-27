@@ -15,7 +15,9 @@
         "word": "单词",
         "say_something": "来说点啥…",
         "notification": "嘿嘿！你有一条来自Z3-R0的新消息！😎",
-        "scroll": "新消息"
+        "scroll": "新消息",
+        "settings": "设置",
+        "clear_chat": "清除聊天记录"
     },
     "placeholders": [
         "输入一些有趣的话或命令，比如 !bug",
