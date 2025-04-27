@@ -1,67 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 * {
     @apply scroll-smooth;
     scrollbar-width: none !important;
-}
-
-.lore-crawl-wrapper {
-    perspective: 600px;
-    height: 300px;
-    overflow: hidden;
-    background: black;
-    color: #ffe81f;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
-    text-align: center;
-    position: relative;
-}
-
-.lore-crawl {
-    transform-origin: 50% 100%;
-    animation: crawl 60s linear infinite;
-    padding: 0 20px;
-    position: absolute;
-    bottom: -100%;
-    width: 100%;
-    animation-delay: 2s;
-}
-
-.lore-crawl p {
-    margin: 0.5em 0;
-}
-
-.title {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.subtitle {
-    font-size: 18px;
-    margin-bottom: 1em;
-}
-
-@keyframes crawl {
-    0% {
-        transform: rotateX(25deg) translateZ(0) translateY(100%);
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-
-    95% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: rotateX(20deg) translateZ(-150px) translateY(-220%);
-        opacity: 0;
-    }
 }
 
 @theme inline {
@@ -172,10 +114,11 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+    * {
+        @apply border-border outline-ring/50;
     }
-  body {
-    @apply bg-background text-foreground;
+
+    body {
+        @apply bg-background text-foreground;
     }
 }

@@ -1,8 +1,8 @@
+import { MessageDto } from '@/types/message';
+import { scrollToBottom } from '@/utils/scroll.util';
 import { useEffect } from 'react';
-import { MessageDto } from '../types/message';
-import Message from './Message';
-import TypingIndicator from './TypingIndicator';
-import { scrollToBottom } from '../utils/scroll.util';
+import TypingIndicator from '../animations/TypingIndicator';
+import Message from '../message/Message';
 
 interface Props {
     messages: MessageDto[]
@@ -13,7 +13,7 @@ interface Props {
 const Feed = ({ messages, isTyping, bottomRef }: Props) => {
     useEffect(() => {
         scrollToBottom(bottomRef);
-    }, [messages]);
+    }, [bottomRef, messages]);
 
     return (
         <div className="flex flex-col gap-2 container max-w-2xl mx-auto">

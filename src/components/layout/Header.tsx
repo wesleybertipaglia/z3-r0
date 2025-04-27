@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { LanguageSwitcher } from "./LanguageSwitcher"
-import StatusBar from "./StatusBar";
+import StatusBar from "../animations/StatusBar";
+import Menu from "../settings/Menu";
 
 const Header = () => {
     const [isOnline, setIsOnline] = useState(false);
@@ -34,7 +34,7 @@ const Header = () => {
                     </div>
 
                     <div>
-                        <LanguageSwitcher />
+                        <Menu />
                     </div>
                 </nav>
             </div>

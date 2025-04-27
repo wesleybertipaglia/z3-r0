@@ -45,5 +45,12 @@ export function useMessage() {
         addMessage({ id: nanoid(), from, content, type, style, });
     }
 
-    return { messages, send, initialized };
+    // 🗑️ Clear Messages
+    function clear() {
+        setMessages([]);
+        localStorage.removeItem(STORAGE_KEY);
+        window.location.reload();
+    }
+
+    return { initialized, messages, send, clear };
 }

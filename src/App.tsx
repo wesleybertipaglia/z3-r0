@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import { useBot } from "./hooks/core/useBot";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Feed from "./components/Feed";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import Feed from "./components/layout/Feed";
 import { scrollToBottom } from "./utils/scroll.util";
 import { useInViewport } from "./hooks/core/useInViewport";
 

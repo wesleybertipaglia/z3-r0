@@ -1,4 +1,4 @@
-import { useLanguage } from "../hooks/core/useLanguage";
+import { useLanguage } from "@/hooks/core/useLanguage";
 
 export function LanguageSwitcher() {
     const { language, changeLanguage } = useLanguage();
@@ -8,7 +8,7 @@ export function LanguageSwitcher() {
         <select
             value={language}
             onChange={(e) => changeLanguage(e.target.value)}
-            className="bg-neutral-800 text-neutral-50 text-sm px-3 py-1 rounded border border-neutral-700 focus:outline-none focus:ring-2"
+            className="bg-neutral-900 text-neutral-50 text-sm px-3 py-1 rounded w-full border border-neutral-800 focus:outline-none focus:ring-2"
         >
             {langs.map((lng) => (
                 <option key={lng} value={lng}>
