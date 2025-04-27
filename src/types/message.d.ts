@@ -13,6 +13,7 @@ export const messageTypes = [
     "video",
     "file",
     "lore",
+    "modal"
 ];
 
 export const messageStyles = [
@@ -35,5 +36,7 @@ export type MessageDto = {
     from: From;
     type?: MessageType;
     style?: MessageStyle;
-    content: string | React.FC;
+    content: MessageContent | string;
 };
+
+export type MessageContent = object
