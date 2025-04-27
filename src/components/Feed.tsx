@@ -16,7 +16,7 @@ const Feed = ({ messages, isTyping, bottomRef }: Props) => {
     }, [messages]);
 
     return (
-        <div className="flex flex-col gap-2 container max-w-2xl mx-auto py-4 px-6">
+        <div className="flex flex-col gap-2 container max-w-2xl mx-auto">
             {messages.map((msg) => (
                 <Message key={msg.id} {...msg} />
             ))}

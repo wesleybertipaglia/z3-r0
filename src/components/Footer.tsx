@@ -1,13 +1,14 @@
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next';
 
 interface Props {
-    input: string
-    setInput: (value: string) => void
-    onSend: () => void
+    input: string;
+    setInput: (value: string) => void;
+    onSend: () => void;
     onScrollToBottom: () => void;
+    bottomInViewport: boolean;
 }
 
-const Footer = ({ input, setInput, onSend, onScrollToBottom }: Props) => {
+const Footer = ({ input, setInput, onSend, onScrollToBottom, bottomInViewport }: Props) => {
     const { t } = useTranslation();
     const placeholders: string[] = t("placeholders", { returnObjects: true }) as string[];
     const randomPlaceholder = placeholders[Math.floor(Math.random() * placeholders.length)];
@@ -32,14 +33,19 @@ const Footer = ({ input, setInput, onSend, onScrollToBottom }: Props) => {
                     </small>
                 </p>
 
-                <div className='absolute -top-full right-0'>
-                    <button onClick={onScrollToBottom} className="px-4 py-2 rounded-full text-sm cursor-pointer bg-neutral-800 hover:bg-neutral-900 border border-neutral-700">
-                        New Messages
-                    </button>
-                </div>
+                {!bottomInViewport && (
+                    <div className="absolute -top-full right-0">
+                        <button
+                            onClick={onScrollToBottom}
+                            className="px-4 py-2 rounded-full text-sm cursor-pointer bg-neutral-800 hover:bg-neutral-900 border border-neutral-700"
+                        >
+                            {t("ui.scroll")}
+                        </button>
+                    </div>
+                )}
             </div>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;
