@@ -10,7 +10,7 @@ const Profile = () => {
             <DialogTrigger>
                 <img src="/profile.webp" alt="Z3-R0" className="h-10 w-10 rounded-full" loading='lazy' />
             </DialogTrigger>
-            <DialogContent className='bg-neutral-900 border border-neutral-800 text-neutral-50 w-fit p-4 rounded-md shadow-lg'>
+            <DialogContent className='bg-neutral-900 border border-neutral-800 text-neutral-50 w-full md:w-fit p-4 rounded-md shadow-lg'>
                 <img src="/profile.webp" alt="Z3-R0" className="h-auto w-full max-w-64 mx-auto rounded-full" loading='lazy' />
                 <DialogFooter className='flex !flex-col gap-2'>
                     <h2 className="text-2xl font-bold">Z3-R0</h2>
